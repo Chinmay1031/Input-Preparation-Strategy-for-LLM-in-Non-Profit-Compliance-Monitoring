@@ -1,0 +1,1054 @@
+[
+  {
+    "doc_id": "Audit_2024_EduCon.HPF.SPAC.250513.Final",
+    "strategy": "S1_full",
+    "run": 0,
+    "revenue_concentration": "CLEAR",
+    "expense_spike": "FLAG",
+    "passthrough_risk": "FLAG",
+    "unallowable_expenditure": "CLEAR",
+    "audit_opinion": "N/A",
+    "going_concern": "N/A",
+    "overall_verdict": "REVIEW_REQUIRED",
+    "confidence": 0.9,
+    "flags": [
+      {
+        "dimension": "expense_spike",
+        "severity": "FLAG",
+        "evidence": "Prog: Gabon Teacher Training 171,177 117,000 (54,177)",
+        "is_faithful": true,
+        "match_score": 0.94
+      },
+      {
+        "dimension": "passthrough_risk",
+        "severity": "FLAG",
+        "evidence": "donation made to Congo Basin (Odzala Project)",
+        "is_faithful": true,
+        "match_score": 1.0
+      }
+    ],
+    "tokens_input": 6003,
+    "tokens_output": 175,
+    "tokens_total": 6178,
+    "faithfulness_score": 1.0,
+    "hallucination_rate": 0.0,
+    "hallucinated_flags": [],
+    "parse_error": false,
+    "error_message": "",
+    "model": "gpt-4o-2024-08-06"
+  },
+  {
+    "doc_id": "Audit_2024_EduCon.HPF.SPAC.250513.Final",
+    "strategy": "S1_full",
+    "run": 1,
+    "revenue_concentration": "FLAG",
+    "expense_spike": "FLAG",
+    "passthrough_risk": "FLAG",
+    "unallowable_expenditure": "CLEAR",
+    "audit_opinion": "N/A",
+    "going_concern": "N/A",
+    "overall_verdict": "REVIEW_REQUIRED",
+    "confidence": 0.9,
+    "flags": [
+      {
+        "dimension": "revenue_concentration",
+        "severity": "FLAG",
+        "evidence": "The total donations per the Annexure A is \u20ac1,800,000 while the total amount per the bank statement was \u20ac3,210,000.",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "expense_spike",
+        "severity": "FLAG",
+        "evidence": "Prog: Gabon Teacher Training 171,177 117,000 (54,177)",
+        "is_faithful": true,
+        "match_score": 0.94
+      },
+      {
+        "dimension": "passthrough_risk",
+        "severity": "FLAG",
+        "evidence": "Per management the difference of \u20ac1,410,000 relates to a donation made to Congo Basin (Odzala Project).",
+        "is_faithful": true,
+        "match_score": 1.0
+      }
+    ],
+    "tokens_input": 6003,
+    "tokens_output": 247,
+    "tokens_total": 6250,
+    "faithfulness_score": 1.0,
+    "hallucination_rate": 0.0,
+    "hallucinated_flags": [],
+    "parse_error": false,
+    "error_message": "",
+    "model": "gpt-4o-2024-08-06"
+  },
+  {
+    "doc_id": "Audit_2024_EduCon.HPF.SPAC.250513.Final",
+    "strategy": "S1_full",
+    "run": 2,
+    "revenue_concentration": "FLAG",
+    "expense_spike": "FLAG",
+    "passthrough_risk": "FLAG",
+    "unallowable_expenditure": "CLEAR",
+    "audit_opinion": "N/A",
+    "going_concern": "N/A",
+    "overall_verdict": "REVIEW_REQUIRED",
+    "confidence": 0.9,
+    "flags": [
+      {
+        "dimension": "revenue_concentration",
+        "severity": "FLAG",
+        "evidence": "The total donations per the Annexure A is \u20ac1,800,000 while the total amount per the bank statement was \u20ac3,210,000. Per management the difference of \u20ac1,410,000 relates to a donation made to Congo Basin (Odzala Project).",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "expense_spike",
+        "severity": "FLAG",
+        "evidence": "Prog: Gabon Teacher Training 171,177 117,000 (54,177)",
+        "is_faithful": true,
+        "match_score": 0.94
+      },
+      {
+        "dimension": "passthrough_risk",
+        "severity": "FLAG",
+        "evidence": "Per management the difference of \u20ac1,410,000 relates to a donation made to Congo Basin (Odzala Project).",
+        "is_faithful": true,
+        "match_score": 1.0
+      }
+    ],
+    "tokens_input": 6003,
+    "tokens_output": 273,
+    "tokens_total": 6276,
+    "faithfulness_score": 1.0,
+    "hallucination_rate": 0.0,
+    "hallucinated_flags": [],
+    "parse_error": false,
+    "error_message": "",
+    "model": "gpt-4o-2024-08-06"
+  },
+  {
+    "doc_id": "Audit_2024_EduCon.HPF.SPAC.250513.Final",
+    "strategy": "S2_sections",
+    "run": 0,
+    "revenue_concentration": "FLAG",
+    "expense_spike": "FLAG",
+    "passthrough_risk": "FLAG",
+    "unallowable_expenditure": "ESCALATE",
+    "audit_opinion": "N/A",
+    "going_concern": "N/A",
+    "overall_verdict": "ESCALATE",
+    "confidence": 0.9,
+    "flags": [
+      {
+        "dimension": "revenue_concentration",
+        "severity": "FLAG",
+        "evidence": "The total donations per the Annexure A is \u20ac1,800,000 while the total amount per the bank statement was \u20ac3,210,000. Per management the difference of \u20ac1,410,000 relates to a donation made to Congo Basin (Odzala Project).",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "expense_spike",
+        "severity": "FLAG",
+        "evidence": "Prog: Gabon Teacher Training 171,177 117,000 (54,177)",
+        "is_faithful": true,
+        "match_score": 0.94
+      },
+      {
+        "dimension": "passthrough_risk",
+        "severity": "FLAG",
+        "evidence": "Per management the difference of \u20ac1,410,000 relates to a donation made to Congo Basin (Odzala Project).",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "unallowable_expenditure",
+        "severity": "ESCALATE",
+        "evidence": "It relates to LCA annual conference for top management.",
+        "is_faithful": true,
+        "match_score": 1.0
+      }
+    ],
+    "tokens_input": 6024,
+    "tokens_output": 316,
+    "tokens_total": 6340,
+    "faithfulness_score": 1.0,
+    "hallucination_rate": 0.0,
+    "hallucinated_flags": [],
+    "parse_error": false,
+    "error_message": "",
+    "model": "gpt-4o-2024-08-06"
+  },
+  {
+    "doc_id": "Audit_2024_EduCon.HPF.SPAC.250513.Final",
+    "strategy": "S2_sections",
+    "run": 1,
+    "revenue_concentration": "FLAG",
+    "expense_spike": "FLAG",
+    "passthrough_risk": "FLAG",
+    "unallowable_expenditure": "ESCALATE",
+    "audit_opinion": "N/A",
+    "going_concern": "N/A",
+    "overall_verdict": "ESCALATE",
+    "confidence": 0.9,
+    "flags": [
+      {
+        "dimension": "revenue_concentration",
+        "severity": "FLAG",
+        "evidence": "\u20ac1,800,000 while the total amount per the bank statement was \u20ac3,210,000",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "expense_spike",
+        "severity": "FLAG",
+        "evidence": "Prog: Gabon Teacher Training 171,177 117,000 (54,177)",
+        "is_faithful": true,
+        "match_score": 0.94
+      },
+      {
+        "dimension": "passthrough_risk",
+        "severity": "FLAG",
+        "evidence": "\u20ac1,410,000 relates to a donation made to Congo Basin (Odzala Project)",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "unallowable_expenditure",
+        "severity": "ESCALATE",
+        "evidence": "LCA annual conference for top management",
+        "is_faithful": true,
+        "match_score": 1.0
+      }
+    ],
+    "tokens_input": 6024,
+    "tokens_output": 272,
+    "tokens_total": 6296,
+    "faithfulness_score": 1.0,
+    "hallucination_rate": 0.0,
+    "hallucinated_flags": [],
+    "parse_error": false,
+    "error_message": "",
+    "model": "gpt-4o-2024-08-06"
+  },
+  {
+    "doc_id": "Audit_2024_EduCon.HPF.SPAC.250513.Final",
+    "strategy": "S2_sections",
+    "run": 2,
+    "revenue_concentration": "FLAG",
+    "expense_spike": "FLAG",
+    "passthrough_risk": "FLAG",
+    "unallowable_expenditure": "ESCALATE",
+    "audit_opinion": "N/A",
+    "going_concern": "N/A",
+    "overall_verdict": "ESCALATE",
+    "confidence": 0.9,
+    "flags": [
+      {
+        "dimension": "revenue_concentration",
+        "severity": "FLAG",
+        "evidence": "The total donations per the Annexure A is \u20ac1,800,000 while the total amount per the bank statement was \u20ac3,210,000. Per management the difference of \u20ac1,410,000 relates to a donation made to Congo Basin (Odzala Project).",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "expense_spike",
+        "severity": "FLAG",
+        "evidence": "Prog: Gabon Teacher Training 171,177 117,000 (54,177)",
+        "is_faithful": true,
+        "match_score": 0.94
+      },
+      {
+        "dimension": "passthrough_risk",
+        "severity": "FLAG",
+        "evidence": "Per management the difference of \u20ac1,410,000 relates to a donation made to Congo Basin (Odzala Project).",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "unallowable_expenditure",
+        "severity": "ESCALATE",
+        "evidence": "It relates to LCA annual conference for top management.",
+        "is_faithful": true,
+        "match_score": 1.0
+      }
+    ],
+    "tokens_input": 6024,
+    "tokens_output": 316,
+    "tokens_total": 6340,
+    "faithfulness_score": 1.0,
+    "hallucination_rate": 0.0,
+    "hallucinated_flags": [],
+    "parse_error": false,
+    "error_message": "",
+    "model": "gpt-4o-2024-08-06"
+  },
+  {
+    "doc_id": "Audit_2024_EduCon.HPF.SPAC.250513.Final",
+    "strategy": "S3_fields",
+    "run": 0,
+    "revenue_concentration": "CLEAR",
+    "expense_spike": "ESCALATE",
+    "passthrough_risk": "FLAG",
+    "unallowable_expenditure": "CLEAR",
+    "audit_opinion": "N/A",
+    "going_concern": "N/A",
+    "overall_verdict": "ESCALATE",
+    "confidence": 0.9,
+    "flags": [
+      {
+        "dimension": "expense_spike",
+        "severity": "ESCALATE",
+        "evidence": "variance=65596%",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "expense_spike",
+        "severity": "ESCALATE",
+        "evidence": "variance=3296%",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "expense_spike",
+        "severity": "ESCALATE",
+        "evidence": "variance=3503%",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "passthrough_risk",
+        "severity": "FLAG",
+        "evidence": "Difference between bank receipts and Annexure A donations noted. Attributed to separate project.",
+        "is_faithful": true,
+        "match_score": 1.0
+      }
+    ],
+    "tokens_input": 799,
+    "tokens_output": 236,
+    "tokens_total": 1035,
+    "faithfulness_score": 1.0,
+    "hallucination_rate": 0.0,
+    "hallucinated_flags": [],
+    "parse_error": false,
+    "error_message": "",
+    "model": "gpt-4o-2024-08-06"
+  },
+  {
+    "doc_id": "Audit_2024_EduCon.HPF.SPAC.250513.Final",
+    "strategy": "S3_fields",
+    "run": 1,
+    "revenue_concentration": "CLEAR",
+    "expense_spike": "ESCALATE",
+    "passthrough_risk": "FLAG",
+    "unallowable_expenditure": "CLEAR",
+    "audit_opinion": "N/A",
+    "going_concern": "N/A",
+    "overall_verdict": "ESCALATE",
+    "confidence": 0.9,
+    "flags": [
+      {
+        "dimension": "expense_spike",
+        "severity": "ESCALATE",
+        "evidence": "variance=65596%",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "expense_spike",
+        "severity": "ESCALATE",
+        "evidence": "variance=3296%",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "expense_spike",
+        "severity": "ESCALATE",
+        "evidence": "variance=3503%",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "passthrough_risk",
+        "severity": "FLAG",
+        "evidence": "Difference between bank receipts and Annexure A donations noted.",
+        "is_faithful": true,
+        "match_score": 0.99
+      }
+    ],
+    "tokens_input": 799,
+    "tokens_output": 230,
+    "tokens_total": 1029,
+    "faithfulness_score": 1.0,
+    "hallucination_rate": 0.0,
+    "hallucinated_flags": [],
+    "parse_error": false,
+    "error_message": "",
+    "model": "gpt-4o-2024-08-06"
+  },
+  {
+    "doc_id": "Audit_2024_EduCon.HPF.SPAC.250513.Final",
+    "strategy": "S3_fields",
+    "run": 2,
+    "revenue_concentration": "CLEAR",
+    "expense_spike": "ESCALATE",
+    "passthrough_risk": "FLAG",
+    "unallowable_expenditure": "CLEAR",
+    "audit_opinion": "N/A",
+    "going_concern": "N/A",
+    "overall_verdict": "ESCALATE",
+    "confidence": 0.9,
+    "flags": [
+      {
+        "dimension": "expense_spike",
+        "severity": "ESCALATE",
+        "evidence": "variance=65596%",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "expense_spike",
+        "severity": "ESCALATE",
+        "evidence": "variance=3296%",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "expense_spike",
+        "severity": "ESCALATE",
+        "evidence": "variance=3503%",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "passthrough_risk",
+        "severity": "FLAG",
+        "evidence": "Difference between bank receipts and Annexure A donations noted.",
+        "is_faithful": true,
+        "match_score": 0.99
+      }
+    ],
+    "tokens_input": 799,
+    "tokens_output": 230,
+    "tokens_total": 1029,
+    "faithfulness_score": 1.0,
+    "hallucination_rate": 0.0,
+    "hallucinated_flags": [],
+    "parse_error": false,
+    "error_message": "",
+    "model": "gpt-4o-2024-08-06"
+  },
+  {
+    "doc_id": "Audit_2024_EduCon.HPF.SPAC.250513.Final",
+    "strategy": "S4_hybrid",
+    "run": 0,
+    "revenue_concentration": "CLEAR",
+    "expense_spike": "ESCALATE",
+    "passthrough_risk": "FLAG",
+    "unallowable_expenditure": "CLEAR",
+    "audit_opinion": "N/A",
+    "going_concern": "N/A",
+    "overall_verdict": "ESCALATE",
+    "confidence": 0.95,
+    "flags": [
+      {
+        "dimension": "expense_spike",
+        "severity": "ESCALATE",
+        "evidence": "variance=65596%",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "expense_spike",
+        "severity": "ESCALATE",
+        "evidence": "variance=3296%",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "expense_spike",
+        "severity": "ESCALATE",
+        "evidence": "variance=3503%",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "passthrough_risk",
+        "severity": "FLAG",
+        "evidence": "Difference between bank receipts and Annexure A donations noted.",
+        "is_faithful": true,
+        "match_score": 0.99
+      }
+    ],
+    "tokens_input": 1204,
+    "tokens_output": 230,
+    "tokens_total": 1434,
+    "faithfulness_score": 1.0,
+    "hallucination_rate": 0.0,
+    "hallucinated_flags": [],
+    "parse_error": false,
+    "error_message": "",
+    "model": "gpt-4o-2024-08-06"
+  },
+  {
+    "doc_id": "Audit_2024_EduCon.HPF.SPAC.250513.Final",
+    "strategy": "S4_hybrid",
+    "run": 1,
+    "revenue_concentration": "CLEAR",
+    "expense_spike": "ESCALATE",
+    "passthrough_risk": "FLAG",
+    "unallowable_expenditure": "CLEAR",
+    "audit_opinion": "N/A",
+    "going_concern": "N/A",
+    "overall_verdict": "ESCALATE",
+    "confidence": 0.9,
+    "flags": [
+      {
+        "dimension": "expense_spike",
+        "severity": "ESCALATE",
+        "evidence": "variance=65596%",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "expense_spike",
+        "severity": "ESCALATE",
+        "evidence": "variance=3296%",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "expense_spike",
+        "severity": "ESCALATE",
+        "evidence": "variance=3503%",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "passthrough_risk",
+        "severity": "FLAG",
+        "evidence": "Difference between bank receipts and Annexure A donations noted.",
+        "is_faithful": true,
+        "match_score": 0.99
+      }
+    ],
+    "tokens_input": 1204,
+    "tokens_output": 230,
+    "tokens_total": 1434,
+    "faithfulness_score": 1.0,
+    "hallucination_rate": 0.0,
+    "hallucinated_flags": [],
+    "parse_error": false,
+    "error_message": "",
+    "model": "gpt-4o-2024-08-06"
+  },
+  {
+    "doc_id": "Audit_2024_EduCon.HPF.SPAC.250513.Final",
+    "strategy": "S4_hybrid",
+    "run": 2,
+    "revenue_concentration": "CLEAR",
+    "expense_spike": "ESCALATE",
+    "passthrough_risk": "FLAG",
+    "unallowable_expenditure": "CLEAR",
+    "audit_opinion": "N/A",
+    "going_concern": "N/A",
+    "overall_verdict": "ESCALATE",
+    "confidence": 0.9,
+    "flags": [
+      {
+        "dimension": "expense_spike",
+        "severity": "ESCALATE",
+        "evidence": "variance=65596%",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "expense_spike",
+        "severity": "ESCALATE",
+        "evidence": "variance=3296%",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "expense_spike",
+        "severity": "ESCALATE",
+        "evidence": "variance=3503%",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "passthrough_risk",
+        "severity": "FLAG",
+        "evidence": "Difference between bank receipts and Annexure A donations noted.",
+        "is_faithful": true,
+        "match_score": 0.99
+      }
+    ],
+    "tokens_input": 1204,
+    "tokens_output": 230,
+    "tokens_total": 1434,
+    "faithfulness_score": 1.0,
+    "hallucination_rate": 0.0,
+    "hallucinated_flags": [],
+    "parse_error": false,
+    "error_message": "",
+    "model": "gpt-4o-2024-08-06"
+  },
+  {
+    "doc_id": "FinancialStatements_2024_signed.HPF.SPAC.250604.Draft",
+    "strategy": "S1_full",
+    "run": 0,
+    "revenue_concentration": "ESCALATE",
+    "expense_spike": "FLAG",
+    "passthrough_risk": "CLEAR",
+    "unallowable_expenditure": "CLEAR",
+    "audit_opinion": "CLEAR",
+    "going_concern": "CLEAR",
+    "overall_verdict": "REVIEW_REQUIRED",
+    "confidence": 0.9,
+    "flags": [
+      {
+        "dimension": "revenue_concentration",
+        "severity": "ESCALATE",
+        "evidence": "Hasso Plattner Foundation 4 437 800 3 107 244",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "expense_spike",
+        "severity": "FLAG",
+        "evidence": "Development costs and toolkits 597 377 202 930",
+        "is_faithful": true,
+        "match_score": 1.0
+      }
+    ],
+    "tokens_input": 8702,
+    "tokens_output": 178,
+    "tokens_total": 8880,
+    "faithfulness_score": 1.0,
+    "hallucination_rate": 0.0,
+    "hallucinated_flags": [],
+    "parse_error": false,
+    "error_message": "",
+    "model": "gpt-4o-2024-08-06"
+  },
+  {
+    "doc_id": "FinancialStatements_2024_signed.HPF.SPAC.250604.Draft",
+    "strategy": "S1_full",
+    "run": 1,
+    "revenue_concentration": "FLAG",
+    "expense_spike": "FLAG",
+    "passthrough_risk": "CLEAR",
+    "unallowable_expenditure": "CLEAR",
+    "audit_opinion": "CLEAR",
+    "going_concern": "CLEAR",
+    "overall_verdict": "REVIEW_REQUIRED",
+    "confidence": 0.9,
+    "flags": [
+      {
+        "dimension": "revenue_concentration",
+        "severity": "FLAG",
+        "evidence": "Hasso Plattner Foundation 4 437 800 3 107 244",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "expense_spike",
+        "severity": "FLAG",
+        "evidence": "Development costs and toolkits 597 377 202 930",
+        "is_faithful": true,
+        "match_score": 1.0
+      }
+    ],
+    "tokens_input": 8702,
+    "tokens_output": 174,
+    "tokens_total": 8876,
+    "faithfulness_score": 1.0,
+    "hallucination_rate": 0.0,
+    "hallucinated_flags": [],
+    "parse_error": false,
+    "error_message": "",
+    "model": "gpt-4o-2024-08-06"
+  },
+  {
+    "doc_id": "FinancialStatements_2024_signed.HPF.SPAC.250604.Draft",
+    "strategy": "S1_full",
+    "run": 2,
+    "revenue_concentration": "ESCALATE",
+    "expense_spike": "FLAG",
+    "passthrough_risk": "CLEAR",
+    "unallowable_expenditure": "CLEAR",
+    "audit_opinion": "CLEAR",
+    "going_concern": "CLEAR",
+    "overall_verdict": "REVIEW_REQUIRED",
+    "confidence": 0.9,
+    "flags": [
+      {
+        "dimension": "revenue_concentration",
+        "severity": "ESCALATE",
+        "evidence": "Hasso Plattner Foundation 4 437 800 3 107 244",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "expense_spike",
+        "severity": "FLAG",
+        "evidence": "Development costs and toolkits 597 377 202 930",
+        "is_faithful": true,
+        "match_score": 1.0
+      }
+    ],
+    "tokens_input": 8702,
+    "tokens_output": 178,
+    "tokens_total": 8880,
+    "faithfulness_score": 1.0,
+    "hallucination_rate": 0.0,
+    "hallucinated_flags": [],
+    "parse_error": false,
+    "error_message": "",
+    "model": "gpt-4o-2024-08-06"
+  },
+  {
+    "doc_id": "FinancialStatements_2024_signed.HPF.SPAC.250604.Draft",
+    "strategy": "S2_sections",
+    "run": 0,
+    "revenue_concentration": "ESCALATE",
+    "expense_spike": "FLAG",
+    "passthrough_risk": "CLEAR",
+    "unallowable_expenditure": "CLEAR",
+    "audit_opinion": "CLEAR",
+    "going_concern": "CLEAR",
+    "overall_verdict": "REVIEW_REQUIRED",
+    "confidence": 0.9,
+    "flags": [
+      {
+        "dimension": "revenue_concentration",
+        "severity": "ESCALATE",
+        "evidence": "Hasso Plattner Foundation 4 437 800 3 107 244",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "expense_spike",
+        "severity": "FLAG",
+        "evidence": "Development costs and toolkits 597 377 202 930",
+        "is_faithful": true,
+        "match_score": 1.0
+      }
+    ],
+    "tokens_input": 7117,
+    "tokens_output": 178,
+    "tokens_total": 7295,
+    "faithfulness_score": 1.0,
+    "hallucination_rate": 0.0,
+    "hallucinated_flags": [],
+    "parse_error": false,
+    "error_message": "",
+    "model": "gpt-4o-2024-08-06"
+  },
+  {
+    "doc_id": "FinancialStatements_2024_signed.HPF.SPAC.250604.Draft",
+    "strategy": "S2_sections",
+    "run": 1,
+    "revenue_concentration": "ESCALATE",
+    "expense_spike": "FLAG",
+    "passthrough_risk": "CLEAR",
+    "unallowable_expenditure": "CLEAR",
+    "audit_opinion": "CLEAR",
+    "going_concern": "CLEAR",
+    "overall_verdict": "REVIEW_REQUIRED",
+    "confidence": 0.9,
+    "flags": [
+      {
+        "dimension": "revenue_concentration",
+        "severity": "ESCALATE",
+        "evidence": "Hasso Plattner Foundation 4 437 800 3 107 244",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "expense_spike",
+        "severity": "FLAG",
+        "evidence": "Development costs and toolkits 597 377 202 930",
+        "is_faithful": true,
+        "match_score": 1.0
+      }
+    ],
+    "tokens_input": 7117,
+    "tokens_output": 178,
+    "tokens_total": 7295,
+    "faithfulness_score": 1.0,
+    "hallucination_rate": 0.0,
+    "hallucinated_flags": [],
+    "parse_error": false,
+    "error_message": "",
+    "model": "gpt-4o-2024-08-06"
+  },
+  {
+    "doc_id": "FinancialStatements_2024_signed.HPF.SPAC.250604.Draft",
+    "strategy": "S2_sections",
+    "run": 2,
+    "revenue_concentration": "FLAG",
+    "expense_spike": "FLAG",
+    "passthrough_risk": "CLEAR",
+    "unallowable_expenditure": "CLEAR",
+    "audit_opinion": "CLEAR",
+    "going_concern": "CLEAR",
+    "overall_verdict": "REVIEW_REQUIRED",
+    "confidence": 0.9,
+    "flags": [
+      {
+        "dimension": "revenue_concentration",
+        "severity": "FLAG",
+        "evidence": "Hasso Plattner Foundation 4 437 800 3 107 244",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "expense_spike",
+        "severity": "FLAG",
+        "evidence": "Development costs and toolkits 597 377 202 930",
+        "is_faithful": true,
+        "match_score": 1.0
+      }
+    ],
+    "tokens_input": 7117,
+    "tokens_output": 174,
+    "tokens_total": 7291,
+    "faithfulness_score": 1.0,
+    "hallucination_rate": 0.0,
+    "hallucinated_flags": [],
+    "parse_error": false,
+    "error_message": "",
+    "model": "gpt-4o-2024-08-06"
+  },
+  {
+    "doc_id": "FinancialStatements_2024_signed.HPF.SPAC.250604.Draft",
+    "strategy": "S3_fields",
+    "run": 0,
+    "revenue_concentration": "FLAG",
+    "expense_spike": "FLAG",
+    "passthrough_risk": "CLEAR",
+    "unallowable_expenditure": "CLEAR",
+    "audit_opinion": "CLEAR",
+    "going_concern": "CLEAR",
+    "overall_verdict": "REVIEW_REQUIRED",
+    "confidence": 0.9,
+    "flags": [
+      {
+        "dimension": "revenue_concentration",
+        "severity": "FLAG",
+        "evidence": "Hasso Plattner Foundation 4 437 800",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "expense_spike",
+        "severity": "FLAG",
+        "evidence": "Staff welfare: EUR 57,806 (prior: 10,265, YoY: +463%)",
+        "is_faithful": true,
+        "match_score": 0.83
+      }
+    ],
+    "tokens_input": 735,
+    "tokens_output": 177,
+    "tokens_total": 912,
+    "faithfulness_score": 1.0,
+    "hallucination_rate": 0.0,
+    "hallucinated_flags": [],
+    "parse_error": false,
+    "error_message": "",
+    "model": "gpt-4o-2024-08-06"
+  },
+  {
+    "doc_id": "FinancialStatements_2024_signed.HPF.SPAC.250604.Draft",
+    "strategy": "S3_fields",
+    "run": 1,
+    "revenue_concentration": "FLAG",
+    "expense_spike": "FLAG",
+    "passthrough_risk": "CLEAR",
+    "unallowable_expenditure": "CLEAR",
+    "audit_opinion": "CLEAR",
+    "going_concern": "CLEAR",
+    "overall_verdict": "REVIEW_REQUIRED",
+    "confidence": 0.9,
+    "flags": [
+      {
+        "dimension": "revenue_concentration",
+        "severity": "FLAG",
+        "evidence": "Hasso Plattner Foundation 4 437 800 3 107 244",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "expense_spike",
+        "severity": "FLAG",
+        "evidence": "Staff welfare: EUR 57,806 (prior: 10,265, YoY: +463%)",
+        "is_faithful": true,
+        "match_score": 0.83
+      }
+    ],
+    "tokens_input": 735,
+    "tokens_output": 183,
+    "tokens_total": 918,
+    "faithfulness_score": 1.0,
+    "hallucination_rate": 0.0,
+    "hallucinated_flags": [],
+    "parse_error": false,
+    "error_message": "",
+    "model": "gpt-4o-2024-08-06"
+  },
+  {
+    "doc_id": "FinancialStatements_2024_signed.HPF.SPAC.250604.Draft",
+    "strategy": "S3_fields",
+    "run": 2,
+    "revenue_concentration": "FLAG",
+    "expense_spike": "FLAG",
+    "passthrough_risk": "CLEAR",
+    "unallowable_expenditure": "CLEAR",
+    "audit_opinion": "CLEAR",
+    "going_concern": "CLEAR",
+    "overall_verdict": "REVIEW_REQUIRED",
+    "confidence": 0.9,
+    "flags": [
+      {
+        "dimension": "revenue_concentration",
+        "severity": "FLAG",
+        "evidence": "Hasso Plattner Foundation 4 437 800 3 107 244",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "expense_spike",
+        "severity": "FLAG",
+        "evidence": "Staff welfare: EUR 57,806 (prior: 10,265, YoY: +463%)",
+        "is_faithful": true,
+        "match_score": 0.83
+      }
+    ],
+    "tokens_input": 735,
+    "tokens_output": 183,
+    "tokens_total": 918,
+    "faithfulness_score": 1.0,
+    "hallucination_rate": 0.0,
+    "hallucinated_flags": [],
+    "parse_error": false,
+    "error_message": "",
+    "model": "gpt-4o-2024-08-06"
+  },
+  {
+    "doc_id": "FinancialStatements_2024_signed.HPF.SPAC.250604.Draft",
+    "strategy": "S4_hybrid",
+    "run": 0,
+    "revenue_concentration": "FLAG",
+    "expense_spike": "FLAG",
+    "passthrough_risk": "CLEAR",
+    "unallowable_expenditure": "CLEAR",
+    "audit_opinion": "CLEAR",
+    "going_concern": "CLEAR",
+    "overall_verdict": "REVIEW_REQUIRED",
+    "confidence": 0.9,
+    "flags": [
+      {
+        "dimension": "revenue_concentration",
+        "severity": "FLAG",
+        "evidence": "Hasso Plattner Foundation 4 437 800 3 107 244",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "expense_spike",
+        "severity": "FLAG",
+        "evidence": "Staff welfare: EUR 57,806 (prior: 10,265, YoY: +463%)",
+        "is_faithful": true,
+        "match_score": 0.83
+      }
+    ],
+    "tokens_input": 1106,
+    "tokens_output": 183,
+    "tokens_total": 1289,
+    "faithfulness_score": 1.0,
+    "hallucination_rate": 0.0,
+    "hallucinated_flags": [],
+    "parse_error": false,
+    "error_message": "",
+    "model": "gpt-4o-2024-08-06"
+  },
+  {
+    "doc_id": "FinancialStatements_2024_signed.HPF.SPAC.250604.Draft",
+    "strategy": "S4_hybrid",
+    "run": 1,
+    "revenue_concentration": "FLAG",
+    "expense_spike": "FLAG",
+    "passthrough_risk": "CLEAR",
+    "unallowable_expenditure": "CLEAR",
+    "audit_opinion": "CLEAR",
+    "going_concern": "CLEAR",
+    "overall_verdict": "REVIEW_REQUIRED",
+    "confidence": 0.9,
+    "flags": [
+      {
+        "dimension": "revenue_concentration",
+        "severity": "FLAG",
+        "evidence": "Hasso Plattner Foundation 4 437 800 3 107 244",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "expense_spike",
+        "severity": "FLAG",
+        "evidence": "Staff welfare: EUR 57,806 (prior: 10,265, YoY: +463%)",
+        "is_faithful": true,
+        "match_score": 0.83
+      }
+    ],
+    "tokens_input": 1106,
+    "tokens_output": 183,
+    "tokens_total": 1289,
+    "faithfulness_score": 1.0,
+    "hallucination_rate": 0.0,
+    "hallucinated_flags": [],
+    "parse_error": false,
+    "error_message": "",
+    "model": "gpt-4o-2024-08-06"
+  },
+  {
+    "doc_id": "FinancialStatements_2024_signed.HPF.SPAC.250604.Draft",
+    "strategy": "S4_hybrid",
+    "run": 2,
+    "revenue_concentration": "FLAG",
+    "expense_spike": "FLAG",
+    "passthrough_risk": "CLEAR",
+    "unallowable_expenditure": "CLEAR",
+    "audit_opinion": "CLEAR",
+    "going_concern": "CLEAR",
+    "overall_verdict": "REVIEW_REQUIRED",
+    "confidence": 0.9,
+    "flags": [
+      {
+        "dimension": "revenue_concentration",
+        "severity": "FLAG",
+        "evidence": "Hasso Plattner Foundation 4 437 800 3 107 244",
+        "is_faithful": true,
+        "match_score": 1.0
+      },
+      {
+        "dimension": "expense_spike",
+        "severity": "FLAG",
+        "evidence": "Staff welfare: EUR 57,806 (prior: 10,265, YoY: +463%)",
+        "is_faithful": true,
+        "match_score": 0.83
+      }
+    ],
+    "tokens_input": 1106,
+    "tokens_output": 183,
+    "tokens_total": 1289,
+    "faithfulness_score": 1.0,
+    "hallucination_rate": 0.0,
+    "hallucinated_flags": [],
+    "parse_error": false,
+    "error_message": "",
+    "model": "gpt-4o-2024-08-06"
+  }
+]
