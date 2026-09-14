@@ -70,6 +70,25 @@ def parse_document(pdf_path: str, doc_id: Optional[str] = None) -> ParsedDocumen
             page_data.append((page_num + 1, text, tables))
 
     doc.full_text = "\n".join(all_text_parts)
+    if len(doc.full_text.strip()) < 200:
+        from .ocr_fallback import ocr_document, OCR_AVAILABLE
+        if OCR_AVAILABLE:
+            doc.parse_warnings.append(
+                "No text layer detected — OCR fallback used. "
+                "Text quality may be lower than native extraction."
+            )
+            ocr_text = ocr_document(pdf_path)
+            doc.full_text = ocr_text
+            ocr_pages = ocr_text.split("\n\n")
+            page_data = [
+                (i + 1, page, [])
+                for i, page in enumerate(ocr_pages)
+            ]
+        else:
+            doc.parse_warnings.append(
+                "No text layer and OCR not available — "
+                "document cannot be processed."
+            )
 
     # ── Step 2: detect document type ─────────────────────────────────────────
     doc.document_type = detect_document_type(doc.full_text)

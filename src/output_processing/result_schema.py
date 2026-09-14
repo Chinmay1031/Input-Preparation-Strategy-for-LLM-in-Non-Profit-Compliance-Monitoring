@@ -53,6 +53,15 @@ class ExperimentResult:
     hallucination_rate:    float = 0.0  # proportion of unsupported flags
     hallucinated_flags:    List[str] = field(default_factory=list)
 
+    # Citation behaviour — distinguishes verbatim quotation from
+    # synthesised claims constructed out of source material.
+    # A synthesised claim may be factually correct yet cannot be
+    # traced to a single line, which weakens it as audit evidence.
+    verbatim_rate:         float = 1.0
+    synthesis_rate:        float = 0.0
+    mean_match_score:      float = 1.0
+    synthesised_flags:     List[str] = field(default_factory=list)
+
     # Quality control
     parse_error:   bool = False
     error_message: str  = ""
@@ -105,6 +114,10 @@ class ExperimentResult:
             "faithfulness_score":   self.faithfulness_score,
             "hallucination_rate":   self.hallucination_rate,
             "hallucinated_flags":   self.hallucinated_flags,
+            "verbatim_rate":        self.verbatim_rate,
+            "synthesis_rate":       self.synthesis_rate,
+            "mean_match_score":     self.mean_match_score,
+            "synthesised_flags":    self.synthesised_flags,
             "parse_error":          self.parse_error,
             "error_message":        self.error_message,
             "model":                self.model,

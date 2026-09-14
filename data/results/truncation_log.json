@@ -1,0 +1,44 @@
+[
+  {
+    "doc_id": "BRAC-Uganda-Audited-Financial-Statements",
+    "strategy": "S1_full",
+    "run": 0,
+    "original_tokens": 37721,
+    "sent_tokens": 21023
+  },
+  {
+    "doc_id": "BRAC-Uganda-Audited-Financial-Statements",
+    "strategy": "S1_full",
+    "run": 1,
+    "original_tokens": 37721,
+    "sent_tokens": 21023
+  },
+  {
+    "doc_id": "BRAC-Uganda-Audited-Financial-Statements",
+    "strategy": "S1_full",
+    "run": 2,
+    "original_tokens": 37721,
+    "sent_tokens": 21023
+  },
+  {
+    "doc_id": "BRAC-Uganda-Audited-Financial-Statements",
+    "strategy": "S2_sections",
+    "run": 0,
+    "original_tokens": 31810,
+    "sent_tokens": 21022
+  },
+  {
+    "doc_id": "BRAC-Uganda-Audited-Financial-Statements",
+    "strategy": "S2_sections",
+    "run": 1,
+    "original_tokens": 31810,
+    "sent_tokens": 21022
+  },
+  {
+    "doc_id": "BRAC-Uganda-Audited-Financial-Statements",
+    "strategy": "S2_sections",
+    "run": 2,
+    "original_tokens": 31810,
+    "sent_tokens": 21022
+  }
+]

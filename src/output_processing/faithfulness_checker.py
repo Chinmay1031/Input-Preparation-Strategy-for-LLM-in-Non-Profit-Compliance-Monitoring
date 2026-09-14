@@ -4,31 +4,46 @@ faithfulness_checker.py
 Checks whether evidence cited by the LLM in its compliance flags
 actually exists in the source document or prepared strategy text.
 
-Two faithfulness modes:
-- source: checks against raw PDF text (S1, S2)
-- summary: checks against prepared strategy text (S3, S4)
+Two comparison modes:
+  - source:  checks against raw PDF text (S1, S2)
+  - summary: checks against prepared strategy text (S3, S4)
 
-This distinction is itself a methodological contribution — S3 and S4
-evidence citations are grounded in the structured summary, not the
-raw document, which has different implications for auditability.
+This distinction is a methodological contribution. S3 and S4 evidence
+is grounded in the structured extract rather than the raw document,
+which has different implications for auditability.
+
+Three evidence behaviours are distinguished rather than a single
+binary faithful/unfaithful judgement:
+
+  Verbatim   (>= 92)  the model copied a line from the material given
+  Synthesis  (60-91)  the model constructed a claim from source content
+  Unsupported (< 60)  the claim is not present in the material given
+
+The middle band matters for compliance work. A synthesised claim such
+as "expenses increased from X to Y" may be factually correct, yet it
+cannot be traced to a single line of the document, which weakens its
+value as audit evidence.
 """
 
 from fuzzywuzzy import fuzz
 from .result_schema import ExperimentResult, ComplianceFlag
 
-# Threshold: evidence must match at least this well to be grounded
-FAITHFULNESS_THRESHOLD = 60  # lowered from 75 — accounts for paraphrasing
+# Evidence is treated as grounded at or above this score
+FAITHFULNESS_THRESHOLD = 60
 
-# Strategies where evidence should be checked against prepared text
-# rather than raw source (because the LLM only sees the summary)
+# At or above this score the evidence is a near-exact copy of a
+# source line rather than a reconstruction
+VERBATIM_THRESHOLD = 92
+
+# Strategies where evidence is checked against the prepared text
+# rather than the raw source, because the model only saw the extract
 SUMMARY_STRATEGIES = {"S3_fields", "S4_hybrid"}
 
 
 def _best_match_score(evidence: str, source_text: str) -> float:
     """
-    Find the best fuzzy match between cited evidence
-    and any sentence in the comparison text.
-    Returns a score from 0 to 100.
+    Find the best fuzzy match between cited evidence and any
+    sentence in the comparison text. Returns a score from 0 to 100.
     """
     if not evidence or not source_text:
         return 0.0
@@ -53,28 +68,30 @@ def _best_match_score(evidence: str, source_text: str) -> float:
 
 
 def compute_faithfulness(
-    result:      ExperimentResult,
-    source_text: str,
+    result:        ExperimentResult,
+    source_text:   str,
     prepared_text: str = ""
 ) -> ExperimentResult:
     """
-    For each flag, check whether the cited evidence exists in
-    the comparison text. For S3 and S4, checks against the
-    prepared strategy text. For S1 and S2, checks against
-    the raw source document.
+    Score each cited flag against the material the model was given,
+    and classify the citation behaviour.
 
     Args:
         result:        ExperimentResult from verdict_normaliser
-        source_text:   full raw PDF text
-        prepared_text: text sent to LLM (strategy output)
+        source_text:   full raw document text
+        prepared_text: text actually sent to the model
 
     Returns:
-        Updated ExperimentResult with faithfulness scores filled in
+        Updated ExperimentResult with faithfulness measures filled in
     """
     if not result.flags:
         result.faithfulness_score = 1.0
         result.hallucination_rate = 0.0
         result.hallucinated_flags = []
+        result.verbatim_rate      = 1.0
+        result.synthesis_rate     = 0.0
+        result.synthesised_flags  = []
+        result.mean_match_score   = 1.0
         return result
 
     # Choose comparison text based on strategy
@@ -86,24 +103,45 @@ def compute_faithfulness(
         mode = "source"
 
     faithful_count = 0
+    verbatim_count = 0
+    synth_count    = 0
     hallucinated   = []
+    synthesised    = []
+    all_scores     = []
 
     for flag in result.flags:
         score = _best_match_score(flag.evidence, comparison_text)
-        flag.match_score  = score / 100.0
-        flag.is_faithful  = score >= FAITHFULNESS_THRESHOLD
+        flag.match_score = score / 100.0
+        flag.is_faithful = score >= FAITHFULNESS_THRESHOLD
+        all_scores.append(score)
 
-        if flag.is_faithful:
+        if score >= VERBATIM_THRESHOLD:
+            verbatim_count += 1
             faithful_count += 1
+
+        elif score >= FAITHFULNESS_THRESHOLD:
+            synth_count    += 1
+            faithful_count += 1
+            synthesised.append(
+                f"{flag.dimension}: '{flag.evidence[:70]}' "
+                f"(score {score:.0f}, mode: {mode})"
+            )
+
         else:
             hallucinated.append(
-                f"{flag.dimension}: '{flag.evidence}' "
-                f"(match score: {score:.0f}, mode: {mode})"
+                f"{flag.dimension}: '{flag.evidence[:70]}' "
+                f"(score {score:.0f}, mode: {mode})"
             )
 
     total = len(result.flags)
-    result.faithfulness_score = faithful_count / total if total > 0 else 1.0
+
+    result.faithfulness_score = faithful_count / total
     result.hallucination_rate = 1.0 - result.faithfulness_score
     result.hallucinated_flags = hallucinated
+
+    result.verbatim_rate     = verbatim_count / total
+    result.synthesis_rate    = synth_count / total
+    result.synthesised_flags = synthesised
+    result.mean_match_score  = sum(all_scores) / len(all_scores) / 100.0
 
     return result

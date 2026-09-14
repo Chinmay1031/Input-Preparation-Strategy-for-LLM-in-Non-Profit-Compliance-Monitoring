@@ -14,14 +14,17 @@ from .consistency_scorer  import compute_consistency_metrics
 from .faithfulness_scorer import compute_faithfulness_metrics
 
 
-STRATEGY_ORDER = ["S1_full", "S2_sections", "S3_fields", "S4_hybrid"]
+STRATEGY_ORDER = ["S1_full", "S2_sections", "S5_extended",
+                  "S4_hybrid", "S3_fields"]
 
 STRATEGY_LABELS = {
     "S1_full":     "S1 — Full text",
     "S2_sections": "S2 — Section filter",
-    "S3_fields":   "S3 — Field extraction",
+    "S5_extended": "S5 — Extended extraction",
     "S4_hybrid":   "S4 — Hybrid",
+    "S3_fields":   "S3 — Field extraction",
 }
+
 
 
 def generate_master_table(

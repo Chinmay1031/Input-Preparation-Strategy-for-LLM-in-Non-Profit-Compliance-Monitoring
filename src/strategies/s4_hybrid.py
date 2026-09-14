@@ -1,67 +1,91 @@
 """
 s4_hybrid.py
 ------------
-Strategy 4 — Hybrid: S3 structured fields + top narrative sentences.
-Uses TF-IDF scoring to select the most information-dense sentences
-from the Directors Report or AUP Purpose section.
-Expected tokens: ~1,200 to 1,800 per document.
+Strategy 4 — Hybrid: S3 verbatim extract plus narrative context.
+
+Adds the most compliance-relevant sentences from the management or
+directors report on top of the S3 structured extract. Tests whether
+additional narrative context improves compliance reasoning beyond
+the structured lines alone.
+
+Expected tokens: ~900 to 1,500 per document.
 """
 
 import re
 from src.ingestion.document_schema import (
     ParsedDocument,
     DOCUMENT_TYPE_AUP_REPORT,
-    DOCUMENT_TYPE_FINANCIAL_STATEMENT,
 )
 from src.strategies.s3_field_extractor import prepare_s3
 
-# Keywords that signal high compliance relevance in narrative text
 SIGNAL_KEYWORDS = [
     "risk", "concern", "material", "significant", "increase",
     "decrease", "loss", "deficit", "compliance", "aware",
     "unallowable", "exception", "qualified", "doubt",
     "deviation", "irregular", "concentration", "related party",
     "donation", "pass-through", "unbudgeted", "overspend",
-    "going concern", "fraud", "error", "misstatement"
+    "going concern", "fraud", "error", "misstatement",
+    "dependent", "terminated", "funding", "restricted",
+]
+
+EXCLUDE_BOILERPLATE = [
+    "our objectives are to obtain",
+    "in performing an audit in accordance",
+    "auditor's responsibilities for the audit",
+    "the accompanying notes are an integral",
 ]
 
 
 def _score_sentence(sentence: str) -> int:
-    """Score a sentence by counting compliance signal keywords."""
-    lower = sentence.lower()
-    return sum(1 for kw in SIGNAL_KEYWORDS if kw in lower)
+    low = sentence.lower()
+    return sum(1 for kw in SIGNAL_KEYWORDS if kw in low)
 
 
-def _top_sentences(text: str, n: int = 5) -> list:
-    """Extract top N most compliance-relevant sentences from text."""
-    sentences = [s.strip() for s in re.split(r'[.!?]', text)
-                 if len(s.strip()) > 30]
-    scored = [(s, _score_sentence(s)) for s in sentences]
-    scored = [(s, score) for s, score in scored if score > 0]
-    scored.sort(key=lambda x: x[1], reverse=True)
-    return [s for s, _ in scored[:n]]
+def _top_sentences(text: str, n: int = 6) -> list:
+    """Extract the most compliance-relevant sentences from text."""
+    if not text:
+        return []
+
+    sentences = re.split(r'(?<=[.!?])\s+', text.replace('\n', ' '))
+    scored = []
+
+    for s in sentences:
+        s = re.sub(r'\s{2,}', ' ', s.strip())
+        low = s.lower()
+
+        if len(s) < 50 or len(s) > 350:
+            continue
+        if any(x in low for x in EXCLUDE_BOILERPLATE):
+            continue
+
+        score = _score_sentence(s)
+        if score > 0:
+            scored.append((score, s))
+
+    scored.sort(key=lambda x: x[0], reverse=True)
+    return [s for _, s in scored[:n]]
 
 
 def prepare_s4(doc: ParsedDocument) -> str:
     """
-    Combines S3 structured extraction with top compliance-relevant
-    narrative sentences from the Directors Report or AUP section.
+    S4 — S3 verbatim extract plus additional narrative context
+    drawn from the management or directors report.
     """
-    # Start with S3 structured base
     base = prepare_s3(doc)
 
-    # Select narrative section to mine
     if doc.document_type == DOCUMENT_TYPE_AUP_REPORT:
-        narrative_text = doc.get_section_text("aup_purpose")
+        narrative = doc.get_section_text("aup_purpose")
     else:
-        narrative_text = doc.get_section_text("directors_report")
+        narrative = (doc.get_section_text("directors_report")
+                     or doc.get_section_text("notes")[:8000])
 
-    top_sentences = _top_sentences(narrative_text, n=5)
+    top_sentences = _top_sentences(narrative, n=6)
 
     if not top_sentences:
         return base
 
-    narrative_block = "\n\nKEY NARRATIVE SIGNALS (extracted from document):\n"
-    narrative_block += "\n".join(f"  - {s}." for s in top_sentences)
+    block = ["", "[ADDITIONAL NARRATIVE CONTEXT — VERBATIM]"]
+    for s in top_sentences:
+        block.append(f"  {s}")
 
-    return base + narrative_block
+    return base + "\n" + "\n".join(block)
