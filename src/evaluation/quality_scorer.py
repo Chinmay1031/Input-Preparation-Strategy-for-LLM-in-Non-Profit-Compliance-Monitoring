@@ -1,15 +1,11 @@
 """
-quality_scorer.py
------------------
-Computes Precision, Recall, and F1 score for each strategy
-by comparing LLM verdicts against the gold standard.
+Computes Precision, Recall, and F1 for each strategy by comparing LLM
+verdicts against the gold standard.
 
-Uses macro averaging — treats each compliance dimension equally
-regardless of class imbalance.
-
-Recall is emphasised in the discussion because in compliance
-contexts, missing a real flag (false negative) is more serious
-than raising a false alarm (false positive).
+Macro averaging treats each compliance dimension equally regardless of
+class imbalance. Recall carries more weight in the discussion: in
+compliance work, missing a real flag is more serious than raising a
+false alarm.
 """
 
 from typing import List, Dict
@@ -42,7 +38,6 @@ def compute_quality_metrics(
     df = load_gold_standard(gold_standard_path)
     metrics = {}
 
-    # Group results by strategy, use run 0 only
     strategies = set(r.strategy for r in results)
 
     for strategy in strategies:
@@ -62,8 +57,7 @@ def compute_quality_metrics(
 
             for dim in DIMENSIONS:
                 gold_val = gold_labels.get(dim)
-                if gold_val is None:
-                    # Skip N/A dimensions
+                if gold_val is None:   # N/A dimension
                     continue
 
                 pred_val = result.is_flagged(dim)

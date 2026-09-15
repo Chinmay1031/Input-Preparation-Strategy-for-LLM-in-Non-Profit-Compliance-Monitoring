@@ -1,8 +1,5 @@
 """
-token_counter.py
-----------------
 Counts tokens for each strategy and returns all prepared inputs.
-Uses tiktoken — the same tokeniser OpenAI uses internally.
 """
 
 import tiktoken
@@ -13,7 +10,6 @@ from src.strategies.s3_field_extractor import prepare_s3
 from src.strategies.s4_hybrid import prepare_s4
 from src.strategies.s5_extended import prepare_s5
 
-# Use GPT-4o encoding
 ENCODING = tiktoken.encoding_for_model("gpt-4o")
 
 
@@ -41,7 +37,7 @@ def get_all_strategies(doc: ParsedDocument) -> dict:
         "S4_hybrid":   prepare_s4(doc),
         "S5_extended": prepare_s5(doc),
     }
-
+ 
     results = {}
     for name, text in strategies.items():
         results[name] = {

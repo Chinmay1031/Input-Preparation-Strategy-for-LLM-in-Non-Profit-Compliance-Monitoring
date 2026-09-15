@@ -1,7 +1,4 @@
 """
-result_schema.py
-----------------
-Data structure for storing one complete experiment result.
 One ExperimentResult is created per document per strategy per run.
 """
 
@@ -25,12 +22,11 @@ class ExperimentResult:
     Complete result for one API call.
     Stores everything needed for all four evaluation metrics.
     """
-    # Identifiers
     doc_id:        str
     strategy:      str
     run:           int
 
-    # LLM verdict — six compliance dimensions
+    # Six compliance dimensions
     revenue_concentration:    str = "CLEAR"
     expense_spike:            str = "CLEAR"
     passthrough_risk:         str = "CLEAR"
@@ -40,29 +36,24 @@ class ExperimentResult:
     overall_verdict:          str = "COMPLIANT"
     confidence:               float = 0.0
 
-    # Flags with evidence
     flags: List[ComplianceFlag] = field(default_factory=list)
 
-    # Token metrics — for efficiency evaluation
     tokens_input:  int = 0
     tokens_output: int = 0
     tokens_total:  int = 0
 
-    # Faithfulness metrics — for hallucination evaluation
     faithfulness_score:    float = 1.0  # proportion of grounded flags
     hallucination_rate:    float = 0.0  # proportion of unsupported flags
     hallucinated_flags:    List[str] = field(default_factory=list)
 
-    # Citation behaviour — distinguishes verbatim quotation from
-    # synthesised claims constructed out of source material.
-    # A synthesised claim may be factually correct yet cannot be
-    # traced to a single line, which weakens it as audit evidence.
+    # Verbatim quotation vs synthesised claims. A synthesised claim may be
+    # factually correct yet untraceable to a single line, which weakens it
+    # as audit evidence.
     verbatim_rate:         float = 1.0
     synthesis_rate:        float = 0.0
     mean_match_score:      float = 1.0
     synthesised_flags:     List[str] = field(default_factory=list)
 
-    # Quality control
     parse_error:   bool = False
     error_message: str  = ""
     model:         str  = ""

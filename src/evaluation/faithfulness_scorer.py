@@ -1,6 +1,4 @@
 """
-faithfulness_scorer.py
-----------------------
 Aggregates faithfulness scores across all results per strategy.
 Used to generate Figure 3 in the thesis results chapter.
 """

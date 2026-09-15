@@ -1,6 +1,4 @@
 """
-results_table.py
-----------------
 Generates the master results table — Table 1 in the thesis.
 Combines all four metric dimensions into one pandas DataFrame.
 """

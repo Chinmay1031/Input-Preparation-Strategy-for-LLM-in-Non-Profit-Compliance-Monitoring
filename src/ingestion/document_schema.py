@@ -1,15 +1,11 @@
 """
-document_schema.py
-------------------
 Core data structures passed between all pipeline modules.
-Every module receives and returns these objects — consistent interface.
 """
 
 from dataclasses import dataclass, field
 from typing import List, Dict, Optional, Any
 
 
-# ── Document type constants ───────────────────────────────────────────────────
 DOCUMENT_TYPE_FINANCIAL_STATEMENT = "financial_statement"
 DOCUMENT_TYPE_AUP_REPORT          = "aup_report"           # Agreed-Upon Procedures
 DOCUMENT_TYPE_AUDIT_REPORT         = "audit_report"
@@ -17,7 +13,6 @@ DOCUMENT_TYPE_NARRATIVE_REPORT     = "narrative_report"
 DOCUMENT_TYPE_UNKNOWN              = "unknown"
 
 
-# ── Section type constants ────────────────────────────────────────────────────
 # Financial statement sections
 SEC_GENERAL_INFO          = "general_info"
 SEC_DIRECTORS_RESP        = "directors_responsibilities"
@@ -40,15 +35,12 @@ SEC_UNKNOWN               = "unknown"
 
 @dataclass
 class BudgetLine:
-    """
-    One line from Annexure A of an AUP report.
-    Actual vs budget comparison with variance.
-    """
+    """One line from Annexure A of an AUP report: actual vs budget."""
     category: str
     actual: float
     budget: float
     variance: float
-    variance_pct: Optional[float] = None   # computed: variance/budget
+    variance_pct: Optional[float] = None   # variance/budget
     comment: Optional[str] = None
     country: Optional[str] = None          # e.g. "Gabon", "Congo"
     is_overspend: bool = False
@@ -68,15 +60,11 @@ class DocumentSection:
 
 @dataclass
 class ParsedDocument:
-    """
-    Full parsed representation of one grantee document.
-    This is the object passed between all pipeline modules.
-    """
+    """Full parsed representation of one grantee document."""
     doc_id: str
     source_path: str
     document_type: str = DOCUMENT_TYPE_UNKNOWN
 
-    # Metadata
     grantee_name: str = ""
     fiscal_year: Optional[int] = None
     currency: Optional[str] = None
@@ -84,21 +72,18 @@ class ParsedDocument:
     auditor: Optional[str] = None
     report_date: Optional[str] = None
 
-    # Content
     sections: Dict[str, DocumentSection] = field(default_factory=dict)
     full_text: str = ""
     total_pages: int = 0
 
-    # Structured financial data (filled by field extractor)
     budget_lines: List[BudgetLine] = field(default_factory=list)
     financial_figures: Dict[str, Any] = field(default_factory=dict)
 
-    # Quality indicators
     parse_warnings: List[str] = field(default_factory=list)
     ocr_quality_score: float = 1.0         # 1.0=clean PDF, <0.7=likely scanned
 
     def get_section_text(self, section_type: str) -> str:
-        """Safe getter — returns empty string if section missing."""
+        """Returns empty string if the section is missing."""
         s = self.sections.get(section_type)
         return s.raw_text if s else ""
 

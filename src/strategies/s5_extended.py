@@ -1,27 +1,18 @@
 """
-s5_extended.py
---------------
-Strategy 5 — Extended verbatim extraction.
+Strategy 5 — Extended verbatim extraction: S3's mechanism with much
+higher per-dimension line caps, including whole compliance-relevant
+sections rather than a handful of matched lines. Roughly 6,000 to
+9,000 tokens per document.
 
-S5 uses the identical extraction mechanism as S3 but raises the
-per-dimension line caps substantially and includes whole compliance
-relevant sections rather than a handful of matched lines.
+S5 fills the gap in the token range. S1 and S2 sit at 15,642 and
+11,031 tokens, S3 and S4 at 1,138 and 1,331, leaving roughly 1,400 to
+11,000 untested — where the optimal operating point most likely falls.
 
-Purpose in the experimental design:
-
-  S1 and S2 sit at 15,642 and 11,031 tokens. S3 and S4 sit at 1,138
-  and 1,331. Nothing was tested between roughly 1,400 and 11,000
-  tokens, which is where the optimal operating point is most likely
-  to fall. S5 targets approximately 50 percent reduction against S1.
-
-  S5 also resolves a confound in the original design. S3 and S4 are
-  simultaneously the most compressed strategies and the only ones
-  using verbatim extraction, so the observed citation behaviour could
-  be caused by either factor. S5 is verbatim but long. If it produces
-  verbatim citations, extraction method drives the behaviour. If it
-  produces synthesised claims, token volume drives it.
-
-Expected tokens: approximately 6,000 to 9,000 per document.
+It also separates a confound. S3 and S4 are both the most compressed
+strategies and the only verbatim ones, so either factor could explain
+their citation behaviour. S5 is verbatim but long: verbatim citations
+implicate the extraction method, synthesised claims implicate token
+volume.
 """
 
 import re
@@ -50,14 +41,12 @@ from src.strategies.s3_field_extractor import (
     RELATED_PARTY_KEYWORDS,
 )
 
-# ── Extended caps ─────────────────────────────────────────────────────────────
-# S3 uses 5 to 6 lines per dimension. S5 raises these substantially.
+# S3 uses 5 to 6 lines per dimension
 EXT_LINES_PER_DIMENSION     = 30
 EXT_SENTENCES_PER_DIMENSION = 12
 
-# Sections included in full rather than keyword-matched.
-# These carry dense compliance signal and are short enough to include
-# whole without exhausting the token budget.
+# Included in full rather than keyword-matched: dense compliance signal,
+# short enough to include whole without exhausting the token budget.
 FULL_SECTIONS_FINANCIAL = [
     "audit_report",
     "financial_statements",
@@ -116,7 +105,6 @@ def prepare_s5(doc: ParsedDocument) -> str:
                "this evidence.")
     out.append("")
 
-    # ── AUP path ──────────────────────────────────────────────────────────────
     if doc.document_type == DOCUMENT_TYPE_AUP_REPORT:
         out.append("[ENGAGEMENT TYPE]")
         out.append("  Agreed-Upon Procedures under ISRS 4400. "
@@ -161,13 +149,10 @@ def prepare_s5(doc: ParsedDocument) -> str:
                 out.append(f"  {f}")
             out.append("")
 
-    # ── Financial statement path ──────────────────────────────────────────────
     else:
-        # Whole sections that carry dense compliance signal
         for section in FULL_SECTIONS_FINANCIAL:
             out.extend(_section_block(doc, section))
 
-        # Keyword-matched lines with raised caps
         revenue = _extract_lines(
             text, REVENUE_KEYWORDS, max_lines=EXT_LINES_PER_DIMENSION
         )

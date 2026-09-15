@@ -1,9 +1,7 @@
 """
-test_phase4.py
---------------
-Tests Phase 4 output processing on one document with one strategy.
-Runs the full pipeline: parse -> strategy -> LLM -> normalise -> faithfulness.
-Costs approximately $0.01.
+Tests Phase 4 output processing on one document with one strategy,
+running the full pipeline: parse -> strategy -> LLM -> normalise ->
+faithfulness. Costs approximately $0.01.
 """
 
 import sys, os, json
@@ -20,7 +18,6 @@ from src.output_processing import (
 )
 from pathlib import Path
 
-# ── Run on first PDF with S3 ──────────────────────────────────────────────────
 pdf_path = list(Path("data/pdfs").glob("*.pdf"))[0]
 print(f"Testing on: {pdf_path.name}\n")
 
@@ -33,10 +30,8 @@ prepared_text = strategies[strategy_name]["text"]
 print(f"Calling LLM with {strategy_name} "
       f"({strategies[strategy_name]['token_count']} tokens)...\n")
 
-# Phase 3 — LLM call
 raw_result = call_llm_with_retry(prepared_text)
 
-# Phase 4a — normalise verdict
 result = normalise_verdict(
     raw_result,
     doc_id=doc.doc_id,
@@ -50,7 +45,6 @@ for dim, label in result.get_dimension_labels().items():
 print(f"  {'overall_verdict':<30} {result.overall_verdict}")
 print(f"  {'confidence':<30} {result.confidence}")
 
-# Phase 4b — faithfulness check
 result = compute_faithfulness(result, doc.full_text, prepared_text)
 
 print(f"\n── Faithfulness Results ─────────────────────────────────")
@@ -71,11 +65,9 @@ if result.hallucinated_flags:
     for h in result.hallucinated_flags:
         print(f"    {h}")
 
-# Phase 4c — hallucination detector summary
 summary = detect_hallucinations([result])
 print_hallucination_report(summary)
 
-# Show serialised result
 print(f"\n── Serialised Result (sample) ───────────────────────────")
 result_dict = result.to_dict()
 print(json.dumps({
@@ -86,4 +78,4 @@ print(json.dumps({
     "tokens_input":       result_dict["tokens_input"],
 }, indent=2))
 
-print("\n✅ Phase 4 test complete.")
+print("\nPhase 4 test complete.")

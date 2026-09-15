@@ -1,6 +1,4 @@
 """
-hallucination_detector.py
--------------------------
 Logs and summarises hallucinations detected across all experiment runs.
 Used to generate Figure 3 in the thesis results chapter.
 """
@@ -45,7 +43,6 @@ def detect_hallucinations(results: List[ExperimentResult]) -> Dict:
                 "evidence": example,
             })
 
-    # Compute averages
     for strategy, s in summary.items():
         scores = s["faithfulness_scores"]
         s["avg_faithfulness"]    = sum(scores) / len(scores) if scores else 1.0

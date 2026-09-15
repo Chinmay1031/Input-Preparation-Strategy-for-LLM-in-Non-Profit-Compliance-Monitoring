@@ -1,22 +1,15 @@
 """
-s3_field_extractor.py
----------------------
-Strategy 3 — Verbatim compliance line extraction.
+Strategy 3 — Verbatim compliance line extraction, ~400 to 900 tokens
+per document.
 
-Rather than parsing figures numerically, this strategy locates the
-lines in the source document that carry compliance signal and extracts
-them verbatim, grouped by compliance dimension.
-
-Design rationale:
-  1. No arithmetic is performed, so no extraction errors are introduced.
-  2. Every line sent to the model exists word-for-word in the source
-     document, which makes cited evidence genuinely traceable and
-     allows faithfulness to be measured against the original text.
-  3. Works across accounting standards (US GAAP, IPSAS, IFRS, IFRS for
-     SMEs) without needing standard-specific numeric parsing rules.
-  4. Token count stays low because only matched lines are retained.
-
-Expected tokens: ~400 to 900 per document.
+Rather than parsing figures numerically, this locates the lines in the
+source document that carry compliance signal and extracts them
+verbatim, grouped by compliance dimension. Because no arithmetic is
+performed, no extraction errors are introduced, and every line sent to
+the model exists word-for-word in the source, so cited evidence stays
+traceable and faithfulness can be measured against the original text.
+Keyword matching also works across accounting standards (US GAAP,
+IPSAS, IFRS, IFRS for SMEs) without standard-specific parsing rules.
 """
 
 import re
@@ -27,8 +20,6 @@ from src.ingestion.document_schema import (
 )
 from src.ingestion.budget_extractor import summarise_budget_lines
 
-
-# ── Extraction configuration ──────────────────────────────────────────────────
 
 MAX_LINES_PER_DIMENSION = 6
 MIN_LINE_LENGTH         = 8
@@ -123,8 +114,6 @@ def _extract_sentences(
 
     return found
 
-
-# ── Compliance dimension definitions ──────────────────────────────────────────
 
 REVENUE_KEYWORDS = [
     "total revenue", "total support", "total income",
@@ -230,7 +219,6 @@ def prepare_s3(doc: ParsedDocument) -> str:
                "this evidence.")
     out.append("")
 
-    # ── AUP-specific path ─────────────────────────────────────────────────────
     if doc.document_type == DOCUMENT_TYPE_AUP_REPORT:
         out.append("[ENGAGEMENT TYPE]")
         out.append("  Agreed-Upon Procedures under ISRS 4400. "
@@ -272,7 +260,6 @@ def prepare_s3(doc: ParsedDocument) -> str:
                 out.append(f"  {f}")
             out.append("")
 
-    # ── Financial statement path ──────────────────────────────────────────────
     else:
         revenue = _extract_lines(text, REVENUE_KEYWORDS, max_lines=5)
         if revenue:

@@ -1,14 +1,10 @@
 """
-prompt_template.py
-------------------
-Fixed system prompt and user prompt template used across ALL four
-strategies and ALL repeated runs.
+Fixed system prompt and user prompt template, used across every
+strategy and every repeated run.
 
-This is the controlled constant in the experiment — the only variable
-that changes between API calls is the prepared document text.
-Keeping the prompt identical across all conditions ensures that
-differences in LLM output are attributable to input preparation
-strategy and not to prompt variation.
+Holding the prompt identical across all conditions is what attributes
+differences in LLM output to the input preparation strategy rather than
+to prompt variation.
 """
 
 SYSTEM_PROMPT = """You are a compliance analyst reviewing nonprofit grantee

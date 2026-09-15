@@ -1,6 +1,4 @@
 """
-verdict_normaliser.py
----------------------
 Maps raw LLM JSON output to the standard six-dimension schema.
 Handles minor variations in model phrasing and label capitalisation.
 """
@@ -42,7 +40,6 @@ def _normalise_label(raw: str) -> str:
     cleaned = str(raw).strip().upper()
     if cleaned in VALID_LABELS:
         return cleaned
-    # try lowercase mapping
     lower = str(raw).strip().lower()
     return LABEL_MAP.get(lower, "CLEAR")
 
@@ -65,7 +62,6 @@ def normalise_verdict(
     verdict = raw_result.get("verdict", {})
     parse_error = verdict.get("parse_error", False)
 
-    # Build flags list
     flags = []
     for f in verdict.get("flags", []):
         flags.append(ComplianceFlag(

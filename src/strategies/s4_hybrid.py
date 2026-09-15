@@ -1,14 +1,11 @@
 """
-s4_hybrid.py
-------------
-Strategy 4 — Hybrid: S3 verbatim extract plus narrative context.
+Strategy 4 — Hybrid: S3 verbatim extract plus narrative context,
+~900 to 1,500 tokens per document.
 
 Adds the most compliance-relevant sentences from the management or
-directors report on top of the S3 structured extract. Tests whether
-additional narrative context improves compliance reasoning beyond
-the structured lines alone.
-
-Expected tokens: ~900 to 1,500 per document.
+directors report on top of the S3 structured extract, testing whether
+narrative context improves compliance reasoning beyond the structured
+lines alone.
 """
 
 import re

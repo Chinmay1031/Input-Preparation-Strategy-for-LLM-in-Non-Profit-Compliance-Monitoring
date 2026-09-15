@@ -1,12 +1,10 @@
 """
-rescore_faithfulness.py
------------------------
 Re-runs faithfulness scoring on previously saved results using the
-updated three-band classification. No API calls are made.
+three-band classification, without making API calls.
 
-The compliance verdicts from the original run are preserved exactly.
-Only the evidence scoring is recomputed, which is valid because the
-cited evidence strings are stored in the results file and the source
+Compliance verdicts from the original run are preserved exactly; only
+the evidence scoring is recomputed. That is valid because the cited
+evidence strings are stored in the results file and the source
 documents are unchanged.
 """
 
@@ -100,7 +98,6 @@ with open(RESULTS_PATH, "w") as f:
 
 print(f"Rescored results saved to {RESULTS_PATH}\n")
 
-# ── Summary by strategy ───────────────────────────────────────────────────────
 print("="*72)
 print("CITATION BEHAVIOUR BY STRATEGY")
 print("="*72)

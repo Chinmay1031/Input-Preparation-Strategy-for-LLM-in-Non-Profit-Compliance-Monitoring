@@ -1,15 +1,12 @@
 """
-test_phase5.py
---------------
-Runs the full experiment across all documents in data/pdfs/
-with all four strategies and three runs each.
+Runs the full experiment across all documents in data/pdfs/, with every
+strategy and three runs each. Results are saved to
+data/results/all_results.json.
 
 Documents exceeding the per-request token limit are truncated by the
-caller and the truncation is recorded in the results, so the practical
-infeasibility of full-document prompting on large documents becomes
-measurable data rather than a failure.
-
-Saves all results to data/results/all_results.json.
+caller and the truncation recorded, so the practical infeasibility of
+full-document prompting on large documents becomes measurable data
+rather than a failure.
 """
 
 import sys, os, json, time
@@ -32,7 +29,6 @@ GOLD_PATH    = "data/gold_standard/gold_standard.csv"
 # Pause between API calls to stay within the tokens-per-minute budget
 INTER_CALL_DELAY = 3
 
-# ── Run full experiment ───────────────────────────────────────────────────────
 pdf_files = list(Path("data/pdfs").glob("*.pdf"))
 total_calls = len(pdf_files) * 4 * N_RUNS
 
@@ -76,7 +72,6 @@ for pdf_path in pdf_files:
 
             all_results.append(result)
 
-            # Record and report truncation
             trunc_note = ""
             if raw_result.get("was_truncated"):
                 original = raw_result.get("original_tokens", 0)
@@ -94,7 +89,6 @@ for pdf_path in pdf_files:
 
             time.sleep(INTER_CALL_DELAY)
 
-# ── Save results ──────────────────────────────────────────────────────────────
 RESULTS_PATH.parent.mkdir(parents=True, exist_ok=True)
 serialised = [r.to_dict() for r in all_results]
 with open(RESULTS_PATH, "w") as f:
@@ -103,7 +97,6 @@ with open(RESULTS_PATH, "w") as f:
 print(f"\nResults saved to {RESULTS_PATH}")
 print(f"Total results: {len(all_results)}")
 
-# ── Report truncation ─────────────────────────────────────────────────────────
 if truncated_docs:
     trunc_path = Path("data/results/truncation_log.json")
     with open(trunc_path, "w") as f:
@@ -128,7 +121,6 @@ if truncated_docs:
     print("This limitation applies only to full-document strategies and "
           "is reported in the results chapter.")
 
-# ── Generate master table ─────────────────────────────────────────────────────
 print("\nGenerating master results table...")
 try:
     df = generate_master_table(all_results, GOLD_PATH)
@@ -137,4 +129,4 @@ except Exception as e:
     print(f"Table generation error: {e}")
     print("Results are saved — run compute_metrics.py separately.")
 
-print("\n✅ Phase 5 test complete.")
+print("\nPhase 5 test complete.")

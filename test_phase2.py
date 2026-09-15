@@ -1,8 +1,6 @@
 """
-test_phase2.py
---------------
-Tests Phase 2 strategies on all PDFs in data/pdfs/
-Shows token counts for all four strategies per document.
+Tests Phase 2 strategies on all PDFs in data/pdfs/, showing token
+counts for each strategy per document.
 """
 
 import sys, os
@@ -29,9 +27,8 @@ for pdf_path in pdf_files:
     for name, data in strategies.items():
         print(f"{name:<15} {data['token_count']:>8,} {data['char_count']:>8,}")
 
-    # Show S3 output so you can verify it looks right
     print(f"\n── S3 Field Extraction Preview ──")
     print(strategies["S3_fields"]["text"][:800])
     print("...")
 
-print("\n✅ Phase 2 test complete.")
+print("\nPhase 2 test complete.")

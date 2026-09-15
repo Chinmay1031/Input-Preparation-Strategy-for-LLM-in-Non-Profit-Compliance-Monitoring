@@ -1,9 +1,6 @@
 """
-s2_section_filter.py
---------------------
-Strategy 2 — Section-aware filtering.
-Extracts only compliance-relevant sections, discarding boilerplate.
-Expected tokens: ~2,000 to 3,500 per document.
+Strategy 2 — Section-aware filtering. Extracts only compliance-relevant
+sections, discarding boilerplate. ~2,000 to 3,500 tokens per document.
 """
 
 from src.ingestion.document_schema import (

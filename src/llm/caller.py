@@ -1,17 +1,13 @@
 """
-caller.py
----------
-Single LLM caller used by all four strategies.
+Single LLM caller used by all strategies.
 
-The prompt is fixed. The model is fixed. The temperature is fixed.
-The only thing that changes per call is the prepared document text.
-This controlled design is what makes the experiment valid.
+Prompt, model and temperature are fixed; the only thing that varies
+per call is the prepared document text.
 
-Documents that exceed the account's per-request token limit are
-truncated rather than dropped, and the truncation is recorded. The
-fact that full-document prompting cannot fit large grantee documents
-within standard API rate limits is itself a finding relevant to the
-practical feasibility of that approach.
+Documents exceeding the account's per-request token limit are truncated
+rather than dropped, and the truncation is recorded — that full-document
+prompting cannot fit large grantee documents within standard rate limits
+is itself a finding about that approach's feasibility.
 """
 
 import os
@@ -26,7 +22,6 @@ load_dotenv()
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-# ── Experiment constants ──────────────────────────────────────────────────────
 MODEL       = "gpt-4o"
 TEMPERATURE = 0.3
 MAX_TOKENS  = 1000

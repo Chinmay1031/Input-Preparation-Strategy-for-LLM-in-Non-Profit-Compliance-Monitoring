@@ -1,11 +1,6 @@
 """
-efficiency_scorer.py
---------------------
 Computes token efficiency metrics for each strategy.
 Token counts come directly from the OpenAI API response.
-
-This is the most objective measurement in the thesis —
-completely deterministic, no subjectivity involved.
 """
 
 from typing import List, Dict
@@ -57,7 +52,6 @@ def compute_efficiency_metrics(
             "cost_per_100_usd":   round(cost_per_doc * 100, 3),
         }
 
-    # Compute reduction vs S1 baseline
     s1_tokens = metrics.get("S1_full", {}).get("avg_input_tokens", 0)
     for strategy in metrics:
         if s1_tokens > 0:

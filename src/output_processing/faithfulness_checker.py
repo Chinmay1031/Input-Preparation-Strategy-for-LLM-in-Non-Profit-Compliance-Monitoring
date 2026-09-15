@@ -1,6 +1,4 @@
 """
-faithfulness_checker.py
------------------------
 Checks whether evidence cited by the LLM in its compliance flags
 actually exists in the source document or prepared strategy text.
 
@@ -8,12 +6,11 @@ Two comparison modes:
   - source:  checks against raw PDF text (S1, S2)
   - summary: checks against prepared strategy text (S3, S4)
 
-This distinction is a methodological contribution. S3 and S4 evidence
-is grounded in the structured extract rather than the raw document,
-which has different implications for auditability.
+S3 and S4 evidence is grounded in the structured extract rather than
+the raw document, which has different implications for auditability.
 
-Three evidence behaviours are distinguished rather than a single
-binary faithful/unfaithful judgement:
+Rather than a binary faithful/unfaithful judgement, three evidence
+behaviours are distinguished:
 
   Verbatim   (>= 92)  the model copied a line from the material given
   Synthesis  (60-91)  the model constructed a claim from source content
@@ -94,7 +91,6 @@ def compute_faithfulness(
         result.mean_match_score   = 1.0
         return result
 
-    # Choose comparison text based on strategy
     if result.strategy in SUMMARY_STRATEGIES and prepared_text:
         comparison_text = prepared_text
         mode = "summary"

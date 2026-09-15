@@ -1,14 +1,10 @@
 """
-ocr_fallback.py
----------------
 OCR fallback for scanned PDFs with no text layer.
 
 Some grantee documents are submitted as scanned images rather than
-digital PDFs. pdfplumber cannot extract text from these. This module
-rasterises each page and runs Tesseract OCR to produce a text layer.
-
-OCR output is noisier than native text extraction, which is recorded
-in the document's ocr_quality_score and reported in the results.
+digital PDFs, which pdfplumber cannot read. Each page is rasterised and
+run through Tesseract. The resulting text is noisier than native
+extraction, which is recorded in the document's ocr_quality_score.
 """
 
 import os
@@ -22,7 +18,6 @@ except ImportError:
     OCR_AVAILABLE = False
 
 
-# Cache OCR results so we only run it once per document
 CACHE_DIR = Path("data/ocr_cache")
 
 
@@ -44,7 +39,7 @@ def has_text_layer(pdf_path: str, sample_pages: int = 3) -> bool:
 def ocr_document(pdf_path: str, dpi: int = 150) -> str:
     """
     Run OCR on a scanned PDF and return the extracted text.
-    Results are cached to avoid re-running expensive OCR.
+    Results are cached, since OCR is expensive.
 
     Args:
         pdf_path: path to the scanned PDF
@@ -64,7 +59,6 @@ def ocr_document(pdf_path: str, dpi: int = 150) -> str:
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
     cache_file = CACHE_DIR / f"{pdf_path.stem}.txt"
 
-    # Return cached result if available
     if cache_file.exists():
         print(f"    Using cached OCR for {pdf_path.stem}")
         return cache_file.read_text(encoding="utf-8")
@@ -82,7 +76,6 @@ def ocr_document(pdf_path: str, dpi: int = 150) -> str:
 
     full_text = "\n".join(pages_text)
 
-    # Cache for next time
     cache_file.write_text(full_text, encoding="utf-8")
     print(f"    OCR complete — {len(full_text):,} characters extracted")
 

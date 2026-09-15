@@ -1,9 +1,7 @@
 """
-compute_metrics.py
-------------------
-Reads saved results from data/results/all_results.json and
-computes all four evaluation metrics. No API calls made.
-Run this any time to regenerate the thesis results table.
+Reads saved results from data/results/all_results.json and computes all
+four evaluation metrics, without making API calls. Run any time to
+regenerate the thesis results table.
 """
 
 import sys, os, json
@@ -75,7 +73,6 @@ if not RESULTS_PATH.exists():
 results = load_results(RESULTS_PATH)
 print(f"Loaded {len(results)} results from {RESULTS_PATH}\n")
 
-# ── Individual metric breakdowns ──────────────────────────────────────────────
 print("="*70)
 print("QUALITY METRICS (vs gold standard)")
 print("="*70)
@@ -121,11 +118,9 @@ for strategy, m in sorted(faithfulness.items()):
     print(f"    Total flags:      {m['total_flags_raised']}")
     print(f"    Hallucinated:     {m['total_hallucinated']}")
 
-# ── Master table ──────────────────────────────────────────────────────────────
 df = generate_master_table(results, GOLD_PATH)
 print_master_table(df)
 
-# ── Save to CSV for thesis ────────────────────────────────────────────────────
 out_path = Path("data/results/master_results_table.csv")
 df.to_csv(out_path, index=False)
 print(f"\nMaster table saved to {out_path}")

@@ -1,11 +1,9 @@
 """
-gold_standard_loader.py
------------------------
-Loads the manually annotated gold standard CSV and converts
-labels to binary format for metric computation.
+Loads the manually annotated gold standard CSV and converts labels to
+binary format for metric computation.
 
-Handles the detailed annotation format with separate label and
-evidence columns, and maps annotation IDs to actual PDF filenames.
+Handles the detailed annotation format with separate label and evidence
+columns, and maps annotation IDs to actual PDF filenames.
 """
 
 import pandas as pd
@@ -23,8 +21,7 @@ DIMENSIONS = [
 FLAGGED_LABELS = {"FLAG", "ESCALATE"}
 NA_LABEL = "N/A"
 
-# Maps the doc_id used in the gold standard CSV to the actual
-# PDF filename stem used by the pipeline.
+# Gold standard CSV doc_id → PDF filename stem used by the pipeline.
 # Add new entries here as more documents are annotated.
 DOC_ID_MAP = {
     "WaterOrg_AuditedFinancials_2024":
@@ -84,10 +81,9 @@ def load_gold_standard(
             f"Gold standard not found at {path}."
         )
 
-    # Read with proper quoting to handle commas inside evidence fields
+    # Evidence fields contain commas, so quoting matters here
     df = pd.read_csv(path, quotechar='"', skipinitialspace=True)
 
-    # Build a clean DataFrame with only the columns we need
     clean = pd.DataFrame()
 
     doc_col = _find_column(df, "doc_id")
@@ -97,7 +93,6 @@ def load_gold_standard(
         col = _find_column(df, dim)
         clean[dim] = df[col].astype(str).str.strip().str.upper()
 
-    # Map annotation IDs to actual PDF filename stems
     clean["doc_id"] = clean["doc_id"].apply(
         lambda x: DOC_ID_MAP.get(x, x)
     )

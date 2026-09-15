@@ -1,12 +1,6 @@
 """
-section_classifier.py
----------------------
 Classifies each page of a document into a section type.
-Handles BOTH financial statements AND AUP reports.
-
-This domain-specific classification is a core technical contribution —
-it encodes knowledge of nonprofit financial document structure
-that no generic PDF parser possesses.
+Handles both financial statements and AUP reports.
 """
 
 from .document_schema import (
@@ -20,7 +14,6 @@ from .document_schema import (
     SEC_AUP_ANNEXURE_B, SEC_AUP_NOTES, SEC_UNKNOWN
 )
 
-# ── Document type detection keywords ─────────────────────────────────────────
 DOCUMENT_TYPE_SIGNALS = {
     DOCUMENT_TYPE_AUP_REPORT: [
         "AGREED-UPON PROCEDURES",
@@ -63,7 +56,6 @@ DOCUMENT_TYPE_SIGNALS = {
     ],
 }
 
-# ── Section keywords — financial statement ────────────────────────────────────
 FINANCIAL_STATEMENT_SECTIONS = {
     SEC_GENERAL_INFO: [
         "GENERAL INFORMATION",
@@ -134,7 +126,6 @@ FINANCIAL_STATEMENT_SECTIONS = {
     ],
 }
 
-# ── Section keywords — AUP report ────────────────────────────────────────────
 AUP_REPORT_SECTIONS = {
     SEC_AUP_PURPOSE: [
         "PURPOSE OF THIS AGREED",
@@ -171,17 +162,15 @@ AUP_REPORT_SECTIONS = {
     ],
 }
 
-# ── Compliance-relevant sections per document type ───────────────────────────
-# S2 strategy uses this to filter out boilerplate
+# S2 uses this to filter out boilerplate. Every AUP section counts as
+# compliance relevant.
 COMPLIANCE_RELEVANT_SECTIONS = {
-    # Financial statement — compliance signal sections
     SEC_AUDIT_REPORT,
     SEC_DIRECTORS_REPORT,
     SEC_FINANCIAL_STATEMENTS,
     SEC_NOTES,
     SEC_DETAILED_INCOME,
 
-    # AUP report — ALL sections are compliance relevant
     SEC_AUP_PURPOSE,
     SEC_AUP_PROCEDURES,
     SEC_AUP_ANNEXURE_A,
@@ -198,8 +187,8 @@ BOILERPLATE_SECTIONS = {
 
 def detect_document_type(full_text: str) -> str:
     """
-    Determine whether this is a financial statement or AUP report.
-    Checks first 2000 characters (covers page 1 reliably).
+    Determine whether this is a financial statement or AUP report,
+    based on the opening pages.
     """
     sample = full_text[:3000].upper()
     scores = {doc_type: 0 for doc_type in DOCUMENT_TYPE_SIGNALS}
@@ -217,47 +206,44 @@ def detect_document_type(full_text: str) -> str:
 
 def classify_page(page_text: str, document_type: str) -> str:
     """
-    Classify a single page into a section type.
-    Uses priority ordering — more specific sections checked first.
-    Checks body content (after first 200 chars) to avoid header pollution.
+    Classify a single page into a section type, checking more specific
+    sections before general ones.
     """
-    # Use body text — skip the repeated header (first ~200 chars of each page)
-    # The header "SABINE PLATTNER... Annual Financial Statements..." repeats on every page
+    # Financial statements repeat a header on every page ("SABINE PLATTNER...
+    # Annual Financial Statements..."), so classify on the body instead.
     body = page_text[200:] if len(page_text) > 200 else page_text
     upper_body = body.upper()
     upper_full = page_text.upper()
 
     if document_type == DOCUMENT_TYPE_AUP_REPORT:
         section_defs = AUP_REPORT_SECTIONS
-        # For AUP check full page (no repeated header issue)
+        # AUP reports have no repeated header, so the full page is safe
         for section_type, keywords in section_defs.items():
             if any(kw in upper_full for kw in keywords):
                 return section_type
         return SEC_UNKNOWN
 
-    # Financial statement — use priority ordering to avoid general_info
-    # winning on every page due to "REGISTRATION NUMBER" in header
+    # Ordered most to least specific, otherwise "REGISTRATION NUMBER" in the
+    # header makes general_info win on every page.
     PRIORITY_ORDER = [
-        SEC_DETAILED_INCOME,      # most specific — check first
+        SEC_DETAILED_INCOME,
         SEC_NOTES,
         SEC_ACCOUNTING_POLICIES,
         SEC_FINANCIAL_STATEMENTS,
         SEC_DIRECTORS_REPORT,
         SEC_DIRECTORS_RESP,
         SEC_AUDIT_REPORT,
-        SEC_GENERAL_INFO,         # least specific — check last
+        SEC_GENERAL_INFO,
     ]
 
     for section_type in PRIORITY_ORDER:
         keywords = FINANCIAL_STATEMENT_SECTIONS.get(section_type, [])
-        # Check body first (avoids header pollution)
-        # For general_info specifically require keywords in body too
         if section_type == SEC_GENERAL_INFO:
             if any(kw in upper_body for kw in keywords):
                 return section_type
         else:
             if any(kw in upper_body for kw in keywords) or \
-               any(kw in upper_full for kw in keywords[:2]):  # first 2 kw checked in full
+               any(kw in upper_full for kw in keywords[:2]):
                 return section_type
 
     return SEC_UNKNOWN

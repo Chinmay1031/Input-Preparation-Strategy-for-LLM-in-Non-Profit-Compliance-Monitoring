@@ -1,14 +1,11 @@
 """
-consistency_scorer.py
----------------------
 Computes Cohen's Kappa across 3 repeated runs per strategy.
 
-Cohen's Kappa measures inter-run agreement correcting for
-chance, making it more rigorous than simple percentage agreement
-for imbalanced output distributions.
+Kappa measures inter-run agreement correcting for chance, which is more
+rigorous than simple percentage agreement for imbalanced output
+distributions.
 
-Kappa interpretation:
-  < 0.20  = slight
+  < 0.20    = slight
   0.21-0.40 = fair
   0.41-0.60 = moderate
   0.61-0.80 = substantial
@@ -38,7 +35,6 @@ def compute_consistency_metrics(
     strategies = set(r.strategy for r in results)
 
     for strategy in strategies:
-        # Get results for each run
         runs = {}
         for run_num in range(3):
             run_results = [
@@ -56,13 +52,12 @@ def compute_consistency_metrics(
             }
             continue
 
-        # Build label vectors per run across all docs and dimensions
+        # Label vectors per run, across all docs and dimensions
         def get_labels(run_num):
             labels = []
             for r in sorted(runs[run_num], key=lambda x: x.doc_id):
                 for dim in DIMENSIONS:
                     label = r.get_dimension_labels().get(dim, "CLEAR")
-                    # Convert N/A to CLEAR for Kappa computation
                     if label == "N/A":
                         label = "CLEAR"
                     labels.append(1 if label in ("FLAG", "ESCALATE") else 0)
@@ -71,7 +66,6 @@ def compute_consistency_metrics(
         kappas = []
         agreements = []
 
-        # Compare all run pairs
         run_pairs = [
             (0, 1), (0, 2), (1, 2)
         ]
@@ -81,7 +75,7 @@ def compute_consistency_metrics(
                 labels_r2 = get_labels(r2)
 
                 if len(labels_r1) == len(labels_r2) and len(labels_r1) > 0:
-                    # Handle edge case where all labels are the same
+                    # Kappa is undefined when every label is identical
                     if len(set(labels_r1 + labels_r2)) == 1:
                         kappas.append(1.0)
                     else:

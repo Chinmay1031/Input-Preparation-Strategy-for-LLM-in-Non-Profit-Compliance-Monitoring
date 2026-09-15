@@ -1,9 +1,7 @@
 """
-test_phase3.py
---------------
-Tests Phase 3 on ONE document with ONE strategy (S3) for ONE run.
-This costs approximately $0.01 — verify output before running
-the full experiment.
+Tests Phase 3 on one document with one strategy (S3) for one run.
+Costs approximately $0.01 — verify the output before running the full
+experiment.
 """
 
 import sys, os, json
@@ -14,14 +12,12 @@ from src.strategies import get_all_strategies
 from src.llm import call_llm_with_retry
 from pathlib import Path
 
-# ── Test on the financial statement with S3 only ──────────────────────────────
 pdf_path = list(Path("data/pdfs").glob("*.pdf"))[0]
 print(f"Testing on: {pdf_path.name}\n")
 
 doc        = parse_document(str(pdf_path), pdf_path.stem)
 strategies = get_all_strategies(doc)
 
-# Use S3 only for the test — cheapest and most important strategy
 strategy_name = "S3_fields"
 prepared_text = strategies[strategy_name]["text"]
 token_count   = strategies[strategy_name]["token_count"]
@@ -60,4 +56,4 @@ else:
 print("\n── Raw JSON (for debugging) ─────────────────────────────")
 print(json.dumps(verdict, indent=2))
 
-print("\n✅ Phase 3 test complete.")
+print("\nPhase 3 test complete.")

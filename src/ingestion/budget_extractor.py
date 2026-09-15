@@ -1,21 +1,16 @@
 """
-budget_extractor.py
--------------------
-Extracts structured budget vs actual data from AUP Annexure A.
-This is specific to the HPF/SPAC document format.
+Extracts structured budget vs actual data from AUP Annexure A,
+specific to the HPF/SPAC document format.
 
-Technical contribution: domain-specific table parser that:
-1. Reconstructs multi-currency table rows from OCR output
-2. Computes variance percentages
-3. Detects unbudgeted items and significant overspends
-4. Groups line items by country/programme
+Reconstructs multi-currency table rows from OCR output, computes
+variance percentages, detects unbudgeted items and significant
+overspends, and groups line items by country/programme.
 """
 
 import re
 from typing import List, Optional, Tuple
 from .document_schema import BudgetLine, ParsedDocument
 
-# Country identifiers found in Annexure A line items
 COUNTRY_IDENTIFIERS = {
     "CONGO":   ["CONGO", "ODZALA"],
     "GABON":   ["GABON"],
@@ -26,7 +21,6 @@ COUNTRY_IDENTIFIERS = {
     "GENERAL": ["OPS", "DEV:", "M&E", "STAFF", "TRAVEL"],
 }
 
-# Significant variance threshold — your compliance rule
 SIGNIFICANT_VARIANCE_PCT = 0.20   # >20% = FLAG
 OVERSPEND_THRESHOLD = 0.10        # >10% over budget = FLAG
 
@@ -35,9 +29,8 @@ def _clean_number(raw: str) -> Optional[float]:
     """Convert a messy OCR number string to float."""
     if not raw:
         return None
-    # remove currency symbols, spaces, commas
     cleaned = re.sub(r'[€$£,\s]', '', str(raw).strip())
-    # handle bracketed negatives: (7,375) → -7375
+    # bracketed negatives: (7,375) → -7375
     if cleaned.startswith('(') and cleaned.endswith(')'):
         cleaned = '-' + cleaned[1:-1]
     try:
@@ -57,15 +50,13 @@ def _detect_country(line_text: str) -> Optional[str]:
 
 def extract_budget_lines_from_text(annexure_a_text: str) -> List[BudgetLine]:
     """
-    Parse Annexure A text into structured BudgetLine objects.
-
-    Strategy: find lines with three numeric values (actual, budget, variance)
-    preceded by a category label.
+    Parse Annexure A text into structured BudgetLine objects by finding
+    lines with three numeric values (actual, budget, variance) preceded
+    by a category label.
     """
     budget_lines = []
     lines = annexure_a_text.split('\n')
 
-    # Pattern: category name followed by numbers
     # e.g. "Prog: Gabon Teacher Training 171,177 117,000 (54,177)"
     number_pattern = re.compile(
         r'^(.+?)\s+([\d,.\(\)]+)\s+([\d,.\(\)]+)\s+([\d,.\(\)]+)\s*(.*)$'
@@ -78,7 +69,6 @@ def extract_budget_lines_from_text(annexure_a_text: str) -> List[BudgetLine]:
         if not line or len(line) < 5:
             continue
 
-        # update country context from section headers
         detected_country = _detect_country(line)
         if detected_country:
             current_country = detected_country
@@ -93,7 +83,6 @@ def extract_budget_lines_from_text(annexure_a_text: str) -> List[BudgetLine]:
         variance_raw = match.group(4)
         comment      = match.group(5).strip() if match.group(5) else None
 
-        # skip header rows
         if any(h in category_raw.upper() for h in [
             'CATEGORY', 'PROCEDURE', 'ACTUAL', 'BUDGET', 'VARIANCE', 'NO.'
         ]):
@@ -106,7 +95,6 @@ def extract_budget_lines_from_text(annexure_a_text: str) -> List[BudgetLine]:
         if actual is None or budget is None:
             continue
 
-        # compute variance percentage
         variance_pct = None
         if budget and budget != 0:
             variance_pct = abs(variance or 0) / abs(budget)
@@ -144,10 +132,8 @@ def extract_budget_lines_from_tables(tables: List) -> List[BudgetLine]:
             if not row or len(row) < 3:
                 continue
 
-            # clean all cells
             cells = [str(c).strip() if c else "" for c in row]
 
-            # skip header rows
             first = cells[0].upper()
             if any(h in first for h in [
                 'CATEGORY', 'NO.', 'PROCEDURE', 'ITEM', 'DATE PER',
@@ -158,26 +144,22 @@ def extract_budget_lines_from_tables(tables: List) -> List[BudgetLine]:
             if not first or first in ['', 'NONE']:
                 continue
 
-            # CRITICAL: skip Annexure B rows — they have invoice numbers
-            # Annexure B rows start with a digit (item number 1-25)
+            # Annexure B rows carry invoice numbers and start with an item
+            # number (1-25); including them corrupts the budget totals.
             if re.match(r'^\d+$', first):
                 continue
 
-            # detect country section headers
             country = _detect_country(cells[0])
             if country:
                 current_country = country
 
-            # try to extract numbers — but only first 3 numeric cells
-            # (actual, budget, variance) — ignore everything after
             numbers = []
             comment = None
-            for cell in cells[1:4]:  # limit to first 3 value columns
+            for cell in cells[1:4]:  # actual, budget, variance only
                 n = _clean_number(cell)
                 if n is not None:
                     numbers.append(n)
 
-            # get comment from later columns if present
             if len(cells) > 4:
                 for cell in cells[4:]:
                     if cell and len(cell) > 5 and not any(c.isdigit() for c in cell[:3]):
@@ -191,9 +173,9 @@ def extract_budget_lines_from_tables(tables: List) -> List[BudgetLine]:
             budget  = numbers[1] if len(numbers) > 1 else 0
             variance = numbers[2] if len(numbers) > 2 else (actual - budget)
 
-            # sanity filter: skip rows where numbers look like Annexure B
-            # (invoice amounts in foreign currency tend to be very large integers)
-            if budget > 10_000_000:  # 10M+ budget per line is unrealistic
+            # Catches Annexure B invoice amounts in foreign currency that
+            # slipped through — 10M+ budget on a single line is unrealistic.
+            if budget > 10_000_000:
                 continue
 
             variance_pct = None
@@ -229,14 +211,12 @@ def summarise_budget_lines(budget_lines: List[BudgetLine]) -> dict:
     overspends   = [bl for bl in budget_lines if bl.is_overspend]
     unbudgeted   = [bl for bl in budget_lines if bl.is_unbudgeted]
 
-    # top 5 overspends by absolute amount
     top_overspends = sorted(
         overspends,
         key=lambda x: abs(x.variance),
         reverse=True
     )[:5]
 
-    # country totals
     country_totals = {}
     for bl in budget_lines:
         if bl.country:

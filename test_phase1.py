@@ -1,6 +1,4 @@
 """
-test_phase1.py
---------------
 Auto-detects whatever PDFs are in data/pdfs/ and parses them.
 """
 
@@ -11,12 +9,11 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from src.ingestion import parse_document, summarise_budget_lines
 from pathlib import Path
 
-# Auto-detect all PDFs in the folder
 pdf_dir = Path("data/pdfs")
 pdf_files = list(pdf_dir.glob("*.pdf"))
 
 if not pdf_files:
-    print("⚠️  No PDFs found in data/pdfs/")
+    print("No PDFs found in data/pdfs/")
     print("    Copy your PDF files there and run again.")
     sys.exit(1)
 
@@ -64,11 +61,11 @@ for pdf_path in pdf_files:
                 )
 
     if doc.parse_warnings:
-        print(f"\n⚠️  Warnings:")
+        print(f"\nWarnings:")
         for w in doc.parse_warnings:
             print(f"   {w}")
 
     print(f"\n── OCR quality: {doc.ocr_quality_score:.2f}")
     print(f"── Full text length: {len(doc.full_text):,} characters")
 
-print("\n✅ Phase 1 test complete.")
+print("\nPhase 1 test complete.")
