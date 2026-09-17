@@ -63,16 +63,16 @@ The corpus consists of **12 publicly available audited financial statements and 
 |---|----------------------------------------------------------|--------------------------------------|-------------------------|
 | 1 | `2024-CARE-USA-Financial-Statements_Final.pdf`           | CARE USA — FY2024 Financial Statements | *[Add link]*          |
 | 2 | `2024_Water.org_audited_financials.pdf`                  | Water.org — FY2024 Audited Financials  | *[Add link]*          |
-| 3 | `8392233-FinancialStatement-1708722656073.pdf`           | *[Fill in grantee name]*             | *[Add link]*            |
+| 3 | `8392233-FinancialStatement-1708722656073.pdf`           | River Network — Financial Statement  | *[Add link]*            |
 | 4 | `BRAC-Liberia-Audited-Financial-Statements.pdf`          | BRAC Liberia — Audited Financials    | *[Add link]*            |
 | 5 | `BRAC-Uganda-Audited-Financial-Statements.pdf`           | BRAC Uganda — Audited Financials     | *[Add link]*            |
-| 6 | `FY23_Audit.pdf`                                         | *[Fill in grantee name]*             | *[Add link]*            |
+| 6 | `FY23_Audit.pdf`                                         | Rocking the Boat, Inc. — FY23 Audit  | *[Add link]*            |
 | 7 | `FY24-25-ALC-Audit-Financial.pdf`                        | ALC — FY24-25 Audited Financials     | *[Add link]*            |
 | 8 | `Justice-in-Aging-FY23-Audited-Financial-Statements.pdf` | Justice in Aging — FY23 Audited FS   | *[Add link]*            |
 | 9 | `PATH-annual-report-2024.pdf`                            | PATH — Annual Report 2024            | *[Add link]*            |
 | 10 | `Public-Citizen-Foundation-Inc.-FS-3.pdf`               | Public Citizen Foundation Inc. — FS  | *[Add link]*            |
 | 11 | `Somos+2024+Audited+Financial+Statements+-+Final.pdf`   | Somos — 2024 Audited Financials      | *[Add link]*            |
-| 12 | `financial-statements-2024.pdf`                          | *[Fill in grantee name]*             | *[Add link]*            |
+| 12 | `financial-statements-2024.pdf`                          | Save the Children Federation, Inc. — 2024 Financial Statements | *[Add link]*            |
 
 The gold-standard labels used for scoring are in [data/gold_standard/gold_standard.csv](data/gold_standard/gold_standard.csv).
 
