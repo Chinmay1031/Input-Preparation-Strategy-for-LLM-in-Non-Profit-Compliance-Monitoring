@@ -1,16 +1,3 @@
-"""
-Computes Cohen's Kappa across 3 repeated runs per strategy.
-
-Kappa measures inter-run agreement correcting for chance, which is more
-rigorous than simple percentage agreement for imbalanced output
-distributions.
-
-  < 0.20    = slight
-  0.21-0.40 = fair
-  0.41-0.60 = moderate
-  0.61-0.80 = substantial
-  0.81-1.00 = almost perfect
-"""
 
 from typing import List, Dict
 from sklearn.metrics import cohen_kappa_score
@@ -21,16 +8,6 @@ from .gold_standard_loader import DIMENSIONS
 def compute_consistency_metrics(
     results: List[ExperimentResult]
 ) -> Dict:
-    """
-    Compute Cohen's Kappa across 3 runs per strategy.
-    Kappa is averaged across run pairs (0v1, 0v2, 1v2).
-
-    Args:
-        results: all ExperimentResult objects including all 3 runs
-
-    Returns:
-        dict keyed by strategy with consistency metrics
-    """
     metrics = {}
     strategies = set(r.strategy for r in results)
 
@@ -52,7 +29,7 @@ def compute_consistency_metrics(
             }
             continue
 
-        # Label vectors per run, across all docs and dimensions
+                                                               
         def get_labels(run_num):
             labels = []
             for r in sorted(runs[run_num], key=lambda x: x.doc_id):
@@ -75,7 +52,7 @@ def compute_consistency_metrics(
                 labels_r2 = get_labels(r2)
 
                 if len(labels_r1) == len(labels_r2) and len(labels_r1) > 0:
-                    # Kappa is undefined when every label is identical
+                                                                      
                     if len(set(labels_r1 + labels_r2)) == 1:
                         kappas.append(1.0)
                     else:
@@ -109,7 +86,6 @@ def compute_consistency_metrics(
 
 
 def _interpret_kappa(kappa: float) -> str:
-    """Return human-readable Kappa interpretation."""
     if kappa >= 0.81: return "Almost perfect"
     if kappa >= 0.61: return "Substantial"
     if kappa >= 0.41: return "Moderate"

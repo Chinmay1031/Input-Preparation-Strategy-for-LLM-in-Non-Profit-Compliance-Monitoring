@@ -1,7 +1,3 @@
-"""
-Classifies each page of a document into a section type.
-Handles both financial statements and AUP reports.
-"""
 
 from .document_schema import (
     DOCUMENT_TYPE_FINANCIAL_STATEMENT,
@@ -24,18 +20,20 @@ DOCUMENT_TYPE_SIGNALS = {
         "PROCEDURES AND FINDINGS",
     ],
     DOCUMENT_TYPE_FINANCIAL_STATEMENT: [
-        # South African / IFRS for SMEs terminology
+                                                   
         "ANNUAL FINANCIAL STATEMENTS",
         "STATEMENT OF FINANCIAL POSITION",
         "STATEMENT OF COMPREHENSIVE INCOME",
         "IFRS FOR SMES",
         "INDEPENDENT REVIEWER",
         "GOING CONCERN",
-        # US GAAP terminology
+                             
         "CONSOLIDATED FINANCIAL STATEMENTS",
         "REPORT OF INDEPENDENT AUDITORS",
         "INDEPENDENT AUDITOR'S REPORT",
         "INDEPENDENT AUDITORS' REPORT",
+        "ANNUAL REPORT",
+        "STATEMENTS OF ACTIVITIES AND CHANGES IN NET ASSETS",
         "STATEMENTS OF ACTIVITIES",
         "STATEMENT OF ACTIVITIES",
         "STATEMENTS OF FUNCTIONAL EXPENSES",
@@ -43,14 +41,14 @@ DOCUMENT_TYPE_SIGNALS = {
         "NET ASSETS WITHOUT DONOR RESTRICTIONS",
         "NET ASSETS WITH DONOR RESTRICTIONS",
         "GENERALLY ACCEPTED ACCOUNTING PRINCIPLES",
-        # IPSAS terminology (BRAC Liberia)
+                                          
         "INTERNATIONAL PUBLIC SECTOR ACCOUNTING",
         "IPSAS",
         "STATEMENT OF FINANCIAL PERFORMANCE",
-        # IFRS terminology (BRAC Uganda)
+                                        
         "IFRS ACCOUNTING STANDARDS",
         "STATEMENT OF CHANGES IN EQUITY",
-        # Generic
+                 
         "NOTES TO THE FINANCIAL STATEMENTS",
         "NOTES TO THE CONSOLIDATED FINANCIAL",
     ],
@@ -162,8 +160,8 @@ AUP_REPORT_SECTIONS = {
     ],
 }
 
-# S2 uses this to filter out boilerplate. Every AUP section counts as
-# compliance relevant.
+                                                                     
+                      
 COMPLIANCE_RELEVANT_SECTIONS = {
     SEC_AUDIT_REPORT,
     SEC_DIRECTORS_REPORT,
@@ -186,10 +184,6 @@ BOILERPLATE_SECTIONS = {
 
 
 def detect_document_type(full_text: str) -> str:
-    """
-    Determine whether this is a financial statement or AUP report,
-    based on the opening pages.
-    """
     sample = full_text[:3000].upper()
     scores = {doc_type: 0 for doc_type in DOCUMENT_TYPE_SIGNALS}
 
@@ -205,26 +199,22 @@ def detect_document_type(full_text: str) -> str:
 
 
 def classify_page(page_text: str, document_type: str) -> str:
-    """
-    Classify a single page into a section type, checking more specific
-    sections before general ones.
-    """
-    # Financial statements repeat a header on every page ("SABINE PLATTNER...
-    # Annual Financial Statements..."), so classify on the body instead.
+                                                                             
+                                                                        
     body = page_text[200:] if len(page_text) > 200 else page_text
     upper_body = body.upper()
     upper_full = page_text.upper()
 
     if document_type == DOCUMENT_TYPE_AUP_REPORT:
         section_defs = AUP_REPORT_SECTIONS
-        # AUP reports have no repeated header, so the full page is safe
+                                                                       
         for section_type, keywords in section_defs.items():
             if any(kw in upper_full for kw in keywords):
                 return section_type
         return SEC_UNKNOWN
 
-    # Ordered most to least specific, otherwise "REGISTRATION NUMBER" in the
-    # header makes general_info win on every page.
+                                                                            
+                                                  
     PRIORITY_ORDER = [
         SEC_DETAILED_INCOME,
         SEC_NOTES,
@@ -242,7 +232,7 @@ def classify_page(page_text: str, document_type: str) -> str:
             if any(kw in upper_body for kw in keywords):
                 return section_type
         else:
-            if any(kw in upper_body for kw in keywords) or \
+            if any(kw in upper_body for kw in keywords) or\
                any(kw in upper_full for kw in keywords[:2]):
                 return section_type
 

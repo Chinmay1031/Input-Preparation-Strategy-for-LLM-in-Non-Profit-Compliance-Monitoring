@@ -1,19 +1,3 @@
-"""
-Strategy 5 — Extended verbatim extraction: S3's mechanism with much
-higher per-dimension line caps, including whole compliance-relevant
-sections rather than a handful of matched lines. Roughly 6,000 to
-9,000 tokens per document.
-
-S5 fills the gap in the token range. S1 and S2 sit at 15,642 and
-11,031 tokens, S3 and S4 at 1,138 and 1,331, leaving roughly 1,400 to
-11,000 untested — where the optimal operating point most likely falls.
-
-It also separates a confound. S3 and S4 are both the most compressed
-strategies and the only verbatim ones, so either factor could explain
-their citation behaviour. S5 is verbatim but long: verbatim citations
-implicate the extraction method, synthesised claims implicate token
-volume.
-"""
 
 import re
 from src.ingestion.document_schema import (
@@ -23,7 +7,7 @@ from src.ingestion.document_schema import (
 )
 from src.ingestion.budget_extractor import summarise_budget_lines
 
-# Reuse S3's extraction primitives so the mechanism is identical
+                                                                
 from src.strategies.s3_field_extractor import (
     _extract_lines,
     _extract_sentences,
@@ -41,12 +25,12 @@ from src.strategies.s3_field_extractor import (
     RELATED_PARTY_KEYWORDS,
 )
 
-# S3 uses 5 to 6 lines per dimension
+                                    
 EXT_LINES_PER_DIMENSION     = 30
 EXT_SENTENCES_PER_DIMENSION = 12
 
-# Included in full rather than keyword-matched: dense compliance signal,
-# short enough to include whole without exhausting the token budget.
+                                                                        
+                                                                    
 FULL_SECTIONS_FINANCIAL = [
     "audit_report",
     "financial_statements",
@@ -58,13 +42,12 @@ FULL_SECTIONS_AUP = [
     "aup_notes",
 ]
 
-# Cap on characters taken from any single full section, so one long
-# section cannot dominate the budget
+                                                                   
+                                    
 MAX_SECTION_CHARS = 9_000
 
 
 def _section_block(doc: ParsedDocument, section_type: str) -> list:
-    """Return a labelled block of text for one section, truncated if long."""
     text = doc.get_section_text(section_type).strip()
     if not text:
         return []
@@ -88,9 +71,6 @@ def _section_block(doc: ParsedDocument, section_type: str) -> list:
 
 
 def prepare_s5(doc: ParsedDocument) -> str:
-    """
-    Extended verbatim extraction. Same mechanism as S3, wider net.
-    """
     out  = []
     text = doc.full_text
 

@@ -1,12 +1,3 @@
-"""
-Strategy 4 — Hybrid: S3 verbatim extract plus narrative context,
-~900 to 1,500 tokens per document.
-
-Adds the most compliance-relevant sentences from the management or
-directors report on top of the S3 structured extract, testing whether
-narrative context improves compliance reasoning beyond the structured
-lines alone.
-"""
 
 import re
 from src.ingestion.document_schema import (
@@ -39,7 +30,6 @@ def _score_sentence(sentence: str) -> int:
 
 
 def _top_sentences(text: str, n: int = 6) -> list:
-    """Extract the most compliance-relevant sentences from text."""
     if not text:
         return []
 
@@ -64,10 +54,6 @@ def _top_sentences(text: str, n: int = 6) -> list:
 
 
 def prepare_s4(doc: ParsedDocument) -> str:
-    """
-    S4 — S3 verbatim extract plus additional narrative context
-    drawn from the management or directors report.
-    """
     base = prepare_s3(doc)
 
     if doc.document_type == DOCUMENT_TYPE_AUP_REPORT:

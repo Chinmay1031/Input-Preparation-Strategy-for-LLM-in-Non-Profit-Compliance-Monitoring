@@ -1,12 +1,3 @@
-"""
-Computes Precision, Recall, and F1 for each strategy by comparing LLM
-verdicts against the gold standard.
-
-Macro averaging treats each compliance dimension equally regardless of
-class imbalance. Recall carries more weight in the discussion: in
-compliance work, missing a real flag is more serious than raising a
-false alarm.
-"""
 
 from typing import List, Dict
 from sklearn.metrics import (
@@ -23,18 +14,6 @@ def compute_quality_metrics(
     results: List[ExperimentResult],
     gold_standard_path: str = "data/gold_standard/gold_standard.csv"
 ) -> Dict:
-    """
-    Compute precision, recall, F1 per strategy using run 0 only.
-    Run 0 is the primary quality measurement run.
-    Runs 1 and 2 are used for consistency measurement.
-
-    Args:
-        results:             list of all ExperimentResult objects
-        gold_standard_path:  path to gold standard CSV
-
-    Returns:
-        dict keyed by strategy name with quality metrics
-    """
     df = load_gold_standard(gold_standard_path)
     metrics = {}
 
@@ -57,7 +36,7 @@ def compute_quality_metrics(
 
             for dim in DIMENSIONS:
                 gold_val = gold_labels.get(dim)
-                if gold_val is None:   # N/A dimension
+                if gold_val is None:                  
                     continue
 
                 pred_val = result.is_flagged(dim)

@@ -1,16 +1,3 @@
-"""
-Strategy 3 — Verbatim compliance line extraction, ~400 to 900 tokens
-per document.
-
-Rather than parsing figures numerically, this locates the lines in the
-source document that carry compliance signal and extracts them
-verbatim, grouped by compliance dimension. Because no arithmetic is
-performed, no extraction errors are introduced, and every line sent to
-the model exists word-for-word in the source, so cited evidence stays
-traceable and faithfulness can be measured against the original text.
-Keyword matching also works across accounting standards (US GAAP,
-IPSAS, IFRS, IFRS for SMEs) without standard-specific parsing rules.
-"""
 
 import re
 from src.ingestion.document_schema import (
@@ -55,7 +42,6 @@ def _extract_lines(
     max_lines: int = MAX_LINES_PER_DIMENSION,
     exclude: list = None,
 ) -> list:
-    """Return verbatim lines whose lowercase form contains any keyword."""
     exclude = exclude or []
     found   = []
     seen    = set()
@@ -92,7 +78,6 @@ def _extract_sentences(
     max_sentences: int = 3,
     exclude: list = None,
 ) -> list:
-    """Return verbatim sentences containing any keyword."""
     exclude   = exclude or []
     sentences = re.split(r'(?<=[.!?])\s+', text.replace('\n', ' '))
     found     = []
@@ -194,17 +179,13 @@ NOISE_PATTERNS = [
     r'the accompanying notes are an integral',
     r'^\s*table of contents',
     r'\.{6,}',
-    r'^\s*[•*=■▪]',              # bullet points — narrative text
-    r'participants have',         # programme narrative
+    r'^\s*[•*=■▪]',                                              
+    r'participants have',                              
     r'\b(farmers|beneficiaries|households|villages)\b',
 ]
 
 
 def prepare_s3(doc: ParsedDocument) -> str:
-    """
-    Builds a compact compliance summary containing verbatim lines
-    extracted from the source document, grouped by compliance dimension.
-    """
     out  = []
     text = doc.full_text
 

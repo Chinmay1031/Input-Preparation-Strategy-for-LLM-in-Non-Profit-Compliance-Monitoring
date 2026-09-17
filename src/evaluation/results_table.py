@@ -1,7 +1,3 @@
-"""
-Generates the master results table — Table 1 in the thesis.
-Combines all four metric dimensions into one pandas DataFrame.
-"""
 
 import pandas as pd
 from typing import List, Dict
@@ -29,17 +25,6 @@ def generate_master_table(
     results: List[ExperimentResult],
     gold_standard_path: str = "data/gold_standard/gold_standard.csv"
 ) -> pd.DataFrame:
-    """
-    Generate the master results table combining all four
-    evaluation dimensions.
-
-    Args:
-        results:            all ExperimentResult objects
-        gold_standard_path: path to gold standard CSV
-
-    Returns:
-        DataFrame with one row per strategy — thesis Table 1
-    """
     quality     = compute_quality_metrics(results, gold_standard_path)
     efficiency  = compute_efficiency_metrics(results)
     consistency = compute_consistency_metrics(results)
@@ -73,7 +58,6 @@ def generate_master_table(
 
 
 def print_master_table(df: pd.DataFrame) -> None:
-    """Print the master results table to terminal."""
     print("\n" + "="*90)
     print("MASTER RESULTS TABLE — Thesis Table 1")
     print("="*90)

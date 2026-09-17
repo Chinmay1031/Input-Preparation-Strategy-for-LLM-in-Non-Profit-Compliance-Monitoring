@@ -1,6 +1,3 @@
-"""
-One ExperimentResult is created per document per strategy per run.
-"""
 
 from dataclasses import dataclass, field
 from typing import List, Dict, Optional, Any
@@ -8,25 +5,20 @@ from typing import List, Dict, Optional, Any
 
 @dataclass
 class ComplianceFlag:
-    """One flag raised by the LLM for a specific compliance dimension."""
     dimension:   str
     severity:    str
     evidence:    str
-    is_faithful: Optional[bool] = None   # filled by faithfulness checker
-    match_score: Optional[float] = None  # fuzzy match score 0.0 to 1.0
+    is_faithful: Optional[bool] = None                                   
+    match_score: Optional[float] = None                                
 
 
 @dataclass
 class ExperimentResult:
-    """
-    Complete result for one API call.
-    Stores everything needed for all four evaluation metrics.
-    """
     doc_id:        str
     strategy:      str
     run:           int
 
-    # Six compliance dimensions
+                               
     revenue_concentration:    str = "CLEAR"
     expense_spike:            str = "CLEAR"
     passthrough_risk:         str = "CLEAR"
@@ -42,13 +34,13 @@ class ExperimentResult:
     tokens_output: int = 0
     tokens_total:  int = 0
 
-    faithfulness_score:    float = 1.0  # proportion of grounded flags
-    hallucination_rate:    float = 0.0  # proportion of unsupported flags
+    faithfulness_score:    float = 1.0                                
+    hallucination_rate:    float = 0.0                                   
     hallucinated_flags:    List[str] = field(default_factory=list)
 
-    # Verbatim quotation vs synthesised claims. A synthesised claim may be
-    # factually correct yet untraceable to a single line, which weakens it
-    # as audit evidence.
+                                                                          
+                                                                          
+                        
     verbatim_rate:         float = 1.0
     synthesis_rate:        float = 0.0
     mean_match_score:      float = 1.0
@@ -60,7 +52,6 @@ class ExperimentResult:
     raw_response:  str  = ""
 
     def get_dimension_labels(self) -> Dict[str, str]:
-        """Returns all six dimension labels as a dict."""
         return {
             "revenue_concentration":   self.revenue_concentration,
             "expense_spike":           self.expense_spike,
@@ -71,12 +62,10 @@ class ExperimentResult:
         }
 
     def is_flagged(self, dimension: str) -> int:
-        """Returns 1 if dimension is FLAG or ESCALATE, 0 if CLEAR or N/A."""
         label = self.get_dimension_labels().get(dimension, "CLEAR")
         return 1 if label in ("FLAG", "ESCALATE") else 0
 
     def to_dict(self) -> dict:
-        """Serialise to dict for JSON storage."""
         return {
             "doc_id":                  self.doc_id,
             "strategy":                self.strategy,

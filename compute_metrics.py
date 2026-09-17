@@ -1,8 +1,3 @@
-"""
-Reads saved results from data/results/all_results.json and computes all
-four evaluation metrics, without making API calls. Run any time to
-regenerate the thesis results table.
-"""
 
 import sys, os, json
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -22,7 +17,6 @@ GOLD_PATH    = "data/gold_standard/gold_standard.csv"
 
 
 def load_results(path: Path) -> list:
-    """Rebuild ExperimentResult objects from saved JSON."""
     with open(path) as f:
         data = json.load(f)
 

@@ -1,10 +1,3 @@
-"""
-Loads the manually annotated gold standard CSV and converts labels to
-binary format for metric computation.
-
-Handles the detailed annotation format with separate label and evidence
-columns, and maps annotation IDs to actual PDF filenames.
-"""
 
 import pandas as pd
 from pathlib import Path
@@ -21,8 +14,8 @@ DIMENSIONS = [
 FLAGGED_LABELS = {"FLAG", "ESCALATE"}
 NA_LABEL = "N/A"
 
-# Gold standard CSV doc_id → PDF filename stem used by the pipeline.
-# Add new entries here as more documents are annotated.
+                                                                    
+                                                       
 DOC_ID_MAP = {
     "WaterOrg_AuditedFinancials_2024":
         "2024_Water.org_audited_financials",
@@ -36,9 +29,21 @@ DOC_ID_MAP = {
         "BRAC-Uganda-Audited-Financial-Statements",
     "SaveTheChildrenFederation_AuditedFinancials_2024":
         "financial-statements-2024",
+    "RockingTheBoat_AuditedFinancials_2023":
+        "FY23_Audit",
+    "AsianLawCaucus_AuditedFinancials_2025":
+        "FY24-25-ALC-Audit-Financial",
+    "JusticeInAging_AuditedFinancials_2023":
+        "Justice-in-Aging-FY23-Audited-Financial-Statements",
+    "PATH_AnnualReport_2024":
+        "PATH-annual-report-2024",
+    "PublicCitizenFoundation_AuditedFinancials_2024":
+        "Public-Citizen-Foundation-Inc.-FS-3",
+    "SOMOSMayfair_AuditedFinancials_2024":
+        "Somos+2024+Audited+Financial+Statements+-+Final",
 }
 
-# Column name variations the loader can handle
+                                              
 COLUMN_ALIASES = {
     "doc_id":                  ["doc_id", "document_id"],
     "revenue_concentration":   ["revenue_concentration",
@@ -58,7 +63,6 @@ COLUMN_ALIASES = {
 
 
 def _find_column(df: pd.DataFrame, target: str) -> str:
-    """Find the actual column name matching a target field."""
     for alias in COLUMN_ALIASES.get(target, [target]):
         if alias in df.columns:
             return alias
@@ -71,17 +75,13 @@ def _find_column(df: pd.DataFrame, target: str) -> str:
 def load_gold_standard(
     path: str = "data/gold_standard/gold_standard.csv"
 ) -> pd.DataFrame:
-    """
-    Load gold standard CSV, normalise column names,
-    and map annotation IDs to PDF filename stems.
-    """
     path = Path(path)
     if not path.exists():
         raise FileNotFoundError(
             f"Gold standard not found at {path}."
         )
 
-    # Evidence fields contain commas, so quoting matters here
+                                                             
     df = pd.read_csv(path, quotechar='"', skipinitialspace=True)
 
     clean = pd.DataFrame()
@@ -101,10 +101,6 @@ def load_gold_standard(
 
 
 def get_binary_labels(df: pd.DataFrame, doc_id: str) -> dict:
-    """
-    Get binary labels for one document.
-    Returns dict of dimension -> 0, 1, or None (for N/A).
-    """
     row = df[df["doc_id"] == doc_id]
     if row.empty:
         raise ValueError(
@@ -116,7 +112,7 @@ def get_binary_labels(df: pd.DataFrame, doc_id: str) -> dict:
     for dim in DIMENSIONS:
         val = str(row.iloc[0][dim]).strip().upper()
         if val in (NA_LABEL, "NAN", "NA", ""):
-            labels[dim] = None      # excluded from scoring
+            labels[dim] = None                             
         else:
             labels[dim] = 1 if val in FLAGGED_LABELS else 0
 
@@ -126,6 +122,5 @@ def get_binary_labels(df: pd.DataFrame, doc_id: str) -> dict:
 def get_all_doc_ids(
     path: str = "data/gold_standard/gold_standard.csv"
 ) -> list:
-    """Return list of all document IDs in the gold standard."""
     df = load_gold_standard(path)
     return df["doc_id"].tolist()

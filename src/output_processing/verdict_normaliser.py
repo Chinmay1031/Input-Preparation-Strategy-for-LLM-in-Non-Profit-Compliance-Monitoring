@@ -1,7 +1,3 @@
-"""
-Maps raw LLM JSON output to the standard six-dimension schema.
-Handles minor variations in model phrasing and label capitalisation.
-"""
 
 from .result_schema import ExperimentResult, ComplianceFlag
 
@@ -34,7 +30,6 @@ DIMENSIONS = [
 
 
 def _normalise_label(raw: str) -> str:
-    """Normalise a raw LLM label to one of CLEAR / FLAG / ESCALATE / N/A."""
     if not raw:
         return "CLEAR"
     cleaned = str(raw).strip().upper()
@@ -50,15 +45,6 @@ def normalise_verdict(
     strategy: str,
     run: int
 ) -> ExperimentResult:
-    """
-    Takes raw LLM API result dict and returns a clean ExperimentResult.
-
-    Args:
-        raw_result: output from call_llm_with_retry()
-        doc_id:     document identifier
-        strategy:   strategy name e.g. S1_full
-        run:        run number 0, 1, or 2
-    """
     verdict = raw_result.get("verdict", {})
     parse_error = verdict.get("parse_error", False)
 

@@ -1,9 +1,3 @@
-"""
-Parses an HPF grantee document into a structured ParsedDocument.
-
-Handles annual financial statements (IFRS for SMEs format) and AUP /
-Agreed-Upon Procedures reports, detecting the type from content.
-"""
 
 import re
 from pathlib import Path
@@ -26,14 +20,6 @@ from .budget_extractor import (
 
 
 def parse_document(pdf_path: str, doc_id: Optional[str] = None) -> ParsedDocument:
-    """
-    Args:
-        pdf_path:  path to PDF file
-        doc_id:    optional identifier (defaults to filename stem)
-
-    Returns:
-        ParsedDocument with all sections, metadata, and structured data
-    """
     path = Path(pdf_path)
     if not path.exists():
         raise FileNotFoundError(f"PDF not found: {pdf_path}")
@@ -48,7 +34,7 @@ def parse_document(pdf_path: str, doc_id: Optional[str] = None) -> ParsedDocumen
 
     all_text_parts = []
     all_tables     = []
-    page_data      = []  # (page_num, text, tables) per page
+    page_data      = []                                     
 
     with pdfplumber.open(pdf_path) as pdf:
         doc.total_pages = len(pdf.pages)
@@ -90,14 +76,14 @@ def parse_document(pdf_path: str, doc_id: Optional[str] = None) -> ParsedDocumen
     for page_num, text, tables in page_data:
         detected = classify_page(text, doc.document_type)
 
-        # Only advance on a specific detection, otherwise general_info
-        # swallows every page.
+                                                                      
+                              
         if detected != SEC_UNKNOWN:
             current_section = detected
 
-        # Prefer this page's own detection over the accumulating section,
-        # which gives cleaner boundaries in financial statements where each
-        # page usually belongs to a single section.
+                                                                         
+                                                                           
+                                                   
         page_section = detected if detected != SEC_UNKNOWN else current_section
 
         if page_section not in section_accumulator:
@@ -139,7 +125,6 @@ def parse_document(pdf_path: str, doc_id: Optional[str] = None) -> ParsedDocumen
 
 
 def _extract_metadata(doc: ParsedDocument) -> ParsedDocument:
-    """Extract grantee name, year, currency, project name."""
     text  = doc.full_text
     upper = text.upper()
 
@@ -163,7 +148,7 @@ def _extract_metadata(doc: ParsedDocument) -> ParsedDocument:
     elif "USD" in upper or "US DOLLAR" in upper:
         doc.currency = "USD"
     else:
-        doc.currency = "EUR"  # default for HPF documents
+        doc.currency = "EUR"                             
 
     name_patterns = [
         r'([A-Z][A-Z\s]+(?:NPC|FOUNDATION|CHARITIES|ORGANISATION|TRUST))',
@@ -197,7 +182,6 @@ def _extract_metadata(doc: ParsedDocument) -> ParsedDocument:
 
 
 def _extract_aup_data(doc: ParsedDocument, all_tables: list) -> ParsedDocument:
-    """Extract structured data specific to AUP reports."""
 
     budget_lines = extract_budget_lines_from_tables(all_tables)
 
@@ -215,7 +199,7 @@ def _extract_aup_data(doc: ParsedDocument, all_tables: list) -> ParsedDocument:
 
     text = doc.full_text
 
-    # "Donations 1,800,000 2,400,000" → take the first large number
+                                                                   
     donation_match = re.search(
         r'Donations\s+([\d,]+)', text, re.IGNORECASE
     )
@@ -223,7 +207,7 @@ def _extract_aup_data(doc: ParsedDocument, all_tables: list) -> ParsedDocument:
         amount_str = donation_match.group(1).replace(',', '')
         try:
             val = float(amount_str)
-            if val > 1000:  # must be a meaningful amount
+            if val > 1000:                               
                 doc.financial_figures["donations_received"] = val
         except ValueError:
             pass
@@ -252,7 +236,7 @@ def _extract_aup_data(doc: ParsedDocument, all_tables: list) -> ParsedDocument:
         except ValueError:
             pass
 
-    # Procedure count indicates assurance scope
+                                               
     procedure_count = len(re.findall(r'^\d+\.\s+', text, re.MULTILINE))
     if procedure_count > 0:
         doc.financial_figures["procedure_count"] = procedure_count
@@ -264,7 +248,6 @@ def _extract_aup_data(doc: ParsedDocument, all_tables: list) -> ParsedDocument:
 
 
 def _extract_financial_statement_data(doc: ParsedDocument, all_tables: list) -> ParsedDocument:
-    """Extract structured data from annual financial statements."""
 
     for table in all_tables:
         if not table:
@@ -309,7 +292,6 @@ def _extract_financial_statement_data(doc: ParsedDocument, all_tables: list) -> 
 
 
 def _extract_numbers_from_row(cells: list) -> list:
-    """Extract numeric values from a list of cell strings."""
     numbers = []
     for cell in cells:
         cleaned = re.sub(r'[€$£,\s]', '', str(cell))
@@ -325,10 +307,6 @@ def _extract_numbers_from_row(cells: list) -> list:
 
 
 def _estimate_ocr_quality(text: str) -> float:
-    """
-    Estimate OCR quality from text characteristics.
-    Returns 0.0 (very poor) to 1.0 (clean digital PDF).
-    """
     if not text or len(text) < 100:
         return 0.0
 
@@ -339,7 +317,7 @@ def _estimate_ocr_quality(text: str) -> float:
     alpha_words = sum(1 for w in words if any(c.isalpha() for c in w))
     quality = alpha_words / len(words)
 
-    # Excessive special characters suggest OCR artifacts
+                                                        
     special_ratio = sum(
         1 for c in text if c in '|~`^<>{}\\@#$%*'
     ) / max(len(text), 1)

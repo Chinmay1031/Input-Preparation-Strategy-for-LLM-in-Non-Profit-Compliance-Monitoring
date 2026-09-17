@@ -1,7 +1,3 @@
-"""
-Strategy 2 — Section-aware filtering. Extracts only compliance-relevant
-sections, discarding boilerplate. ~2,000 to 3,500 tokens per document.
-"""
 
 from src.ingestion.document_schema import (
     ParsedDocument,
@@ -13,7 +9,7 @@ from src.ingestion.document_schema import (
     SEC_AUP_ANNEXURE_B, SEC_AUP_NOTES
 )
 
-# Sections that carry compliance signal — boilerplate excluded
+                                                              
 RELEVANT_FINANCIAL = [
     SEC_DIRECTORS_REPORT,
     SEC_FINANCIAL_STATEMENTS,
@@ -31,11 +27,6 @@ RELEVANT_AUP = [
 
 
 def prepare_s2(doc: ParsedDocument) -> str:
-    """
-    Returns only the compliance-relevant sections of the document.
-    Skips accounting policies, directors responsibilities, and
-    general information — all boilerplate with no compliance signal.
-    """
     if doc.document_type == DOCUMENT_TYPE_AUP_REPORT:
         relevant_sections = RELEVANT_AUP
     else:

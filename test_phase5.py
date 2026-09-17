@@ -1,13 +1,3 @@
-"""
-Runs the full experiment across all documents in data/pdfs/, with every
-strategy and three runs each. Results are saved to
-data/results/all_results.json.
-
-Documents exceeding the per-request token limit are truncated by the
-caller and the truncation recorded, so the practical infeasibility of
-full-document prompting on large documents becomes measurable data
-rather than a failure.
-"""
 
 import sys, os, json, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -26,7 +16,7 @@ from pathlib import Path
 RESULTS_PATH = Path("data/results/all_results.json")
 GOLD_PATH    = "data/gold_standard/gold_standard.csv"
 
-# Pause between API calls to stay within the tokens-per-minute budget
+                                                                     
 INTER_CALL_DELAY = 3
 
 pdf_files = list(Path("data/pdfs").glob("*.pdf"))

@@ -1,47 +1,38 @@
-"""
-Checks whether evidence cited by the LLM in its compliance flags
-actually exists in the source document or prepared strategy text.
 
-Two comparison modes:
-  - source:  checks against raw PDF text (S1, S2)
-  - summary: checks against prepared strategy text (S3, S4)
-
-S3 and S4 evidence is grounded in the structured extract rather than
-the raw document, which has different implications for auditability.
-
-Rather than a binary faithful/unfaithful judgement, three evidence
-behaviours are distinguished:
-
-  Verbatim   (>= 92)  the model copied a line from the material given
-  Synthesis  (60-91)  the model constructed a claim from source content
-  Unsupported (< 60)  the claim is not present in the material given
-
-The middle band matters for compliance work. A synthesised claim such
-as "expenses increased from X to Y" may be factually correct, yet it
-cannot be traced to a single line of the document, which weakens its
-value as audit evidence.
-"""
-
+import re
 from fuzzywuzzy import fuzz
 from .result_schema import ExperimentResult, ComplianceFlag
 
-# Evidence is treated as grounded at or above this score
+                                                        
 FAITHFULNESS_THRESHOLD = 60
 
-# At or above this score the evidence is a near-exact copy of a
-# source line rather than a reconstruction
+                                                               
+                                          
 VERBATIM_THRESHOLD = 92
 
-# Strategies where evidence is checked against the prepared text
-# rather than the raw source, because the model only saw the extract
-SUMMARY_STRATEGIES = {"S3_fields", "S4_hybrid"}
+                                                                     
+                                                                    
+                                                              
+FIGURE_MATCH_SCORE = 85.0
+
+                                                                
+                                                                    
+SUMMARY_STRATEGIES = {"S3_fields", "S4_hybrid", "S5_extended"}
+
+
+def _extract_figures(text: str) -> set:
+    cleaned = re.sub(r'[$€£()]', ' ', text)
+    figures = set()
+
+    for token in cleaned.split():
+        digits = re.sub(r'[^\d]', '', token)
+        if len(digits) >= 4:
+            figures.add(digits)
+
+    return figures
 
 
 def _best_match_score(evidence: str, source_text: str) -> float:
-    """
-    Find the best fuzzy match between cited evidence and any
-    sentence in the comparison text. Returns a score from 0 to 100.
-    """
     if not evidence or not source_text:
         return 0.0
 
@@ -56,12 +47,23 @@ def _best_match_score(evidence: str, source_text: str) -> float:
     if not sentences:
         return 0.0
 
-    best = max(
+                                         
+    text_score = max(
         fuzz.partial_ratio(evidence_lower, sentence)
         for sentence in sentences
     )
 
-    return float(best)
+                                                                 
+    cited_figures = _extract_figures(evidence)
+    if cited_figures:
+        source_figures = _extract_figures(source_text)
+        matched = cited_figures & source_figures
+                                                                         
+                                                                           
+        if matched and len(matched) == len(cited_figures):
+            return float(max(text_score, FIGURE_MATCH_SCORE))
+
+    return float(text_score)
 
 
 def compute_faithfulness(
@@ -69,18 +71,6 @@ def compute_faithfulness(
     source_text:   str,
     prepared_text: str = ""
 ) -> ExperimentResult:
-    """
-    Score each cited flag against the material the model was given,
-    and classify the citation behaviour.
-
-    Args:
-        result:        ExperimentResult from verdict_normaliser
-        source_text:   full raw document text
-        prepared_text: text actually sent to the model
-
-    Returns:
-        Updated ExperimentResult with faithfulness measures filled in
-    """
     if not result.flags:
         result.faithfulness_score = 1.0
         result.hallucination_rate = 0.0

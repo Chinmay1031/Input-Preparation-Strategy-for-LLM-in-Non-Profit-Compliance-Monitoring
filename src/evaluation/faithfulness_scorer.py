@@ -1,7 +1,3 @@
-"""
-Aggregates faithfulness scores across all results per strategy.
-Used to generate Figure 3 in the thesis results chapter.
-"""
 
 from typing import List, Dict
 from src.output_processing.result_schema import ExperimentResult
@@ -10,12 +6,6 @@ from src.output_processing.result_schema import ExperimentResult
 def compute_faithfulness_metrics(
     results: List[ExperimentResult]
 ) -> Dict:
-    """
-    Aggregate faithfulness scores per strategy using run 0.
-
-    Returns:
-        dict keyed by strategy with faithfulness metrics
-    """
     metrics = {}
     strategies = set(r.strategy for r in results)
 

@@ -1,12 +1,3 @@
-"""
-Re-runs faithfulness scoring on previously saved results using the
-three-band classification, without making API calls.
-
-Compliance verdicts from the original run are preserved exactly; only
-the evidence scoring is recomputed. That is valid because the cited
-evidence strings are stored in the results file and the source
-documents are unchanged.
-"""
 
 import sys, os, json
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -30,7 +21,7 @@ with open(RESULTS_PATH) as f:
 
 print(f"Loaded {len(data)} results\n")
 
-# Parse each document once and cache its text and strategy outputs
+                                                                  
 doc_cache = {}
 for pdf_path in Path("data/pdfs").glob("*.pdf"):
     doc_id = pdf_path.stem
@@ -119,7 +110,7 @@ for d in rescored:
     b["total_flags"] += len(d.get("flags", []))
     b["synth_examples"].extend(d.get("synthesised_flags", []))
 
-order = ["S1_full", "S2_sections", "S3_fields", "S4_hybrid"]
+order = ["S1_full", "S2_sections", "S5_extended", "S4_hybrid", "S3_fields"]
 for s in order:
     if s not in by_strategy:
         continue

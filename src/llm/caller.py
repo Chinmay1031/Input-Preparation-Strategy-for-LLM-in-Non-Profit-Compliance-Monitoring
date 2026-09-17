@@ -1,14 +1,3 @@
-"""
-Single LLM caller used by all strategies.
-
-Prompt, model and temperature are fixed; the only thing that varies
-per call is the prepared document text.
-
-Documents exceeding the account's per-request token limit are truncated
-rather than dropped, and the truncation is recorded — that full-document
-prompting cannot fit large grantee documents within standard rate limits
-is itself a finding about that approach's feasibility.
-"""
 
 import os
 import json
@@ -27,7 +16,7 @@ TEMPERATURE = 0.3
 MAX_TOKENS  = 1000
 N_RUNS      = 3
 
-# Must stay below the account's tokens-per-minute limit (30,000)
+                                                                
 MAX_INPUT_TOKENS = 22_000
 INTER_CALL_DELAY = 3
 
@@ -35,10 +24,6 @@ _ENCODING = tiktoken.encoding_for_model("gpt-4o")
 
 
 def _truncate_to_limit(text: str, max_tokens: int = MAX_INPUT_TOKENS):
-    """
-    Truncate text to fit within the per-request token limit.
-    Returns (text, was_truncated, original_token_count).
-    """
     tokens   = _ENCODING.encode(text)
     original = len(tokens)
 
@@ -55,7 +40,6 @@ def _truncate_to_limit(text: str, max_tokens: int = MAX_INPUT_TOKENS):
 
 
 def call_llm(prepared_text: str) -> dict:
-    """Single LLM call with structured JSON output enforced."""
     prepared_text, was_truncated, original_tokens = _truncate_to_limit(
         prepared_text
     )
@@ -105,11 +89,6 @@ def call_llm(prepared_text: str) -> dict:
 
 
 def call_llm_with_retry(prepared_text: str, max_retries: int = 4) -> dict:
-    """
-    Wrapper with exponential backoff for transient rate limits.
-    Input is truncated before the call, so size-based 429 errors
-    should not occur.
-    """
     for attempt in range(max_retries):
         try:
             return call_llm(prepared_text)
@@ -121,7 +100,7 @@ def call_llm_with_retry(prepared_text: str, max_retries: int = 4) -> dict:
             )
 
             if is_rate_limit and attempt < max_retries - 1:
-                wait = 15 * (attempt + 1)   # 15s, 30s, 45s
+                wait = 15 * (attempt + 1)                  
                 print(f"\n    Rate limit — waiting {wait}s "
                       f"(retry {attempt + 1}/{max_retries})", flush=True)
                 time.sleep(wait)

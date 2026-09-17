@@ -1,11 +1,3 @@
-"""
-OCR fallback for scanned PDFs with no text layer.
-
-Some grantee documents are submitted as scanned images rather than
-digital PDFs, which pdfplumber cannot read. Each page is rasterised and
-run through Tesseract. The resulting text is noisier than native
-extraction, which is recorded in the document's ocr_quality_score.
-"""
 
 import os
 from pathlib import Path
@@ -22,10 +14,6 @@ CACHE_DIR = Path("data/ocr_cache")
 
 
 def has_text_layer(pdf_path: str, sample_pages: int = 3) -> bool:
-    """
-    Check whether a PDF has an extractable text layer.
-    Samples the first few pages rather than the whole document.
-    """
     import pdfplumber
     with pdfplumber.open(pdf_path) as pdf:
         n = min(sample_pages, len(pdf.pages))
@@ -37,17 +25,6 @@ def has_text_layer(pdf_path: str, sample_pages: int = 3) -> bool:
 
 
 def ocr_document(pdf_path: str, dpi: int = 150) -> str:
-    """
-    Run OCR on a scanned PDF and return the extracted text.
-    Results are cached, since OCR is expensive.
-
-    Args:
-        pdf_path: path to the scanned PDF
-        dpi:      rasterisation resolution (150 is a good balance)
-
-    Returns:
-        extracted text as a single string
-    """
     if not OCR_AVAILABLE:
         raise ImportError(
             "OCR requires pytesseract and pdf2image. Install with:\n"

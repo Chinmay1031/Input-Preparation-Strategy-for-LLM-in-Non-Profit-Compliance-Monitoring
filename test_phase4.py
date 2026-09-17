@@ -1,8 +1,3 @@
-"""
-Tests Phase 4 output processing on one document with one strategy,
-running the full pipeline: parse -> strategy -> LLM -> normalise ->
-faithfulness. Costs approximately $0.01.
-"""
 
 import sys, os, json
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))

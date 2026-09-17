@@ -1,11 +1,3 @@
-"""
-Extracts structured budget vs actual data from AUP Annexure A,
-specific to the HPF/SPAC document format.
-
-Reconstructs multi-currency table rows from OCR output, computes
-variance percentages, detects unbudgeted items and significant
-overspends, and groups line items by country/programme.
-"""
 
 import re
 from typing import List, Optional, Tuple
@@ -14,23 +6,22 @@ from .document_schema import BudgetLine, ParsedDocument
 COUNTRY_IDENTIFIERS = {
     "CONGO":   ["CONGO", "ODZALA"],
     "GABON":   ["GABON"],
-    "MOROCCO": ["MOROCCO", "MORROCCO"],  # note: typo in original doc
+    "MOROCCO": ["MOROCCO", "MORROCCO"],                              
     "NAMIBIA": ["NAMIBIA"],
     "SENEGAL": ["SENEGAL"],
     "RWANDA":  ["RWANDA"],
     "GENERAL": ["OPS", "DEV:", "M&E", "STAFF", "TRAVEL"],
 }
 
-SIGNIFICANT_VARIANCE_PCT = 0.20   # >20% = FLAG
-OVERSPEND_THRESHOLD = 0.10        # >10% over budget = FLAG
+SIGNIFICANT_VARIANCE_PCT = 0.20                
+OVERSPEND_THRESHOLD = 0.10                                 
 
 
 def _clean_number(raw: str) -> Optional[float]:
-    """Convert a messy OCR number string to float."""
     if not raw:
         return None
     cleaned = re.sub(r'[€$£,\s]', '', str(raw).strip())
-    # bracketed negatives: (7,375) → -7375
+                                          
     if cleaned.startswith('(') and cleaned.endswith(')'):
         cleaned = '-' + cleaned[1:-1]
     try:
@@ -40,7 +31,6 @@ def _clean_number(raw: str) -> Optional[float]:
 
 
 def _detect_country(line_text: str) -> Optional[str]:
-    """Identify which country a budget line belongs to."""
     upper = line_text.upper()
     for country, keywords in COUNTRY_IDENTIFIERS.items():
         if any(kw in upper for kw in keywords):
@@ -49,15 +39,10 @@ def _detect_country(line_text: str) -> Optional[str]:
 
 
 def extract_budget_lines_from_text(annexure_a_text: str) -> List[BudgetLine]:
-    """
-    Parse Annexure A text into structured BudgetLine objects by finding
-    lines with three numeric values (actual, budget, variance) preceded
-    by a category label.
-    """
     budget_lines = []
     lines = annexure_a_text.split('\n')
 
-    # e.g. "Prog: Gabon Teacher Training 171,177 117,000 (54,177)"
+                                                                  
     number_pattern = re.compile(
         r'^(.+?)\s+([\d,.\(\)]+)\s+([\d,.\(\)]+)\s+([\d,.\(\)]+)\s*(.*)$'
     )
@@ -117,10 +102,6 @@ def extract_budget_lines_from_text(annexure_a_text: str) -> List[BudgetLine]:
 
 
 def extract_budget_lines_from_tables(tables: List) -> List[BudgetLine]:
-    """
-    Extract budget lines from pdfplumber table objects.
-    More reliable than text parsing for well-structured tables.
-    """
     budget_lines = []
     current_country = None
 
@@ -144,8 +125,8 @@ def extract_budget_lines_from_tables(tables: List) -> List[BudgetLine]:
             if not first or first in ['', 'NONE']:
                 continue
 
-            # Annexure B rows carry invoice numbers and start with an item
-            # number (1-25); including them corrupts the budget totals.
+                                                                          
+                                                                       
             if re.match(r'^\d+$', first):
                 continue
 
@@ -155,7 +136,7 @@ def extract_budget_lines_from_tables(tables: List) -> List[BudgetLine]:
 
             numbers = []
             comment = None
-            for cell in cells[1:4]:  # actual, budget, variance only
+            for cell in cells[1:4]:                                 
                 n = _clean_number(cell)
                 if n is not None:
                     numbers.append(n)
@@ -173,8 +154,8 @@ def extract_budget_lines_from_tables(tables: List) -> List[BudgetLine]:
             budget  = numbers[1] if len(numbers) > 1 else 0
             variance = numbers[2] if len(numbers) > 2 else (actual - budget)
 
-            # Catches Annexure B invoice amounts in foreign currency that
-            # slipped through — 10M+ budget on a single line is unrealistic.
+                                                                         
+                                                                            
             if budget > 10_000_000:
                 continue
 
@@ -199,10 +180,6 @@ def extract_budget_lines_from_tables(tables: List) -> List[BudgetLine]:
 
 
 def summarise_budget_lines(budget_lines: List[BudgetLine]) -> dict:
-    """
-    Compute summary statistics from extracted budget lines.
-    Used by S3 field extractor to build compact context.
-    """
     if not budget_lines:
         return {}
 

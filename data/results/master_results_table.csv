@@ -1,6 +1,6 @@
 Strategy,Precision,Recall,F1,Avg tokens,Cost/doc ($),Token reduction,Kappa,Consistency,Faithfulness,Hallucination %
-S1 — Full text,0.825,0.816,0.781,15642,0.08097,0%,0.961,Almost perfect,1.0,0.0
-S2 — Section filter,0.825,0.816,0.781,11031,0.05805,29%,0.959,Almost perfect,1.0,0.0
-S5 — Extended extraction,0.671,0.674,0.656,4812,0.02725,69%,0.962,Almost perfect,1.0,0.0
-S4 — Hybrid,0.692,0.686,0.656,1331,0.00956,91%,0.878,Almost perfect,1.0,0.0
-S3 — Field extraction,0.74,0.725,0.686,1138,0.0086,93%,0.959,Almost perfect,1.0,0.0
+S1 — Full text,0.83,0.81,0.808,14101,0.07332,0%,0.939,Almost perfect,1.0,0.0
+S2 — Section filter,0.806,0.793,0.791,9180,0.04873,35%,0.856,Almost perfect,1.0,0.0
+S5 — Extended extraction,0.705,0.69,0.684,4957,0.02749,65%,0.932,Almost perfect,1.0,0.0
+S4 — Hybrid,0.759,0.707,0.691,1336,0.00904,91%,0.898,Almost perfect,1.0,0.0
+S3 — Field extraction,0.716,0.672,0.655,1124,0.008,92%,0.898,Almost perfect,1.0,0.0

@@ -1,26 +1,15 @@
-"""
-Computes token efficiency metrics for each strategy.
-Token counts come directly from the OpenAI API response.
-"""
 
 from typing import List, Dict
 from src.output_processing.result_schema import ExperimentResult
 
-# GPT-4o pricing as of mid-2025 — update if needed
-COST_PER_1K_INPUT_TOKENS  = 0.005   # USD
-COST_PER_1K_OUTPUT_TOKENS = 0.015   # USD
+                                                  
+COST_PER_1K_INPUT_TOKENS  = 0.005        
+COST_PER_1K_OUTPUT_TOKENS = 0.015        
 
 
 def compute_efficiency_metrics(
     results: List[ExperimentResult]
 ) -> Dict:
-    """
-    Compute token efficiency metrics per strategy.
-    Uses run 0 only for token counting.
-
-    Returns:
-        dict keyed by strategy with efficiency metrics
-    """
     metrics = {}
     strategies = set(r.strategy for r in results)
 

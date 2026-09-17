@@ -1,7 +1,3 @@
-"""
-Tests Phase 2 strategies on all PDFs in data/pdfs/, showing token
-counts for each strategy per document.
-"""
 
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))

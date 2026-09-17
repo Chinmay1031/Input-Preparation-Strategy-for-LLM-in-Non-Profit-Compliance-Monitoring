@@ -1,11 +1,3 @@
-"""
-Fixed system prompt and user prompt template, used across every
-strategy and every repeated run.
-
-Holding the prompt identical across all conditions is what attributes
-differences in LLM output to the input preparation strategy rather than
-to prompt variation.
-"""
 
 SYSTEM_PROMPT = """You are a compliance analyst reviewing nonprofit grantee
 financial documents on behalf of a foundation.

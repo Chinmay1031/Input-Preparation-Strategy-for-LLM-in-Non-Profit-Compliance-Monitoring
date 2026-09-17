@@ -1,8 +1,3 @@
-"""
-Tests Phase 3 on one document with one strategy (S3) for one run.
-Costs approximately $0.01 — verify the output before running the full
-experiment.
-"""
 
 import sys, os, json
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))

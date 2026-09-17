@@ -1,23 +1,9 @@
-"""
-Logs and summarises hallucinations detected across all experiment runs.
-Used to generate Figure 3 in the thesis results chapter.
-"""
 
 from typing import List, Dict
 from .result_schema import ExperimentResult
 
 
 def detect_hallucinations(results: List[ExperimentResult]) -> Dict:
-    """
-    Summarise hallucination patterns across a list of results.
-
-    Args:
-        results: list of ExperimentResult objects with faithfulness
-                 scores already computed
-
-    Returns:
-        dict with hallucination summary statistics per strategy
-    """
     summary = {}
 
     for result in results:
@@ -53,7 +39,6 @@ def detect_hallucinations(results: List[ExperimentResult]) -> Dict:
 
 
 def print_hallucination_report(summary: Dict) -> None:
-    """Print a formatted hallucination report to the terminal."""
     print("\n── Hallucination Report ─────────────────────────────────")
     for strategy, s in summary.items():
         print(f"\n  Strategy: {strategy}")

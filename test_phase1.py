@@ -1,6 +1,3 @@
-"""
-Auto-detects whatever PDFs are in data/pdfs/ and parses them.
-"""
 
 import sys
 import os
