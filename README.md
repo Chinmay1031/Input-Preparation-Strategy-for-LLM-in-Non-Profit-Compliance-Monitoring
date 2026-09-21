@@ -61,18 +61,18 @@ The corpus consists of **12 publicly available audited financial statements and 
 
 | # | File                                                     | Organisation / Report                | Public source (fill in) |
 |---|----------------------------------------------------------|--------------------------------------|-------------------------|
-| 1 | `2024-CARE-USA-Financial-Statements_Final.pdf`           | CARE USA — FY2024 Financial Statements | *[Add link]*          |
-| 2 | `2024_Water.org_audited_financials.pdf`                  | Water.org — FY2024 Audited Financials  | *[Add link]*          |
-| 3 | `8392233-FinancialStatement-1708722656073.pdf`           | River Network — Financial Statement  | *[Add link]*            |
-| 4 | `BRAC-Liberia-Audited-Financial-Statements.pdf`          | BRAC Liberia — Audited Financials    | *[Add link]*            |
-| 5 | `BRAC-Uganda-Audited-Financial-Statements.pdf`           | BRAC Uganda — Audited Financials     | *[Add link]*            |
-| 6 | `FY23_Audit.pdf`                                         | Rocking the Boat, Inc. — FY23 Audit  | *[Add link]*            |
-| 7 | `FY24-25-ALC-Audit-Financial.pdf`                        | ALC — FY24-25 Audited Financials     | *[Add link]*            |
-| 8 | `Justice-in-Aging-FY23-Audited-Financial-Statements.pdf` | Justice in Aging — FY23 Audited FS   | *[Add link]*            |
-| 9 | `PATH-annual-report-2024.pdf`                            | PATH — Annual Report 2024            | *[Add link]*            |
-| 10 | `Public-Citizen-Foundation-Inc.-FS-3.pdf`               | Public Citizen Foundation Inc. — FS  | *[Add link]*            |
-| 11 | `Somos+2024+Audited+Financial+Statements+-+Final.pdf`   | Somos — 2024 Audited Financials      | *[Add link]*            |
-| 12 | `financial-statements-2024.pdf`                          | Save the Children Federation, Inc. — 2024 Financial Statements | *[Add link]*            |
+| 1 | `2024-CARE-USA-Financial-Statements_Final.pdf`           | CARE USA — FY2024 Financial Statements | https://www.care.org/financial-reports/ |
+| 2 | `2024_Water.org_audited_financials.pdf`                  | Water.org — FY2024 Audited Financials  | https://water.org/about-us/financials/ |
+| 3 | `8392233-FinancialStatement-1708722656073.pdf`           | River Network — Financial Statement  | https://www.rivernetwork.org/our-impact/annual-report/ |
+| 4 | `BRAC-Liberia-Audited-Financial-Statements.pdf`          | BRAC Liberia — Audited Financials    | https://www.brac.net/stay-informed/annual-reports/ |
+| 5 | `BRAC-Uganda-Audited-Financial-Statements.pdf`           | BRAC Uganda — Audited Financials     | https://www.brac.net/stay-informed/annual-reports/ |
+| 6 | `FY23_Audit.pdf`                                         | Rocking the Boat, Inc. — FY23 Audit  | https://rockingtheboat.org/ |
+| 7 | `FY24-25-ALC-Audit-Financial.pdf`                        | Asian Law Caucus — FY24-25 Audited Financials | https://www.asianlawcaucus.org/about/financial-annual-reports/financial-statements |
+| 8 | `Justice-in-Aging-FY23-Audited-Financial-Statements.pdf` | Justice in Aging — FY23 Audited FS   | https://justiceinaging.org/go/annual-report-2023/index.html |
+| 9 | `PATH-annual-report-2024.pdf`                            | PATH — Annual Report 2024            | https://www.path.org/who-we-are/finances/financial-documents/ |
+| 10 | `Public-Citizen-Foundation-Inc.-FS-3.pdf`               | Public Citizen Foundation Inc. — FS  | https://www.citizen.org/about/annual-report/ |
+| 11 | `Somos+2024+Audited+Financial+Statements+-+Final.pdf`   | Somos Mayfair — 2024 Audited Financials | https://www.somosmayfair.org/annualreports |
+| 12 | `financial-statements-2024.pdf`                          | Save the Children Federation, Inc. — 2024 Financial Statements | https://www.savethechildren.org/us/about-us/ |
 
 The gold-standard labels used for scoring are in [data/gold_standard/gold_standard.csv](data/gold_standard/gold_standard.csv).
 
@@ -118,7 +118,7 @@ Full interpretation and discussion belong in the thesis document itself. In brie
 │   ├── llm/                        # OpenAI client + prompt template
 │   ├── output_processing/          # Verdict normalisation, faithfulness, hallucination detection
 │   └── evaluation/                 # Quality / efficiency / consistency / faithfulness scorers
-├── test_phase1.py … test_phase5.py # Phased pipeline runners (see §9)
+├── parse.py, strategies.py, one_call.py, faithfulness.py, experiment.py  # Pipeline runners (see §9)
 ├── compute_metrics.py              # Re-scores existing results without re-calling the API
 ├── rescore_faithfulness.py         # Recomputes faithfulness on saved runs
 ├── requirements.txt
@@ -151,16 +151,16 @@ OPENAI_API_KEY=sk-...
 
 The pipeline is split into five phases that map onto the thesis chapters:
 
-| Script            | Purpose                                                       |
-|-------------------|---------------------------------------------------------------|
-| `test_phase1.py`  | PDF parsing + section classification sanity check             |
-| `test_phase2.py`  | Strategy preparation (no LLM calls)                            |
-| `test_phase3.py`  | Single-run LLM sanity check                                    |
-| `test_phase4.py`  | Full 3-run experiment on a subset                              |
-| `test_phase5.py`  | Full 3-run experiment on the entire corpus (produces `all_results.json`) |
+| Script              | Purpose                                                       |
+|---------------------|---------------------------------------------------------------|
+| `parse.py`          | PDF parsing + section classification sanity check             |
+| `strategies.py`     | Strategy preparation (no LLM calls)                            |
+| `one_call.py`       | Single-run LLM sanity check                                    |
+| `faithfulness.py`   | LLM call + hallucination/faithfulness detection                |
+| `experiment.py`     | Full 3-run experiment on the entire corpus (produces `all_results.json`) |
 
 ```bash
-python test_phase5.py         # Full experiment (calls the OpenAI API)
+python experiment.py          # Full experiment (calls the OpenAI API)
 python compute_metrics.py     # Re-score saved results without any API calls
 ```
 

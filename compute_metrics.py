@@ -61,7 +61,7 @@ def load_results(path: Path) -> list:
 
 if not RESULTS_PATH.exists():
     print(f"No results found at {RESULTS_PATH}")
-    print("Run test_phase5.py first to generate results.")
+    print("Run experiment.py first to generate results.")
     sys.exit(1)
 
 results = load_results(RESULTS_PATH)
