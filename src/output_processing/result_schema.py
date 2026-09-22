@@ -8,8 +8,8 @@ class ComplianceFlag:
     dimension:   str
     severity:    str
     evidence:    str
-    is_faithful: Optional[bool] = None                                   
-    match_score: Optional[float] = None                                
+    is_faithful: Optional[bool] = None
+    match_score: Optional[float] = None
 
 
 @dataclass
@@ -18,7 +18,6 @@ class ExperimentResult:
     strategy:      str
     run:           int
 
-                               
     revenue_concentration:    str = "CLEAR"
     expense_spike:            str = "CLEAR"
     passthrough_risk:         str = "CLEAR"
@@ -34,13 +33,10 @@ class ExperimentResult:
     tokens_output: int = 0
     tokens_total:  int = 0
 
-    faithfulness_score:    float = 1.0                                
-    hallucination_rate:    float = 0.0                                   
+    faithfulness_score:    float = 1.0
+    hallucination_rate:    float = 0.0
     hallucinated_flags:    List[str] = field(default_factory=list)
 
-                                                                          
-                                                                          
-                        
     verbatim_rate:         float = 1.0
     synthesis_rate:        float = 0.0
     mean_match_score:      float = 1.0

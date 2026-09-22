@@ -6,22 +6,21 @@ from .document_schema import BudgetLine, ParsedDocument
 COUNTRY_IDENTIFIERS = {
     "CONGO":   ["CONGO", "ODZALA"],
     "GABON":   ["GABON"],
-    "MOROCCO": ["MOROCCO", "MORROCCO"],                              
+    "MOROCCO": ["MOROCCO", "MORROCCO"],
     "NAMIBIA": ["NAMIBIA"],
     "SENEGAL": ["SENEGAL"],
     "RWANDA":  ["RWANDA"],
     "GENERAL": ["OPS", "DEV:", "M&E", "STAFF", "TRAVEL"],
 }
 
-SIGNIFICANT_VARIANCE_PCT = 0.20                
-OVERSPEND_THRESHOLD = 0.10                                 
+SIGNIFICANT_VARIANCE_PCT = 0.20
+OVERSPEND_THRESHOLD = 0.10
 
 
 def _clean_number(raw: str) -> Optional[float]:
     if not raw:
         return None
     cleaned = re.sub(r'[€$£,\s]', '', str(raw).strip())
-                                          
     if cleaned.startswith('(') and cleaned.endswith(')'):
         cleaned = '-' + cleaned[1:-1]
     try:
@@ -42,7 +41,6 @@ def extract_budget_lines_from_text(annexure_a_text: str) -> List[BudgetLine]:
     budget_lines = []
     lines = annexure_a_text.split('\n')
 
-                                                                  
     number_pattern = re.compile(
         r'^(.+?)\s+([\d,.\(\)]+)\s+([\d,.\(\)]+)\s+([\d,.\(\)]+)\s*(.*)$'
     )
@@ -125,8 +123,6 @@ def extract_budget_lines_from_tables(tables: List) -> List[BudgetLine]:
             if not first or first in ['', 'NONE']:
                 continue
 
-                                                                          
-                                                                       
             if re.match(r'^\d+$', first):
                 continue
 
@@ -136,7 +132,7 @@ def extract_budget_lines_from_tables(tables: List) -> List[BudgetLine]:
 
             numbers = []
             comment = None
-            for cell in cells[1:4]:                                 
+            for cell in cells[1:4]:
                 n = _clean_number(cell)
                 if n is not None:
                     numbers.append(n)
@@ -154,8 +150,6 @@ def extract_budget_lines_from_tables(tables: List) -> List[BudgetLine]:
             budget  = numbers[1] if len(numbers) > 1 else 0
             variance = numbers[2] if len(numbers) > 2 else (actual - budget)
 
-                                                                         
-                                                                            
             if budget > 10_000_000:
                 continue
 

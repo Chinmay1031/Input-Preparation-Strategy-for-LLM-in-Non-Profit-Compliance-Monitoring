@@ -36,7 +36,7 @@ def compute_quality_metrics(
 
             for dim in DIMENSIONS:
                 gold_val = gold_labels.get(dim)
-                if gold_val is None:                  
+                if gold_val is None:
                     continue
 
                 pred_val = result.is_flagged(dim)

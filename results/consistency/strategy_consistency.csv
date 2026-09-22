@@ -1,0 +1,6 @@
+strategy,strategy_label,comparisons,mean_kappa,mean_agreement_rate,min_kappa,max_kappa,observations_per_comparison,kappa_interpretation
+S1_full,S1 – Full text,3,0.9392917369308601,0.9722222222222223,0.9089376053962901,1.0,72,Almost perfect
+S2_sections,S2 – Section filtering,3,0.8564339680008262,0.9351851851851851,0.7838765008576329,0.939799331103679,72,Almost perfect
+S3_fields,S3 – Field extraction,3,0.8983758046901276,0.9629629629629629,0.8820960698689956,0.9260020554984584,72,Almost perfect
+S4_hybrid,S4 – Hybrid,3,0.898348636195473,0.9629629629629629,0.8459893048128342,0.9622641509433962,72,Almost perfect
+S5_extended,S5 – Extended extraction,3,0.9319470699432891,0.9722222222222223,0.8979206049149339,1.0,72,Almost perfect

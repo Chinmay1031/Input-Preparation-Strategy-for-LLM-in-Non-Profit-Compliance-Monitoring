@@ -1,0 +1,6 @@
+strategy,strategy_label,evidence_cases,mean_faithfulness,hallucination_rate,verbatim_rate,synthesised_rate,unsupported_rate,mean_match_score
+S1_full,S1 – Full text,25,1.0,0.0,0.88,0.12,0.0,0.9823999999999999
+S2_sections,S2 – Section filtering,26,1.0,0.0,0.7692307692307693,0.23076923076923078,0.0,0.9619230769230769
+S3_fields,S3 – Field extraction,17,1.0,0.0,1.0,0.0,0.0,1.0
+S4_hybrid,S4 – Hybrid,17,1.0,0.0,1.0,0.0,0.0,1.0
+S5_extended,S5 – Extended extraction,22,1.0,0.0,1.0,0.0,0.0,1.0

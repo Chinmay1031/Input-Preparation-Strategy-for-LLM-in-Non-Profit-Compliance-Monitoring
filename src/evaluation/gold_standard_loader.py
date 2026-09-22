@@ -14,8 +14,6 @@ DIMENSIONS = [
 FLAGGED_LABELS = {"FLAG", "ESCALATE"}
 NA_LABEL = "N/A"
 
-                                                                    
-                                                       
 DOC_ID_MAP = {
     "WaterOrg_AuditedFinancials_2024":
         "2024_Water.org_audited_financials",
@@ -43,7 +41,6 @@ DOC_ID_MAP = {
         "Somos+2024+Audited+Financial+Statements+-+Final",
 }
 
-                                              
 COLUMN_ALIASES = {
     "doc_id":                  ["doc_id", "document_id"],
     "revenue_concentration":   ["revenue_concentration",
@@ -81,7 +78,6 @@ def load_gold_standard(
             f"Gold standard not found at {path}."
         )
 
-                                                             
     df = pd.read_csv(path, quotechar='"', skipinitialspace=True)
 
     clean = pd.DataFrame()
@@ -112,7 +108,7 @@ def get_binary_labels(df: pd.DataFrame, doc_id: str) -> dict:
     for dim in DIMENSIONS:
         val = str(row.iloc[0][dim]).strip().upper()
         if val in (NA_LABEL, "NAN", "NA", ""):
-            labels[dim] = None                             
+            labels[dim] = None
         else:
             labels[dim] = 1 if val in FLAGGED_LABELS else 0
 

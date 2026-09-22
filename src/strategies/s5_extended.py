@@ -7,7 +7,6 @@ from src.ingestion.document_schema import (
 )
 from src.ingestion.budget_extractor import summarise_budget_lines
 
-                                                                
 from src.strategies.s3_field_extractor import (
     _extract_lines,
     _extract_sentences,
@@ -25,12 +24,9 @@ from src.strategies.s3_field_extractor import (
     RELATED_PARTY_KEYWORDS,
 )
 
-                                    
 EXT_LINES_PER_DIMENSION     = 30
 EXT_SENTENCES_PER_DIMENSION = 12
 
-                                                                        
-                                                                    
 FULL_SECTIONS_FINANCIAL = [
     "audit_report",
     "financial_statements",
@@ -42,8 +38,6 @@ FULL_SECTIONS_AUP = [
     "aup_notes",
 ]
 
-                                                                   
-                                    
 MAX_SECTION_CHARS = 9_000
 
 

@@ -1,0 +1,16 @@
+strategy,strategy_label,evidence_type,count,percentage
+S1_full,S1 – Full text,Verbatim,22,88.0
+S1_full,S1 – Full text,Synthesised,3,12.0
+S1_full,S1 – Full text,Unsupported,0,0.0
+S2_sections,S2 – Section filtering,Verbatim,20,76.92307692307693
+S2_sections,S2 – Section filtering,Synthesised,6,23.076923076923077
+S2_sections,S2 – Section filtering,Unsupported,0,0.0
+S3_fields,S3 – Field extraction,Verbatim,17,100.0
+S3_fields,S3 – Field extraction,Synthesised,0,0.0
+S3_fields,S3 – Field extraction,Unsupported,0,0.0
+S4_hybrid,S4 – Hybrid,Verbatim,17,100.0
+S4_hybrid,S4 – Hybrid,Synthesised,0,0.0
+S4_hybrid,S4 – Hybrid,Unsupported,0,0.0
+S5_extended,S5 – Extended extraction,Verbatim,22,100.0
+S5_extended,S5 – Extended extraction,Synthesised,0,0.0
+S5_extended,S5 – Extended extraction,Unsupported,0,0.0

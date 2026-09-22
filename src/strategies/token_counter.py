@@ -22,7 +22,7 @@ def get_all_strategies(doc: ParsedDocument) -> dict:
         "S4_hybrid":   prepare_s4(doc),
         "S5_extended": prepare_s5(doc),
     }
- 
+
     results = {}
     for name, text in strategies.items():
         results[name] = {

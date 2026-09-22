@@ -1,0 +1,291 @@
+experiment_doc_id,gold_document_id,strategy,dimension,experiment_dimension,gold_label,predicted_label,gold_binary,predicted_binary,error_type,is_error,strategy_label,dimension_label
+BRAC-Uganda-Audited-Financial-Statements,BRAC_Uganda_AuditedFinancials_2023,S1_full,revenue_concentration,revenue_concentration,ESCALATE,CLEAR,1,0,False Negative,True,S1 – Full text,Revenue concentration
+BRAC-Uganda-Audited-Financial-Statements,BRAC_Uganda_AuditedFinancials_2023,S1_full,expense_spike,expense_spike,FLAG,FLAG,1,1,True Positive,False,S1 – Full text,Expense spike
+BRAC-Uganda-Audited-Financial-Statements,BRAC_Uganda_AuditedFinancials_2023,S1_full,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S1 – Full text,Audit opinion
+BRAC-Uganda-Audited-Financial-Statements,BRAC_Uganda_AuditedFinancials_2023,S1_full,going_concern,going_concern,CLEAR,CLEAR,0,0,True Negative,False,S1 – Full text,Going concern
+BRAC-Uganda-Audited-Financial-Statements,BRAC_Uganda_AuditedFinancials_2023,S2_sections,revenue_concentration,revenue_concentration,ESCALATE,FLAG,1,1,True Positive,False,S2 – Section filtering,Revenue concentration
+BRAC-Uganda-Audited-Financial-Statements,BRAC_Uganda_AuditedFinancials_2023,S2_sections,expense_spike,expense_spike,FLAG,FLAG,1,1,True Positive,False,S2 – Section filtering,Expense spike
+BRAC-Uganda-Audited-Financial-Statements,BRAC_Uganda_AuditedFinancials_2023,S2_sections,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S2 – Section filtering,Audit opinion
+BRAC-Uganda-Audited-Financial-Statements,BRAC_Uganda_AuditedFinancials_2023,S2_sections,going_concern,going_concern,CLEAR,CLEAR,0,0,True Negative,False,S2 – Section filtering,Going concern
+BRAC-Uganda-Audited-Financial-Statements,BRAC_Uganda_AuditedFinancials_2023,S3_fields,revenue_concentration,revenue_concentration,ESCALATE,CLEAR,1,0,False Negative,True,S3 – Field extraction,Revenue concentration
+BRAC-Uganda-Audited-Financial-Statements,BRAC_Uganda_AuditedFinancials_2023,S3_fields,expense_spike,expense_spike,FLAG,CLEAR,1,0,False Negative,True,S3 – Field extraction,Expense spike
+BRAC-Uganda-Audited-Financial-Statements,BRAC_Uganda_AuditedFinancials_2023,S3_fields,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S3 – Field extraction,Audit opinion
+BRAC-Uganda-Audited-Financial-Statements,BRAC_Uganda_AuditedFinancials_2023,S3_fields,going_concern,going_concern,CLEAR,CLEAR,0,0,True Negative,False,S3 – Field extraction,Going concern
+BRAC-Uganda-Audited-Financial-Statements,BRAC_Uganda_AuditedFinancials_2023,S4_hybrid,revenue_concentration,revenue_concentration,ESCALATE,CLEAR,1,0,False Negative,True,S4 – Hybrid,Revenue concentration
+BRAC-Uganda-Audited-Financial-Statements,BRAC_Uganda_AuditedFinancials_2023,S4_hybrid,expense_spike,expense_spike,FLAG,CLEAR,1,0,False Negative,True,S4 – Hybrid,Expense spike
+BRAC-Uganda-Audited-Financial-Statements,BRAC_Uganda_AuditedFinancials_2023,S4_hybrid,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S4 – Hybrid,Audit opinion
+BRAC-Uganda-Audited-Financial-Statements,BRAC_Uganda_AuditedFinancials_2023,S4_hybrid,going_concern,going_concern,CLEAR,CLEAR,0,0,True Negative,False,S4 – Hybrid,Going concern
+BRAC-Uganda-Audited-Financial-Statements,BRAC_Uganda_AuditedFinancials_2023,S5_extended,revenue_concentration,revenue_concentration,ESCALATE,CLEAR,1,0,False Negative,True,S5 – Extended extraction,Revenue concentration
+BRAC-Uganda-Audited-Financial-Statements,BRAC_Uganda_AuditedFinancials_2023,S5_extended,expense_spike,expense_spike,FLAG,FLAG,1,1,True Positive,False,S5 – Extended extraction,Expense spike
+BRAC-Uganda-Audited-Financial-Statements,BRAC_Uganda_AuditedFinancials_2023,S5_extended,audit_opinion,audit_opinion,CLEAR,FLAG,0,1,False Positive,True,S5 – Extended extraction,Audit opinion
+BRAC-Uganda-Audited-Financial-Statements,BRAC_Uganda_AuditedFinancials_2023,S5_extended,going_concern,going_concern,CLEAR,CLEAR,0,0,True Negative,False,S5 – Extended extraction,Going concern
+BRAC-Liberia-Audited-Financial-Statements,BRAC_Liberia_AuditedFinancials_2023,S1_full,revenue_concentration,revenue_concentration,ESCALATE,FLAG,1,1,True Positive,False,S1 – Full text,Revenue concentration
+BRAC-Liberia-Audited-Financial-Statements,BRAC_Liberia_AuditedFinancials_2023,S1_full,expense_spike,expense_spike,ESCALATE,FLAG,1,1,True Positive,False,S1 – Full text,Expense spike
+BRAC-Liberia-Audited-Financial-Statements,BRAC_Liberia_AuditedFinancials_2023,S1_full,pass_through_risk,passthrough_risk,FLAG,FLAG,1,1,True Positive,False,S1 – Full text,Pass-through risk
+BRAC-Liberia-Audited-Financial-Statements,BRAC_Liberia_AuditedFinancials_2023,S1_full,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S1 – Full text,Audit opinion
+BRAC-Liberia-Audited-Financial-Statements,BRAC_Liberia_AuditedFinancials_2023,S1_full,going_concern,going_concern,CLEAR,CLEAR,0,0,True Negative,False,S1 – Full text,Going concern
+BRAC-Liberia-Audited-Financial-Statements,BRAC_Liberia_AuditedFinancials_2023,S2_sections,revenue_concentration,revenue_concentration,ESCALATE,FLAG,1,1,True Positive,False,S2 – Section filtering,Revenue concentration
+BRAC-Liberia-Audited-Financial-Statements,BRAC_Liberia_AuditedFinancials_2023,S2_sections,expense_spike,expense_spike,ESCALATE,FLAG,1,1,True Positive,False,S2 – Section filtering,Expense spike
+BRAC-Liberia-Audited-Financial-Statements,BRAC_Liberia_AuditedFinancials_2023,S2_sections,pass_through_risk,passthrough_risk,FLAG,FLAG,1,1,True Positive,False,S2 – Section filtering,Pass-through risk
+BRAC-Liberia-Audited-Financial-Statements,BRAC_Liberia_AuditedFinancials_2023,S2_sections,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S2 – Section filtering,Audit opinion
+BRAC-Liberia-Audited-Financial-Statements,BRAC_Liberia_AuditedFinancials_2023,S2_sections,going_concern,going_concern,CLEAR,,0,0,True Negative,False,S2 – Section filtering,Going concern
+BRAC-Liberia-Audited-Financial-Statements,BRAC_Liberia_AuditedFinancials_2023,S3_fields,revenue_concentration,revenue_concentration,ESCALATE,FLAG,1,1,True Positive,False,S3 – Field extraction,Revenue concentration
+BRAC-Liberia-Audited-Financial-Statements,BRAC_Liberia_AuditedFinancials_2023,S3_fields,expense_spike,expense_spike,ESCALATE,FLAG,1,1,True Positive,False,S3 – Field extraction,Expense spike
+BRAC-Liberia-Audited-Financial-Statements,BRAC_Liberia_AuditedFinancials_2023,S3_fields,pass_through_risk,passthrough_risk,FLAG,FLAG,1,1,True Positive,False,S3 – Field extraction,Pass-through risk
+BRAC-Liberia-Audited-Financial-Statements,BRAC_Liberia_AuditedFinancials_2023,S3_fields,audit_opinion,audit_opinion,CLEAR,,0,0,True Negative,False,S3 – Field extraction,Audit opinion
+BRAC-Liberia-Audited-Financial-Statements,BRAC_Liberia_AuditedFinancials_2023,S3_fields,going_concern,going_concern,CLEAR,,0,0,True Negative,False,S3 – Field extraction,Going concern
+BRAC-Liberia-Audited-Financial-Statements,BRAC_Liberia_AuditedFinancials_2023,S4_hybrid,revenue_concentration,revenue_concentration,ESCALATE,FLAG,1,1,True Positive,False,S4 – Hybrid,Revenue concentration
+BRAC-Liberia-Audited-Financial-Statements,BRAC_Liberia_AuditedFinancials_2023,S4_hybrid,expense_spike,expense_spike,ESCALATE,FLAG,1,1,True Positive,False,S4 – Hybrid,Expense spike
+BRAC-Liberia-Audited-Financial-Statements,BRAC_Liberia_AuditedFinancials_2023,S4_hybrid,pass_through_risk,passthrough_risk,FLAG,FLAG,1,1,True Positive,False,S4 – Hybrid,Pass-through risk
+BRAC-Liberia-Audited-Financial-Statements,BRAC_Liberia_AuditedFinancials_2023,S4_hybrid,audit_opinion,audit_opinion,CLEAR,,0,0,True Negative,False,S4 – Hybrid,Audit opinion
+BRAC-Liberia-Audited-Financial-Statements,BRAC_Liberia_AuditedFinancials_2023,S4_hybrid,going_concern,going_concern,CLEAR,,0,0,True Negative,False,S4 – Hybrid,Going concern
+BRAC-Liberia-Audited-Financial-Statements,BRAC_Liberia_AuditedFinancials_2023,S5_extended,revenue_concentration,revenue_concentration,ESCALATE,FLAG,1,1,True Positive,False,S5 – Extended extraction,Revenue concentration
+BRAC-Liberia-Audited-Financial-Statements,BRAC_Liberia_AuditedFinancials_2023,S5_extended,expense_spike,expense_spike,ESCALATE,FLAG,1,1,True Positive,False,S5 – Extended extraction,Expense spike
+BRAC-Liberia-Audited-Financial-Statements,BRAC_Liberia_AuditedFinancials_2023,S5_extended,pass_through_risk,passthrough_risk,FLAG,FLAG,1,1,True Positive,False,S5 – Extended extraction,Pass-through risk
+BRAC-Liberia-Audited-Financial-Statements,BRAC_Liberia_AuditedFinancials_2023,S5_extended,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S5 – Extended extraction,Audit opinion
+BRAC-Liberia-Audited-Financial-Statements,BRAC_Liberia_AuditedFinancials_2023,S5_extended,going_concern,going_concern,CLEAR,,0,0,True Negative,False,S5 – Extended extraction,Going concern
+Justice-in-Aging-FY23-Audited-Financial-Statements,JusticeInAging_AuditedFinancials_2023,S1_full,revenue_concentration,revenue_concentration,ESCALATE,FLAG,1,1,True Positive,False,S1 – Full text,Revenue concentration
+Justice-in-Aging-FY23-Audited-Financial-Statements,JusticeInAging_AuditedFinancials_2023,S1_full,expense_spike,expense_spike,ESCALATE,FLAG,1,1,True Positive,False,S1 – Full text,Expense spike
+Justice-in-Aging-FY23-Audited-Financial-Statements,JusticeInAging_AuditedFinancials_2023,S1_full,unallowable_expenditure,unallowable_expenditure,CLEAR,CLEAR,0,0,True Negative,False,S1 – Full text,Unallowable expenditure
+Justice-in-Aging-FY23-Audited-Financial-Statements,JusticeInAging_AuditedFinancials_2023,S1_full,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S1 – Full text,Audit opinion
+Justice-in-Aging-FY23-Audited-Financial-Statements,JusticeInAging_AuditedFinancials_2023,S1_full,going_concern,going_concern,CLEAR,CLEAR,0,0,True Negative,False,S1 – Full text,Going concern
+Justice-in-Aging-FY23-Audited-Financial-Statements,JusticeInAging_AuditedFinancials_2023,S2_sections,revenue_concentration,revenue_concentration,ESCALATE,FLAG,1,1,True Positive,False,S2 – Section filtering,Revenue concentration
+Justice-in-Aging-FY23-Audited-Financial-Statements,JusticeInAging_AuditedFinancials_2023,S2_sections,expense_spike,expense_spike,ESCALATE,FLAG,1,1,True Positive,False,S2 – Section filtering,Expense spike
+Justice-in-Aging-FY23-Audited-Financial-Statements,JusticeInAging_AuditedFinancials_2023,S2_sections,unallowable_expenditure,unallowable_expenditure,CLEAR,CLEAR,0,0,True Negative,False,S2 – Section filtering,Unallowable expenditure
+Justice-in-Aging-FY23-Audited-Financial-Statements,JusticeInAging_AuditedFinancials_2023,S2_sections,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S2 – Section filtering,Audit opinion
+Justice-in-Aging-FY23-Audited-Financial-Statements,JusticeInAging_AuditedFinancials_2023,S2_sections,going_concern,going_concern,CLEAR,CLEAR,0,0,True Negative,False,S2 – Section filtering,Going concern
+Justice-in-Aging-FY23-Audited-Financial-Statements,JusticeInAging_AuditedFinancials_2023,S3_fields,revenue_concentration,revenue_concentration,ESCALATE,FLAG,1,1,True Positive,False,S3 – Field extraction,Revenue concentration
+Justice-in-Aging-FY23-Audited-Financial-Statements,JusticeInAging_AuditedFinancials_2023,S3_fields,expense_spike,expense_spike,ESCALATE,FLAG,1,1,True Positive,False,S3 – Field extraction,Expense spike
+Justice-in-Aging-FY23-Audited-Financial-Statements,JusticeInAging_AuditedFinancials_2023,S3_fields,unallowable_expenditure,unallowable_expenditure,CLEAR,CLEAR,0,0,True Negative,False,S3 – Field extraction,Unallowable expenditure
+Justice-in-Aging-FY23-Audited-Financial-Statements,JusticeInAging_AuditedFinancials_2023,S3_fields,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S3 – Field extraction,Audit opinion
+Justice-in-Aging-FY23-Audited-Financial-Statements,JusticeInAging_AuditedFinancials_2023,S3_fields,going_concern,going_concern,CLEAR,,0,0,True Negative,False,S3 – Field extraction,Going concern
+Justice-in-Aging-FY23-Audited-Financial-Statements,JusticeInAging_AuditedFinancials_2023,S4_hybrid,revenue_concentration,revenue_concentration,ESCALATE,FLAG,1,1,True Positive,False,S4 – Hybrid,Revenue concentration
+Justice-in-Aging-FY23-Audited-Financial-Statements,JusticeInAging_AuditedFinancials_2023,S4_hybrid,expense_spike,expense_spike,ESCALATE,FLAG,1,1,True Positive,False,S4 – Hybrid,Expense spike
+Justice-in-Aging-FY23-Audited-Financial-Statements,JusticeInAging_AuditedFinancials_2023,S4_hybrid,unallowable_expenditure,unallowable_expenditure,CLEAR,CLEAR,0,0,True Negative,False,S4 – Hybrid,Unallowable expenditure
+Justice-in-Aging-FY23-Audited-Financial-Statements,JusticeInAging_AuditedFinancials_2023,S4_hybrid,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S4 – Hybrid,Audit opinion
+Justice-in-Aging-FY23-Audited-Financial-Statements,JusticeInAging_AuditedFinancials_2023,S4_hybrid,going_concern,going_concern,CLEAR,,0,0,True Negative,False,S4 – Hybrid,Going concern
+Justice-in-Aging-FY23-Audited-Financial-Statements,JusticeInAging_AuditedFinancials_2023,S5_extended,revenue_concentration,revenue_concentration,ESCALATE,FLAG,1,1,True Positive,False,S5 – Extended extraction,Revenue concentration
+Justice-in-Aging-FY23-Audited-Financial-Statements,JusticeInAging_AuditedFinancials_2023,S5_extended,expense_spike,expense_spike,ESCALATE,FLAG,1,1,True Positive,False,S5 – Extended extraction,Expense spike
+Justice-in-Aging-FY23-Audited-Financial-Statements,JusticeInAging_AuditedFinancials_2023,S5_extended,unallowable_expenditure,unallowable_expenditure,CLEAR,CLEAR,0,0,True Negative,False,S5 – Extended extraction,Unallowable expenditure
+Justice-in-Aging-FY23-Audited-Financial-Statements,JusticeInAging_AuditedFinancials_2023,S5_extended,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S5 – Extended extraction,Audit opinion
+Justice-in-Aging-FY23-Audited-Financial-Statements,JusticeInAging_AuditedFinancials_2023,S5_extended,going_concern,going_concern,CLEAR,,0,0,True Negative,False,S5 – Extended extraction,Going concern
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S1_full,revenue_concentration,revenue_concentration,FLAG,FLAG,1,1,True Positive,False,S1 – Full text,Revenue concentration
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S1_full,expense_spike,expense_spike,FLAG,FLAG,1,1,True Positive,False,S1 – Full text,Expense spike
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S1_full,pass_through_risk,passthrough_risk,FLAG,FLAG,1,1,True Positive,False,S1 – Full text,Pass-through risk
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S1_full,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S1 – Full text,Audit opinion
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S1_full,going_concern,going_concern,CLEAR,CLEAR,0,0,True Negative,False,S1 – Full text,Going concern
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S2_sections,revenue_concentration,revenue_concentration,FLAG,FLAG,1,1,True Positive,False,S2 – Section filtering,Revenue concentration
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S2_sections,expense_spike,expense_spike,FLAG,FLAG,1,1,True Positive,False,S2 – Section filtering,Expense spike
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S2_sections,pass_through_risk,passthrough_risk,FLAG,FLAG,1,1,True Positive,False,S2 – Section filtering,Pass-through risk
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S2_sections,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S2 – Section filtering,Audit opinion
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S2_sections,going_concern,going_concern,CLEAR,CLEAR,0,0,True Negative,False,S2 – Section filtering,Going concern
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S3_fields,revenue_concentration,revenue_concentration,FLAG,CLEAR,1,0,False Negative,True,S3 – Field extraction,Revenue concentration
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S3_fields,expense_spike,expense_spike,FLAG,CLEAR,1,0,False Negative,True,S3 – Field extraction,Expense spike
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S3_fields,pass_through_risk,passthrough_risk,FLAG,CLEAR,1,0,False Negative,True,S3 – Field extraction,Pass-through risk
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S3_fields,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S3 – Field extraction,Audit opinion
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S3_fields,going_concern,going_concern,CLEAR,,0,0,True Negative,False,S3 – Field extraction,Going concern
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S4_hybrid,revenue_concentration,revenue_concentration,FLAG,CLEAR,1,0,False Negative,True,S4 – Hybrid,Revenue concentration
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S4_hybrid,expense_spike,expense_spike,FLAG,FLAG,1,1,True Positive,False,S4 – Hybrid,Expense spike
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S4_hybrid,pass_through_risk,passthrough_risk,FLAG,CLEAR,1,0,False Negative,True,S4 – Hybrid,Pass-through risk
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S4_hybrid,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S4 – Hybrid,Audit opinion
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S4_hybrid,going_concern,going_concern,CLEAR,,0,0,True Negative,False,S4 – Hybrid,Going concern
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S5_extended,revenue_concentration,revenue_concentration,FLAG,CLEAR,1,0,False Negative,True,S5 – Extended extraction,Revenue concentration
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S5_extended,expense_spike,expense_spike,FLAG,FLAG,1,1,True Positive,False,S5 – Extended extraction,Expense spike
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S5_extended,pass_through_risk,passthrough_risk,FLAG,CLEAR,1,0,False Negative,True,S5 – Extended extraction,Pass-through risk
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S5_extended,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S5 – Extended extraction,Audit opinion
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S5_extended,going_concern,going_concern,CLEAR,,0,0,True Negative,False,S5 – Extended extraction,Going concern
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S1_full,revenue_concentration,revenue_concentration,ESCALATE,FLAG,1,1,True Positive,False,S1 – Full text,Revenue concentration
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S1_full,expense_spike,expense_spike,CLEAR,CLEAR,0,0,True Negative,False,S1 – Full text,Expense spike
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S1_full,pass_through_risk,passthrough_risk,ESCALATE,FLAG,1,1,True Positive,False,S1 – Full text,Pass-through risk
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S1_full,unallowable_expenditure,unallowable_expenditure,FLAG,CLEAR,1,0,False Negative,True,S1 – Full text,Unallowable expenditure
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S1_full,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S1 – Full text,Audit opinion
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S1_full,going_concern,going_concern,CLEAR,CLEAR,0,0,True Negative,False,S1 – Full text,Going concern
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S2_sections,revenue_concentration,revenue_concentration,ESCALATE,CLEAR,1,0,False Negative,True,S2 – Section filtering,Revenue concentration
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S2_sections,expense_spike,expense_spike,CLEAR,CLEAR,0,0,True Negative,False,S2 – Section filtering,Expense spike
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S2_sections,pass_through_risk,passthrough_risk,ESCALATE,FLAG,1,1,True Positive,False,S2 – Section filtering,Pass-through risk
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S2_sections,unallowable_expenditure,unallowable_expenditure,FLAG,CLEAR,1,0,False Negative,True,S2 – Section filtering,Unallowable expenditure
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S2_sections,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S2 – Section filtering,Audit opinion
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S2_sections,going_concern,going_concern,CLEAR,CLEAR,0,0,True Negative,False,S2 – Section filtering,Going concern
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S3_fields,revenue_concentration,revenue_concentration,ESCALATE,FLAG,1,1,True Positive,False,S3 – Field extraction,Revenue concentration
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S3_fields,expense_spike,expense_spike,CLEAR,CLEAR,0,0,True Negative,False,S3 – Field extraction,Expense spike
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S3_fields,pass_through_risk,passthrough_risk,ESCALATE,FLAG,1,1,True Positive,False,S3 – Field extraction,Pass-through risk
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S3_fields,unallowable_expenditure,unallowable_expenditure,FLAG,CLEAR,1,0,False Negative,True,S3 – Field extraction,Unallowable expenditure
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S3_fields,audit_opinion,audit_opinion,CLEAR,,0,0,True Negative,False,S3 – Field extraction,Audit opinion
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S3_fields,going_concern,going_concern,CLEAR,,0,0,True Negative,False,S3 – Field extraction,Going concern
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S4_hybrid,revenue_concentration,revenue_concentration,ESCALATE,FLAG,1,1,True Positive,False,S4 – Hybrid,Revenue concentration
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S4_hybrid,expense_spike,expense_spike,CLEAR,CLEAR,0,0,True Negative,False,S4 – Hybrid,Expense spike
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S4_hybrid,pass_through_risk,passthrough_risk,ESCALATE,FLAG,1,1,True Positive,False,S4 – Hybrid,Pass-through risk
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S4_hybrid,unallowable_expenditure,unallowable_expenditure,FLAG,CLEAR,1,0,False Negative,True,S4 – Hybrid,Unallowable expenditure
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S4_hybrid,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S4 – Hybrid,Audit opinion
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S4_hybrid,going_concern,going_concern,CLEAR,,0,0,True Negative,False,S4 – Hybrid,Going concern
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S5_extended,revenue_concentration,revenue_concentration,ESCALATE,FLAG,1,1,True Positive,False,S5 – Extended extraction,Revenue concentration
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S5_extended,expense_spike,expense_spike,CLEAR,FLAG,0,1,False Positive,True,S5 – Extended extraction,Expense spike
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S5_extended,pass_through_risk,passthrough_risk,ESCALATE,FLAG,1,1,True Positive,False,S5 – Extended extraction,Pass-through risk
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S5_extended,unallowable_expenditure,unallowable_expenditure,FLAG,CLEAR,1,0,False Negative,True,S5 – Extended extraction,Unallowable expenditure
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S5_extended,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S5 – Extended extraction,Audit opinion
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S5_extended,going_concern,going_concern,CLEAR,,0,0,True Negative,False,S5 – Extended extraction,Going concern
+PATH-annual-report-2024,PATH_AnnualReport_2024,S1_full,revenue_concentration,revenue_concentration,FLAG,CLEAR,1,0,False Negative,True,S1 – Full text,Revenue concentration
+PATH-annual-report-2024,PATH_AnnualReport_2024,S1_full,pass_through_risk,passthrough_risk,FLAG,FLAG,1,1,True Positive,False,S1 – Full text,Pass-through risk
+PATH-annual-report-2024,PATH_AnnualReport_2024,S2_sections,revenue_concentration,revenue_concentration,FLAG,CLEAR,1,0,False Negative,True,S2 – Section filtering,Revenue concentration
+PATH-annual-report-2024,PATH_AnnualReport_2024,S2_sections,pass_through_risk,passthrough_risk,FLAG,FLAG,1,1,True Positive,False,S2 – Section filtering,Pass-through risk
+PATH-annual-report-2024,PATH_AnnualReport_2024,S3_fields,revenue_concentration,revenue_concentration,FLAG,FLAG,1,1,True Positive,False,S3 – Field extraction,Revenue concentration
+PATH-annual-report-2024,PATH_AnnualReport_2024,S3_fields,pass_through_risk,passthrough_risk,FLAG,CLEAR,1,0,False Negative,True,S3 – Field extraction,Pass-through risk
+PATH-annual-report-2024,PATH_AnnualReport_2024,S4_hybrid,revenue_concentration,revenue_concentration,FLAG,FLAG,1,1,True Positive,False,S4 – Hybrid,Revenue concentration
+PATH-annual-report-2024,PATH_AnnualReport_2024,S4_hybrid,pass_through_risk,passthrough_risk,FLAG,CLEAR,1,0,False Negative,True,S4 – Hybrid,Pass-through risk
+PATH-annual-report-2024,PATH_AnnualReport_2024,S5_extended,revenue_concentration,revenue_concentration,FLAG,FLAG,1,1,True Positive,False,S5 – Extended extraction,Revenue concentration
+PATH-annual-report-2024,PATH_AnnualReport_2024,S5_extended,pass_through_risk,passthrough_risk,FLAG,CLEAR,1,0,False Negative,True,S5 – Extended extraction,Pass-through risk
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S1_full,revenue_concentration,revenue_concentration,FLAG,FLAG,1,1,True Positive,False,S1 – Full text,Revenue concentration
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S1_full,expense_spike,expense_spike,CLEAR,CLEAR,0,0,True Negative,False,S1 – Full text,Expense spike
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S1_full,pass_through_risk,passthrough_risk,FLAG,FLAG,1,1,True Positive,False,S1 – Full text,Pass-through risk
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S1_full,unallowable_expenditure,unallowable_expenditure,CLEAR,CLEAR,0,0,True Negative,False,S1 – Full text,Unallowable expenditure
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S1_full,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S1 – Full text,Audit opinion
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S1_full,going_concern,going_concern,CLEAR,CLEAR,0,0,True Negative,False,S1 – Full text,Going concern
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S2_sections,revenue_concentration,revenue_concentration,FLAG,FLAG,1,1,True Positive,False,S2 – Section filtering,Revenue concentration
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S2_sections,expense_spike,expense_spike,CLEAR,FLAG,0,1,False Positive,True,S2 – Section filtering,Expense spike
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S2_sections,pass_through_risk,passthrough_risk,FLAG,FLAG,1,1,True Positive,False,S2 – Section filtering,Pass-through risk
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S2_sections,unallowable_expenditure,unallowable_expenditure,CLEAR,CLEAR,0,0,True Negative,False,S2 – Section filtering,Unallowable expenditure
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S2_sections,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S2 – Section filtering,Audit opinion
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S2_sections,going_concern,going_concern,CLEAR,CLEAR,0,0,True Negative,False,S2 – Section filtering,Going concern
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S3_fields,revenue_concentration,revenue_concentration,FLAG,CLEAR,1,0,False Negative,True,S3 – Field extraction,Revenue concentration
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S3_fields,expense_spike,expense_spike,CLEAR,FLAG,0,1,False Positive,True,S3 – Field extraction,Expense spike
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S3_fields,pass_through_risk,passthrough_risk,FLAG,CLEAR,1,0,False Negative,True,S3 – Field extraction,Pass-through risk
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S3_fields,unallowable_expenditure,unallowable_expenditure,CLEAR,CLEAR,0,0,True Negative,False,S3 – Field extraction,Unallowable expenditure
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S3_fields,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S3 – Field extraction,Audit opinion
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S3_fields,going_concern,going_concern,CLEAR,,0,0,True Negative,False,S3 – Field extraction,Going concern
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S4_hybrid,revenue_concentration,revenue_concentration,FLAG,CLEAR,1,0,False Negative,True,S4 – Hybrid,Revenue concentration
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S4_hybrid,expense_spike,expense_spike,CLEAR,FLAG,0,1,False Positive,True,S4 – Hybrid,Expense spike
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S4_hybrid,pass_through_risk,passthrough_risk,FLAG,CLEAR,1,0,False Negative,True,S4 – Hybrid,Pass-through risk
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S4_hybrid,unallowable_expenditure,unallowable_expenditure,CLEAR,CLEAR,0,0,True Negative,False,S4 – Hybrid,Unallowable expenditure
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S4_hybrid,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S4 – Hybrid,Audit opinion
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S4_hybrid,going_concern,going_concern,CLEAR,,0,0,True Negative,False,S4 – Hybrid,Going concern
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S5_extended,revenue_concentration,revenue_concentration,FLAG,CLEAR,1,0,False Negative,True,S5 – Extended extraction,Revenue concentration
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S5_extended,expense_spike,expense_spike,CLEAR,FLAG,0,1,False Positive,True,S5 – Extended extraction,Expense spike
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S5_extended,pass_through_risk,passthrough_risk,FLAG,CLEAR,1,0,False Negative,True,S5 – Extended extraction,Pass-through risk
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S5_extended,unallowable_expenditure,unallowable_expenditure,CLEAR,CLEAR,0,0,True Negative,False,S5 – Extended extraction,Unallowable expenditure
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S5_extended,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S5 – Extended extraction,Audit opinion
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S5_extended,going_concern,going_concern,CLEAR,,0,0,True Negative,False,S5 – Extended extraction,Going concern
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S1_full,expense_spike,expense_spike,FLAG,FLAG,1,1,True Positive,False,S1 – Full text,Expense spike
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S1_full,pass_through_risk,passthrough_risk,ESCALATE,FLAG,1,1,True Positive,False,S1 – Full text,Pass-through risk
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S1_full,unallowable_expenditure,unallowable_expenditure,ESCALATE,CLEAR,1,0,False Negative,True,S1 – Full text,Unallowable expenditure
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S1_full,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S1 – Full text,Audit opinion
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S1_full,going_concern,going_concern,CLEAR,CLEAR,0,0,True Negative,False,S1 – Full text,Going concern
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S2_sections,expense_spike,expense_spike,FLAG,FLAG,1,1,True Positive,False,S2 – Section filtering,Expense spike
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S2_sections,pass_through_risk,passthrough_risk,ESCALATE,FLAG,1,1,True Positive,False,S2 – Section filtering,Pass-through risk
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S2_sections,unallowable_expenditure,unallowable_expenditure,ESCALATE,CLEAR,1,0,False Negative,True,S2 – Section filtering,Unallowable expenditure
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S2_sections,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S2 – Section filtering,Audit opinion
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S2_sections,going_concern,going_concern,CLEAR,CLEAR,0,0,True Negative,False,S2 – Section filtering,Going concern
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S3_fields,expense_spike,expense_spike,FLAG,FLAG,1,1,True Positive,False,S3 – Field extraction,Expense spike
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S3_fields,pass_through_risk,passthrough_risk,ESCALATE,FLAG,1,1,True Positive,False,S3 – Field extraction,Pass-through risk
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S3_fields,unallowable_expenditure,unallowable_expenditure,ESCALATE,CLEAR,1,0,False Negative,True,S3 – Field extraction,Unallowable expenditure
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S3_fields,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S3 – Field extraction,Audit opinion
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S3_fields,going_concern,going_concern,CLEAR,,0,0,True Negative,False,S3 – Field extraction,Going concern
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S4_hybrid,expense_spike,expense_spike,FLAG,CLEAR,1,0,False Negative,True,S4 – Hybrid,Expense spike
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S4_hybrid,pass_through_risk,passthrough_risk,ESCALATE,FLAG,1,1,True Positive,False,S4 – Hybrid,Pass-through risk
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S4_hybrid,unallowable_expenditure,unallowable_expenditure,ESCALATE,CLEAR,1,0,False Negative,True,S4 – Hybrid,Unallowable expenditure
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S4_hybrid,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S4 – Hybrid,Audit opinion
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S4_hybrid,going_concern,going_concern,CLEAR,,0,0,True Negative,False,S4 – Hybrid,Going concern
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S5_extended,expense_spike,expense_spike,FLAG,FLAG,1,1,True Positive,False,S5 – Extended extraction,Expense spike
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S5_extended,pass_through_risk,passthrough_risk,ESCALATE,FLAG,1,1,True Positive,False,S5 – Extended extraction,Pass-through risk
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S5_extended,unallowable_expenditure,unallowable_expenditure,ESCALATE,CLEAR,1,0,False Negative,True,S5 – Extended extraction,Unallowable expenditure
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S5_extended,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S5 – Extended extraction,Audit opinion
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S5_extended,going_concern,going_concern,CLEAR,,0,0,True Negative,False,S5 – Extended extraction,Going concern
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S1_full,expense_spike,expense_spike,CLEAR,FLAG,0,1,False Positive,True,S1 – Full text,Expense spike
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S1_full,unallowable_expenditure,unallowable_expenditure,FLAG,CLEAR,1,0,False Negative,True,S1 – Full text,Unallowable expenditure
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S1_full,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S1 – Full text,Audit opinion
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S1_full,going_concern,going_concern,CLEAR,CLEAR,0,0,True Negative,False,S1 – Full text,Going concern
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S2_sections,expense_spike,expense_spike,CLEAR,FLAG,0,1,False Positive,True,S2 – Section filtering,Expense spike
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S2_sections,unallowable_expenditure,unallowable_expenditure,FLAG,CLEAR,1,0,False Negative,True,S2 – Section filtering,Unallowable expenditure
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S2_sections,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S2 – Section filtering,Audit opinion
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S2_sections,going_concern,going_concern,CLEAR,CLEAR,0,0,True Negative,False,S2 – Section filtering,Going concern
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S3_fields,expense_spike,expense_spike,CLEAR,FLAG,0,1,False Positive,True,S3 – Field extraction,Expense spike
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S3_fields,unallowable_expenditure,unallowable_expenditure,FLAG,CLEAR,1,0,False Negative,True,S3 – Field extraction,Unallowable expenditure
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S3_fields,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S3 – Field extraction,Audit opinion
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S3_fields,going_concern,going_concern,CLEAR,,0,0,True Negative,False,S3 – Field extraction,Going concern
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S4_hybrid,expense_spike,expense_spike,CLEAR,FLAG,0,1,False Positive,True,S4 – Hybrid,Expense spike
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S4_hybrid,unallowable_expenditure,unallowable_expenditure,FLAG,CLEAR,1,0,False Negative,True,S4 – Hybrid,Unallowable expenditure
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S4_hybrid,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S4 – Hybrid,Audit opinion
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S4_hybrid,going_concern,going_concern,CLEAR,,0,0,True Negative,False,S4 – Hybrid,Going concern
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S5_extended,expense_spike,expense_spike,CLEAR,FLAG,0,1,False Positive,True,S5 – Extended extraction,Expense spike
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S5_extended,unallowable_expenditure,unallowable_expenditure,FLAG,CLEAR,1,0,False Negative,True,S5 – Extended extraction,Unallowable expenditure
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S5_extended,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S5 – Extended extraction,Audit opinion
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S5_extended,going_concern,going_concern,CLEAR,,0,0,True Negative,False,S5 – Extended extraction,Going concern
+Public-Citizen-Foundation-Inc.-FS-3,PublicCitizenFoundation_AuditedFinancials_2024,S1_full,revenue_concentration,revenue_concentration,CLEAR,CLEAR,0,0,True Negative,False,S1 – Full text,Revenue concentration
+Public-Citizen-Foundation-Inc.-FS-3,PublicCitizenFoundation_AuditedFinancials_2024,S1_full,expense_spike,expense_spike,CLEAR,FLAG,0,1,False Positive,True,S1 – Full text,Expense spike
+Public-Citizen-Foundation-Inc.-FS-3,PublicCitizenFoundation_AuditedFinancials_2024,S1_full,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S1 – Full text,Audit opinion
+Public-Citizen-Foundation-Inc.-FS-3,PublicCitizenFoundation_AuditedFinancials_2024,S1_full,going_concern,going_concern,CLEAR,CLEAR,0,0,True Negative,False,S1 – Full text,Going concern
+Public-Citizen-Foundation-Inc.-FS-3,PublicCitizenFoundation_AuditedFinancials_2024,S2_sections,revenue_concentration,revenue_concentration,CLEAR,CLEAR,0,0,True Negative,False,S2 – Section filtering,Revenue concentration
+Public-Citizen-Foundation-Inc.-FS-3,PublicCitizenFoundation_AuditedFinancials_2024,S2_sections,expense_spike,expense_spike,CLEAR,FLAG,0,1,False Positive,True,S2 – Section filtering,Expense spike
+Public-Citizen-Foundation-Inc.-FS-3,PublicCitizenFoundation_AuditedFinancials_2024,S2_sections,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S2 – Section filtering,Audit opinion
+Public-Citizen-Foundation-Inc.-FS-3,PublicCitizenFoundation_AuditedFinancials_2024,S2_sections,going_concern,going_concern,CLEAR,CLEAR,0,0,True Negative,False,S2 – Section filtering,Going concern
+Public-Citizen-Foundation-Inc.-FS-3,PublicCitizenFoundation_AuditedFinancials_2024,S3_fields,revenue_concentration,revenue_concentration,CLEAR,CLEAR,0,0,True Negative,False,S3 – Field extraction,Revenue concentration
+Public-Citizen-Foundation-Inc.-FS-3,PublicCitizenFoundation_AuditedFinancials_2024,S3_fields,expense_spike,expense_spike,CLEAR,CLEAR,0,0,True Negative,False,S3 – Field extraction,Expense spike
+Public-Citizen-Foundation-Inc.-FS-3,PublicCitizenFoundation_AuditedFinancials_2024,S3_fields,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S3 – Field extraction,Audit opinion
+Public-Citizen-Foundation-Inc.-FS-3,PublicCitizenFoundation_AuditedFinancials_2024,S3_fields,going_concern,going_concern,CLEAR,,0,0,True Negative,False,S3 – Field extraction,Going concern
+Public-Citizen-Foundation-Inc.-FS-3,PublicCitizenFoundation_AuditedFinancials_2024,S4_hybrid,revenue_concentration,revenue_concentration,CLEAR,CLEAR,0,0,True Negative,False,S4 – Hybrid,Revenue concentration
+Public-Citizen-Foundation-Inc.-FS-3,PublicCitizenFoundation_AuditedFinancials_2024,S4_hybrid,expense_spike,expense_spike,CLEAR,CLEAR,0,0,True Negative,False,S4 – Hybrid,Expense spike
+Public-Citizen-Foundation-Inc.-FS-3,PublicCitizenFoundation_AuditedFinancials_2024,S4_hybrid,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S4 – Hybrid,Audit opinion
+Public-Citizen-Foundation-Inc.-FS-3,PublicCitizenFoundation_AuditedFinancials_2024,S4_hybrid,going_concern,going_concern,CLEAR,,0,0,True Negative,False,S4 – Hybrid,Going concern
+Public-Citizen-Foundation-Inc.-FS-3,PublicCitizenFoundation_AuditedFinancials_2024,S5_extended,revenue_concentration,revenue_concentration,CLEAR,CLEAR,0,0,True Negative,False,S5 – Extended extraction,Revenue concentration
+Public-Citizen-Foundation-Inc.-FS-3,PublicCitizenFoundation_AuditedFinancials_2024,S5_extended,expense_spike,expense_spike,CLEAR,FLAG,0,1,False Positive,True,S5 – Extended extraction,Expense spike
+Public-Citizen-Foundation-Inc.-FS-3,PublicCitizenFoundation_AuditedFinancials_2024,S5_extended,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S5 – Extended extraction,Audit opinion
+Public-Citizen-Foundation-Inc.-FS-3,PublicCitizenFoundation_AuditedFinancials_2024,S5_extended,going_concern,going_concern,CLEAR,,0,0,True Negative,False,S5 – Extended extraction,Going concern
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S1_full,revenue_concentration,revenue_concentration,ESCALATE,FLAG,1,1,True Positive,False,S1 – Full text,Revenue concentration
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S1_full,expense_spike,expense_spike,CLEAR,CLEAR,0,0,True Negative,False,S1 – Full text,Expense spike
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S1_full,pass_through_risk,passthrough_risk,ESCALATE,FLAG,1,1,True Positive,False,S1 – Full text,Pass-through risk
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S1_full,unallowable_expenditure,unallowable_expenditure,FLAG,CLEAR,1,0,False Negative,True,S1 – Full text,Unallowable expenditure
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S1_full,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S1 – Full text,Audit opinion
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S1_full,going_concern,going_concern,ESCALATE,CLEAR,1,0,False Negative,True,S1 – Full text,Going concern
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S2_sections,revenue_concentration,revenue_concentration,ESCALATE,FLAG,1,1,True Positive,False,S2 – Section filtering,Revenue concentration
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S2_sections,expense_spike,expense_spike,CLEAR,CLEAR,0,0,True Negative,False,S2 – Section filtering,Expense spike
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S2_sections,pass_through_risk,passthrough_risk,ESCALATE,FLAG,1,1,True Positive,False,S2 – Section filtering,Pass-through risk
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S2_sections,unallowable_expenditure,unallowable_expenditure,FLAG,CLEAR,1,0,False Negative,True,S2 – Section filtering,Unallowable expenditure
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S2_sections,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S2 – Section filtering,Audit opinion
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S2_sections,going_concern,going_concern,ESCALATE,CLEAR,1,0,False Negative,True,S2 – Section filtering,Going concern
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S3_fields,revenue_concentration,revenue_concentration,ESCALATE,FLAG,1,1,True Positive,False,S3 – Field extraction,Revenue concentration
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S3_fields,expense_spike,expense_spike,CLEAR,FLAG,0,1,False Positive,True,S3 – Field extraction,Expense spike
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S3_fields,pass_through_risk,passthrough_risk,ESCALATE,FLAG,1,1,True Positive,False,S3 – Field extraction,Pass-through risk
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S3_fields,unallowable_expenditure,unallowable_expenditure,FLAG,CLEAR,1,0,False Negative,True,S3 – Field extraction,Unallowable expenditure
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S3_fields,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S3 – Field extraction,Audit opinion
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S3_fields,going_concern,going_concern,ESCALATE,,1,0,False Negative,True,S3 – Field extraction,Going concern
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S4_hybrid,revenue_concentration,revenue_concentration,ESCALATE,FLAG,1,1,True Positive,False,S4 – Hybrid,Revenue concentration
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S4_hybrid,expense_spike,expense_spike,CLEAR,CLEAR,0,0,True Negative,False,S4 – Hybrid,Expense spike
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S4_hybrid,pass_through_risk,passthrough_risk,ESCALATE,FLAG,1,1,True Positive,False,S4 – Hybrid,Pass-through risk
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S4_hybrid,unallowable_expenditure,unallowable_expenditure,FLAG,CLEAR,1,0,False Negative,True,S4 – Hybrid,Unallowable expenditure
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S4_hybrid,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S4 – Hybrid,Audit opinion
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S4_hybrid,going_concern,going_concern,ESCALATE,,1,0,False Negative,True,S4 – Hybrid,Going concern
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S5_extended,revenue_concentration,revenue_concentration,ESCALATE,FLAG,1,1,True Positive,False,S5 – Extended extraction,Revenue concentration
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S5_extended,expense_spike,expense_spike,CLEAR,CLEAR,0,0,True Negative,False,S5 – Extended extraction,Expense spike
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S5_extended,pass_through_risk,passthrough_risk,ESCALATE,FLAG,1,1,True Positive,False,S5 – Extended extraction,Pass-through risk
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S5_extended,unallowable_expenditure,unallowable_expenditure,FLAG,CLEAR,1,0,False Negative,True,S5 – Extended extraction,Unallowable expenditure
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S5_extended,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S5 – Extended extraction,Audit opinion
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S5_extended,going_concern,going_concern,ESCALATE,,1,0,False Negative,True,S5 – Extended extraction,Going concern
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S1_full,revenue_concentration,revenue_concentration,FLAG,CLEAR,1,0,False Negative,True,S1 – Full text,Revenue concentration
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S1_full,expense_spike,expense_spike,FLAG,FLAG,1,1,True Positive,False,S1 – Full text,Expense spike
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S1_full,pass_through_risk,passthrough_risk,FLAG,FLAG,1,1,True Positive,False,S1 – Full text,Pass-through risk
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S1_full,unallowable_expenditure,unallowable_expenditure,FLAG,CLEAR,1,0,False Negative,True,S1 – Full text,Unallowable expenditure
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S1_full,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S1 – Full text,Audit opinion
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S1_full,going_concern,going_concern,CLEAR,CLEAR,0,0,True Negative,False,S1 – Full text,Going concern
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S2_sections,revenue_concentration,revenue_concentration,FLAG,CLEAR,1,0,False Negative,True,S2 – Section filtering,Revenue concentration
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S2_sections,expense_spike,expense_spike,FLAG,FLAG,1,1,True Positive,False,S2 – Section filtering,Expense spike
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S2_sections,pass_through_risk,passthrough_risk,FLAG,FLAG,1,1,True Positive,False,S2 – Section filtering,Pass-through risk
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S2_sections,unallowable_expenditure,unallowable_expenditure,FLAG,CLEAR,1,0,False Negative,True,S2 – Section filtering,Unallowable expenditure
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S2_sections,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S2 – Section filtering,Audit opinion
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S2_sections,going_concern,going_concern,CLEAR,CLEAR,0,0,True Negative,False,S2 – Section filtering,Going concern
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S3_fields,revenue_concentration,revenue_concentration,FLAG,CLEAR,1,0,False Negative,True,S3 – Field extraction,Revenue concentration
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S3_fields,expense_spike,expense_spike,FLAG,CLEAR,1,0,False Negative,True,S3 – Field extraction,Expense spike
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S3_fields,pass_through_risk,passthrough_risk,FLAG,FLAG,1,1,True Positive,False,S3 – Field extraction,Pass-through risk
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S3_fields,unallowable_expenditure,unallowable_expenditure,FLAG,CLEAR,1,0,False Negative,True,S3 – Field extraction,Unallowable expenditure
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S3_fields,audit_opinion,audit_opinion,CLEAR,,0,0,True Negative,False,S3 – Field extraction,Audit opinion
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S3_fields,going_concern,going_concern,CLEAR,,0,0,True Negative,False,S3 – Field extraction,Going concern
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S4_hybrid,revenue_concentration,revenue_concentration,FLAG,CLEAR,1,0,False Negative,True,S4 – Hybrid,Revenue concentration
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S4_hybrid,expense_spike,expense_spike,FLAG,FLAG,1,1,True Positive,False,S4 – Hybrid,Expense spike
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S4_hybrid,pass_through_risk,passthrough_risk,FLAG,FLAG,1,1,True Positive,False,S4 – Hybrid,Pass-through risk
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S4_hybrid,unallowable_expenditure,unallowable_expenditure,FLAG,CLEAR,1,0,False Negative,True,S4 – Hybrid,Unallowable expenditure
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S4_hybrid,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S4 – Hybrid,Audit opinion
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S4_hybrid,going_concern,going_concern,CLEAR,,0,0,True Negative,False,S4 – Hybrid,Going concern
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S5_extended,revenue_concentration,revenue_concentration,FLAG,CLEAR,1,0,False Negative,True,S5 – Extended extraction,Revenue concentration
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S5_extended,expense_spike,expense_spike,FLAG,FLAG,1,1,True Positive,False,S5 – Extended extraction,Expense spike
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S5_extended,pass_through_risk,passthrough_risk,FLAG,FLAG,1,1,True Positive,False,S5 – Extended extraction,Pass-through risk
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S5_extended,unallowable_expenditure,unallowable_expenditure,FLAG,CLEAR,1,0,False Negative,True,S5 – Extended extraction,Unallowable expenditure
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S5_extended,audit_opinion,audit_opinion,CLEAR,CLEAR,0,0,True Negative,False,S5 – Extended extraction,Audit opinion
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S5_extended,going_concern,going_concern,CLEAR,,0,0,True Negative,False,S5 – Extended extraction,Going concern

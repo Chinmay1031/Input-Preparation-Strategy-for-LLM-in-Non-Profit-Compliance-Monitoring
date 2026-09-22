@@ -20,14 +20,12 @@ DOCUMENT_TYPE_SIGNALS = {
         "PROCEDURES AND FINDINGS",
     ],
     DOCUMENT_TYPE_FINANCIAL_STATEMENT: [
-                                                   
         "ANNUAL FINANCIAL STATEMENTS",
         "STATEMENT OF FINANCIAL POSITION",
         "STATEMENT OF COMPREHENSIVE INCOME",
         "IFRS FOR SMES",
         "INDEPENDENT REVIEWER",
         "GOING CONCERN",
-                             
         "CONSOLIDATED FINANCIAL STATEMENTS",
         "REPORT OF INDEPENDENT AUDITORS",
         "INDEPENDENT AUDITOR'S REPORT",
@@ -41,14 +39,11 @@ DOCUMENT_TYPE_SIGNALS = {
         "NET ASSETS WITHOUT DONOR RESTRICTIONS",
         "NET ASSETS WITH DONOR RESTRICTIONS",
         "GENERALLY ACCEPTED ACCOUNTING PRINCIPLES",
-                                          
         "INTERNATIONAL PUBLIC SECTOR ACCOUNTING",
         "IPSAS",
         "STATEMENT OF FINANCIAL PERFORMANCE",
-                                        
         "IFRS ACCOUNTING STANDARDS",
         "STATEMENT OF CHANGES IN EQUITY",
-                 
         "NOTES TO THE FINANCIAL STATEMENTS",
         "NOTES TO THE CONSOLIDATED FINANCIAL",
     ],
@@ -160,8 +155,6 @@ AUP_REPORT_SECTIONS = {
     ],
 }
 
-                                                                     
-                      
 COMPLIANCE_RELEVANT_SECTIONS = {
     SEC_AUDIT_REPORT,
     SEC_DIRECTORS_REPORT,
@@ -199,22 +192,17 @@ def detect_document_type(full_text: str) -> str:
 
 
 def classify_page(page_text: str, document_type: str) -> str:
-                                                                             
-                                                                        
     body = page_text[200:] if len(page_text) > 200 else page_text
     upper_body = body.upper()
     upper_full = page_text.upper()
 
     if document_type == DOCUMENT_TYPE_AUP_REPORT:
         section_defs = AUP_REPORT_SECTIONS
-                                                                       
         for section_type, keywords in section_defs.items():
             if any(kw in upper_full for kw in keywords):
                 return section_type
         return SEC_UNKNOWN
 
-                                                                            
-                                                  
     PRIORITY_ORDER = [
         SEC_DETAILED_INCOME,
         SEC_NOTES,

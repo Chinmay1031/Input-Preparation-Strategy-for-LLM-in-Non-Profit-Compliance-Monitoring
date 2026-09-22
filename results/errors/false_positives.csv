@@ -1,0 +1,16 @@
+experiment_doc_id,gold_document_id,strategy,strategy_label,dimension,dimension_label,gold_label,predicted_label,gold_binary,predicted_binary
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S1_full,S1 – Full text,expense_spike,Expense spike,CLEAR,FLAG,0,1
+Public-Citizen-Foundation-Inc.-FS-3,PublicCitizenFoundation_AuditedFinancials_2024,S1_full,S1 – Full text,expense_spike,Expense spike,CLEAR,FLAG,0,1
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S2_sections,S2 – Section filtering,expense_spike,Expense spike,CLEAR,FLAG,0,1
+Public-Citizen-Foundation-Inc.-FS-3,PublicCitizenFoundation_AuditedFinancials_2024,S2_sections,S2 – Section filtering,expense_spike,Expense spike,CLEAR,FLAG,0,1
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S2_sections,S2 – Section filtering,expense_spike,Expense spike,CLEAR,FLAG,0,1
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S3_fields,S3 – Field extraction,expense_spike,Expense spike,CLEAR,FLAG,0,1
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S3_fields,S3 – Field extraction,expense_spike,Expense spike,CLEAR,FLAG,0,1
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S3_fields,S3 – Field extraction,expense_spike,Expense spike,CLEAR,FLAG,0,1
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S4_hybrid,S4 – Hybrid,expense_spike,Expense spike,CLEAR,FLAG,0,1
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S4_hybrid,S4 – Hybrid,expense_spike,Expense spike,CLEAR,FLAG,0,1
+BRAC-Uganda-Audited-Financial-Statements,BRAC_Uganda_AuditedFinancials_2023,S5_extended,S5 – Extended extraction,audit_opinion,Audit opinion,CLEAR,FLAG,0,1
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S5_extended,S5 – Extended extraction,expense_spike,Expense spike,CLEAR,FLAG,0,1
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S5_extended,S5 – Extended extraction,expense_spike,Expense spike,CLEAR,FLAG,0,1
+Public-Citizen-Foundation-Inc.-FS-3,PublicCitizenFoundation_AuditedFinancials_2024,S5_extended,S5 – Extended extraction,expense_spike,Expense spike,CLEAR,FLAG,0,1
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S5_extended,S5 – Extended extraction,expense_spike,Expense spike,CLEAR,FLAG,0,1

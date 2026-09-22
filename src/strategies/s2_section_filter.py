@@ -9,7 +9,6 @@ from src.ingestion.document_schema import (
     SEC_AUP_ANNEXURE_B, SEC_AUP_NOTES
 )
 
-                                                              
 RELEVANT_FINANCIAL = [
     SEC_DIRECTORS_REPORT,
     SEC_FINANCIAL_STATEMENTS,

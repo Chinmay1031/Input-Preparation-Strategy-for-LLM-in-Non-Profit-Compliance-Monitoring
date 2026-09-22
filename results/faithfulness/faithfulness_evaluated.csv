@@ -1,0 +1,108 @@
+doc_id,strategy,strategy_label,run,dimension,verdict,evidence,match_score,is_faithful,comparison_mode,evidence_type
+BRAC-Uganda-Audited-Financial-Statements,S1_full,S1 – Full text,0,expense_spike,FLAG,"Training, workshops & seminars 11,340,582 6,550,418",1.0,True,source_text,Verbatim
+BRAC-Uganda-Audited-Financial-Statements,S1_full,S1 – Full text,0,passthrough_risk,FLAG,BRAC Uganda partnership with International Labour Organization (ILO) is implementing a one year project,1.0,True,source_text,Verbatim
+BRAC-Uganda-Audited-Financial-Statements,S2_sections,S2 – Section filtering,0,revenue_concentration,FLAG,"Reveleratng aa for-Young: Women 24,912,128 6,677,787 6,667,593 ‘1,799,421",1.0,True,source_text,Verbatim
+BRAC-Uganda-Audited-Financial-Statements,S2_sections,S2 – Section filtering,0,expense_spike,FLAG,"Training, workshops & seminars 11,340,582 6,550,418 3,035,244 1,765,100",1.0,True,source_text,Verbatim
+BRAC-Uganda-Audited-Financial-Statements,S2_sections,S2 – Section filtering,0,passthrough_risk,FLAG,The Company has transferred its rights to receive cash flows from the asset or has assumed an obligation to pay the received cash flows in full without material delay to a third party under a ‘pass-through’ arrangement,1.0,True,source_text,Verbatim
+BRAC-Uganda-Audited-Financial-Statements,S3_fields,S3 – Field extraction,0,passthrough_risk,FLAG,a ‘pass-through’ arrangement; and either;,1.0,True,prepared_context,Verbatim
+BRAC-Uganda-Audited-Financial-Statements,S4_hybrid,S4 – Hybrid,0,passthrough_risk,FLAG,a ‘pass-through’ arrangement; and either;,1.0,True,prepared_context,Verbatim
+BRAC-Uganda-Audited-Financial-Statements,S5_extended,S5 – Extended extraction,0,expense_spike,FLAG,"(11,340,582) (6,550,418) (3,035,244) (1,765,100)",1.0,True,prepared_context,Verbatim
+BRAC-Uganda-Audited-Financial-Statements,S5_extended,S5 – Extended extraction,0,passthrough_risk,FLAG,a ‘pass-through’ arrangement; and either;,1.0,True,prepared_context,Verbatim
+BRAC-Uganda-Audited-Financial-Statements,S5_extended,S5 – Extended extraction,0,audit_opinion,FLAG,"We have not audited this supplementary information and, accordingly, we do not express an opinion on this supplementary information.",1.0,True,prepared_context,Verbatim
+BRAC-Liberia-Audited-Financial-Statements,S1_full,S1 – Full text,0,revenue_concentration,FLAG,"Grant 927,057,037 LRD",0.86,True,source_text,Synthesised
+BRAC-Liberia-Audited-Financial-Statements,S1_full,S1 – Full text,0,expense_spike,FLAG,"Staff costs and other benefits 277,059,744 LRD",1.0,True,source_text,Verbatim
+BRAC-Liberia-Audited-Financial-Statements,S1_full,S1 – Full text,0,passthrough_risk,FLAG,"The project is implemented by a consortium of four organizations including Research Triangle Institute (RTI), BRAC USA, GiveDirectly and Dimagi, with RTI as the Lead Partner.",1.0,True,source_text,Verbatim
+BRAC-Liberia-Audited-Financial-Statements,S2_sections,S2 – Section filtering,0,revenue_concentration,FLAG,"Grant 927,057,037",0.88,True,source_text,Synthesised
+BRAC-Liberia-Audited-Financial-Statements,S2_sections,S2 – Section filtering,0,expense_spike,FLAG,"Occupancy expenses 52,671,276 13,439,288",1.0,True,source_text,Verbatim
+BRAC-Liberia-Audited-Financial-Statements,S2_sections,S2 – Section filtering,0,passthrough_risk,FLAG,BRAC acts as a fund manager providing incentive,0.88,True,source_text,Synthesised
+BRAC-Liberia-Audited-Financial-Statements,S3_fields,S3 – Field extraction,0,revenue_concentration,FLAG,"Revenue from grant received in - 920,198,022",1.0,True,prepared_context,Verbatim
+BRAC-Liberia-Audited-Financial-Statements,S3_fields,S3 – Field extraction,0,expense_spike,FLAG,"Occupancy expenses (106,417) - - - 5,931,576",1.0,True,prepared_context,Verbatim
+BRAC-Liberia-Audited-Financial-Statements,S3_fields,S3 – Field extraction,0,passthrough_risk,FLAG,Development (EnDev).This is a piloted 2.4 million Euro project and BRAC acts as a fund manager providing,1.0,True,prepared_context,Verbatim
+BRAC-Liberia-Audited-Financial-Statements,S4_hybrid,S4 – Hybrid,0,revenue_concentration,FLAG,"Revenue from grant received in - 920,198,022",1.0,True,prepared_context,Verbatim
+BRAC-Liberia-Audited-Financial-Statements,S4_hybrid,S4 – Hybrid,0,expense_spike,FLAG,"Staff costs and other benefits 50,650,009 23,036,557 169,330,362",1.0,True,prepared_context,Verbatim
+BRAC-Liberia-Audited-Financial-Statements,S4_hybrid,S4 – Hybrid,0,passthrough_risk,FLAG,BRAC acts as a fund manager providing,1.0,True,prepared_context,Verbatim
+BRAC-Liberia-Audited-Financial-Statements,S5_extended,S5 – Extended extraction,0,revenue_concentration,FLAG,"Grant 4 927,057,037 358,048,858 5,319,812 2,351,086",1.0,True,prepared_context,Verbatim
+BRAC-Liberia-Audited-Financial-Statements,S5_extended,S5 – Extended extraction,0,expense_spike,FLAG,"Occupancy expenses 8 (52,671,276) (13,439,288) (302,248) (88,248)",1.0,True,prepared_context,Verbatim
+BRAC-Liberia-Audited-Financial-Statements,S5_extended,S5 – Extended extraction,0,passthrough_risk,FLAG,Development (EnDev).This is a piloted 2.4 million Euro project and BRAC acts as a fund manager providing,1.0,True,prepared_context,Verbatim
+Justice-in-Aging-FY23-Audited-Financial-Statements,S1_full,S1 – Full text,0,revenue_concentration,FLAG,"approximately 50% and 68%, respectively, of grants and contributions receivable consisted of amounts due from one donor",1.0,True,source_text,Verbatim
+Justice-in-Aging-FY23-Audited-Financial-Statements,S1_full,S1 – Full text,0,expense_spike,FLAG,"Total Expenses 6,080,594 4,432,906",1.0,True,source_text,Verbatim
+Justice-in-Aging-FY23-Audited-Financial-Statements,S1_full,S1 – Full text,0,passthrough_risk,FLAG,Pass-Through from State Bar of California,1.0,True,source_text,Verbatim
+Justice-in-Aging-FY23-Audited-Financial-Statements,S2_sections,S2 – Section filtering,0,revenue_concentration,FLAG,"approximately 50% and 68%, respectively, of grants and contributions receivable consisted of amounts due from one donor",1.0,True,source_text,Verbatim
+Justice-in-Aging-FY23-Audited-Financial-Statements,S2_sections,S2 – Section filtering,0,expense_spike,FLAG,"Total Expenses 6,080,594 4,432,906",1.0,True,source_text,Verbatim
+Justice-in-Aging-FY23-Audited-Financial-Statements,S2_sections,S2 – Section filtering,0,passthrough_risk,FLAG,"Subcontractor Expenses 176,689 75,932 - 252,621",1.0,True,source_text,Verbatim
+Justice-in-Aging-FY23-Audited-Financial-Statements,S3_fields,S3 – Field extraction,0,revenue_concentration,FLAG,"approximately 50% and 68%, respectively, of grants and contributions receivable consisted of amounts due from one donor",1.0,True,prepared_context,Verbatim
+Justice-in-Aging-FY23-Audited-Financial-Statements,S3_fields,S3 – Field extraction,0,expense_spike,FLAG,"Total Expenses 6,080,594 - 6 ,080,594 4,432,906",1.0,True,prepared_context,Verbatim
+Justice-in-Aging-FY23-Audited-Financial-Statements,S4_hybrid,S4 – Hybrid,0,revenue_concentration,FLAG,"approximately 50% and 68%, respectively, of grants and contributions receivable consisted of amounts due from one donor",1.0,True,prepared_context,Verbatim
+Justice-in-Aging-FY23-Audited-Financial-Statements,S4_hybrid,S4 – Hybrid,0,expense_spike,FLAG,"Total Expenses 6,080,594 - 6 ,080,594 4,432,906",1.0,True,prepared_context,Verbatim
+Justice-in-Aging-FY23-Audited-Financial-Statements,S5_extended,S5 – Extended extraction,0,revenue_concentration,FLAG,"approximately 50% and 68%, respectively, of grants and contributions receivable consisted of amounts due from one donor.",1.0,True,prepared_context,Verbatim
+Justice-in-Aging-FY23-Audited-Financial-Statements,S5_extended,S5 – Extended extraction,0,expense_spike,FLAG,"Total Expenses 6,080,594 - 6 ,080,594 4,432,906",1.0,True,prepared_context,Verbatim
+2024_Water.org_audited_financials,S1_full,S1 – Full text,0,revenue_concentration,FLAG,"As of September 30, 2024, three donors accounted for approximately 88% of outstanding balances.",1.0,True,source_text,Verbatim
+2024_Water.org_audited_financials,S1_full,S1 – Full text,0,expense_spike,FLAG,"Travel expense increased from $1,433,233 in 2023 to $2,473,518 in 2024.",0.85,True,source_text,Synthesised
+2024_Water.org_audited_financials,S1_full,S1 – Full text,0,passthrough_risk,FLAG,Water.org works with their in-country financial partners to add loans for water and sanitation solutions to their portfolios.,1.0,True,source_text,Verbatim
+2024_Water.org_audited_financials,S2_sections,S2 – Section filtering,0,revenue_concentration,FLAG,"During the year ended September 30, 2024, approximately 49% of all contributions were received from three donors.",1.0,True,source_text,Verbatim
+2024_Water.org_audited_financials,S2_sections,S2 – Section filtering,0,expense_spike,FLAG,"Travel expense $2,473,518",0.85,True,source_text,Synthesised
+2024_Water.org_audited_financials,S2_sections,S2 – Section filtering,0,passthrough_risk,FLAG,"Program specific expenses - grants $5,320,024",0.98,True,source_text,Verbatim
+2024_Water.org_audited_financials,S4_hybrid,S4 – Hybrid,0,expense_spike,FLAG,"Salaries and taxes $ 1 3,155,970 $ 1 20,967 $ 13,276,937 $ 1 ,670,304 $ 2 ,134,478 $ 17,081,719",1.0,True,prepared_context,Verbatim
+2024_Water.org_audited_financials,S5_extended,S5 – Extended extraction,0,expense_spike,FLAG,"Travel expense 2 ,143,428 1 12 2,143,540 1 53,612 1 76,366 2,473,518",1.0,True,prepared_context,Verbatim
+2024-CARE-USA-Financial-Statements_Final,S1_full,S1 – Full text,0,revenue_concentration,FLAG,"Grants and contracts revenue from the United States government, including agricultural commodities and ocean freight, were 40% and 37% of CARE’s total support for the years ended June 30, 2024 and 2023, respectively.",1.0,True,source_text,Verbatim
+2024-CARE-USA-Financial-Statements_Final,S1_full,S1 – Full text,0,passthrough_risk,FLAG,"CARE also serves as a resource provider, making contributions to partners and sub-grantees in connection with program implementation.",1.0,True,source_text,Verbatim
+2024-CARE-USA-Financial-Statements_Final,S2_sections,S2 – Section filtering,0,passthrough_risk,FLAG,CARE receives and provides funding through grants and other contributions to and from CARE International and member organizations.,1.0,True,source_text,Verbatim
+2024-CARE-USA-Financial-Statements_Final,S3_fields,S3 – Field extraction,0,revenue_concentration,FLAG,CARE receives awards from three major donor groups which are essential to further our mission.,1.0,True,prepared_context,Verbatim
+2024-CARE-USA-Financial-Statements_Final,S3_fields,S3 – Field extraction,0,passthrough_risk,FLAG,"CARE also serves as a resource provider, making contributions to partners and sub-grantees",1.0,True,prepared_context,Verbatim
+2024-CARE-USA-Financial-Statements_Final,S4_hybrid,S4 – Hybrid,0,revenue_concentration,FLAG,CARE receives awards from three major donor groups which are essential to further our mission.,1.0,True,prepared_context,Verbatim
+2024-CARE-USA-Financial-Statements_Final,S4_hybrid,S4 – Hybrid,0,passthrough_risk,FLAG,"CARE also serves as a resource provider, making contributions to partners and sub-grantees",1.0,True,prepared_context,Verbatim
+2024-CARE-USA-Financial-Statements_Final,S5_extended,S5 – Extended extraction,0,revenue_concentration,FLAG,CARE receives awards from three major donor groups which are essential to further our mission.,1.0,True,prepared_context,Verbatim
+2024-CARE-USA-Financial-Statements_Final,S5_extended,S5 – Extended extraction,0,expense_spike,FLAG,"Personnel costs $ 96,643 $ 133,262",1.0,True,prepared_context,Verbatim
+2024-CARE-USA-Financial-Statements_Final,S5_extended,S5 – Extended extraction,0,passthrough_risk,FLAG,"CARE also serves as a resource provider, making contributions to partners and sub-grantees",1.0,True,prepared_context,Verbatim
+PATH-annual-report-2024,S1_full,S1 – Full text,0,passthrough_risk,FLAG,supporting 332 local organizations,1.0,True,source_text,Verbatim
+PATH-annual-report-2024,S2_sections,S2 – Section filtering,0,passthrough_risk,FLAG,"Subawards to program partners 97,163",1.0,True,source_text,Verbatim
+PATH-annual-report-2024,S3_fields,S3 – Field extraction,0,revenue_concentration,FLAG,No explicit concentration disclosure found.,1.0,True,prepared_context,Verbatim
+PATH-annual-report-2024,S4_hybrid,S4 – Hybrid,0,revenue_concentration,FLAG,No explicit concentration disclosure found.,1.0,True,prepared_context,Verbatim
+PATH-annual-report-2024,S5_extended,S5 – Extended extraction,0,revenue_concentration,FLAG,No explicit concentration disclosure found.,1.0,True,prepared_context,Verbatim
+Somos+2024+Audited+Financial+Statements+-+Final,S1_full,S1 – Full text,0,revenue_concentration,FLAG,"Government grants $ 2,221,595",1.0,True,source_text,Verbatim
+Somos+2024+Audited+Financial+Statements+-+Final,S1_full,S1 – Full text,0,passthrough_risk,FLAG,"$480,210",0.88,True,source_text,Synthesised
+Somos+2024+Audited+Financial+Statements+-+Final,S2_sections,S2 – Section filtering,0,revenue_concentration,FLAG,"Government grants $ 2,221,595",1.0,True,source_text,Verbatim
+Somos+2024+Audited+Financial+Statements+-+Final,S2_sections,S2 – Section filtering,0,expense_spike,FLAG,"Subcontract fees $ 991,526",0.71,True,source_text,Synthesised
+Somos+2024+Audited+Financial+Statements+-+Final,S2_sections,S2 – Section filtering,0,passthrough_risk,FLAG,"Sub‐recipients $ 480,210",0.85,True,source_text,Synthesised
+Somos+2024+Audited+Financial+Statements+-+Final,S3_fields,S3 – Field extraction,0,expense_spike,FLAG,"Total Expenses 5,968,323 ‐ 5,968,323 Total Expenses 7,677,770 7,677,770",1.0,True,prepared_context,Verbatim
+Somos+2024+Audited+Financial+Statements+-+Final,S4_hybrid,S4 – Hybrid,0,expense_spike,FLAG,"Total Expenses 5,968,323 ‐ 5,968,323 Total Expenses 7,677,770 7,677,770",1.0,True,prepared_context,Verbatim
+Somos+2024+Audited+Financial+Statements+-+Final,S5_extended,S5 – Extended extraction,0,expense_spike,FLAG,"Total Expenses 5,968,323 - 5,968,323 Total Expenses 7,677,770 7,677,770",1.0,True,prepared_context,Verbatim
+FY24-25-ALC-Audit-Financial,S1_full,S1 – Full text,0,expense_spike,FLAG,63%,1.0,True,source_text,Verbatim
+FY24-25-ALC-Audit-Financial,S1_full,S1 – Full text,0,passthrough_risk,FLAG,"subgrant disbursements totaling approximately $967,000",1.0,True,source_text,Verbatim
+FY24-25-ALC-Audit-Financial,S2_sections,S2 – Section filtering,0,expense_spike,FLAG,Community Safety Initiative 63%,1.0,True,source_text,Verbatim
+FY24-25-ALC-Audit-Financial,S2_sections,S2 – Section filtering,0,passthrough_risk,FLAG,"Subcontractors (Note 2) 2,238,647",0.89,True,source_text,Synthesised
+FY24-25-ALC-Audit-Financial,S3_fields,S3 – Field extraction,0,expense_spike,FLAG,"Total personnel costs 1 ,214,832 1,759,427 959,065 3 ,405,605 7,338,929 734,386 875,202 8,948,517 7,674,408",1.0,True,prepared_context,Verbatim
+FY24-25-ALC-Audit-Financial,S3_fields,S3 – Field extraction,0,passthrough_risk,FLAG,"subgrant disbursements totaling approximately $967,000",1.0,True,prepared_context,Verbatim
+FY24-25-ALC-Audit-Financial,S4_hybrid,S4 – Hybrid,0,passthrough_risk,FLAG,"subgrant disbursements totaling approximately $967,000",1.0,True,prepared_context,Verbatim
+FY24-25-ALC-Audit-Financial,S5_extended,S5 – Extended extraction,0,expense_spike,FLAG,"Program services 1 8,038,182 18,038,182 1 6,733,319",1.0,True,prepared_context,Verbatim
+FY24-25-ALC-Audit-Financial,S5_extended,S5 – Extended extraction,0,passthrough_risk,FLAG,"subgrant disbursements totaling approximately $967,000",1.0,True,prepared_context,Verbatim
+FY23_Audit,S1_full,S1 – Full text,0,expense_spike,FLAG,"Professional services (including in-kind of $92,054) 171,389 30,930 202,319 318,168 75,322 393,490 595,809 330,192",1.0,True,source_text,Verbatim
+FY23_Audit,S2_sections,S2 – Section filtering,0,expense_spike,FLAG,"Special events (net of expenses with a direct benefit to donor) 645,111 148,619",1.0,True,source_text,Verbatim
+FY23_Audit,S3_fields,S3 – Field extraction,0,expense_spike,FLAG,"Total expenses 3,371,115 - - - 3,371,115 3,110,243",1.0,True,prepared_context,Verbatim
+FY23_Audit,S4_hybrid,S4 – Hybrid,0,expense_spike,FLAG,"Total expenses 3,371,115 - - - 3,371,115 3,110,243",1.0,True,prepared_context,Verbatim
+FY23_Audit,S5_extended,S5 – Extended extraction,0,expense_spike,FLAG,"Professional services (including in-kind of $92,054) 171,389 3 0,930 202,319 318,168 7 5,322 393,490 595,809 330,192",1.0,True,prepared_context,Verbatim
+Public-Citizen-Foundation-Inc.-FS-3,S1_full,S1 – Full text,0,expense_spike,FLAG,"Access to Medicines 686,566 437,714",1.0,True,source_text,Verbatim
+Public-Citizen-Foundation-Inc.-FS-3,S1_full,S1 – Full text,0,passthrough_risk,FLAG,"Grant distribution 93,800 - - - 569,588 80,000 1,200 600,000 860,709 2,205,297",0.97,True,source_text,Verbatim
+Public-Citizen-Foundation-Inc.-FS-3,S2_sections,S2 – Section filtering,0,expense_spike,FLAG,"Access to Medicines 686,566 437,714",1.0,True,source_text,Verbatim
+Public-Citizen-Foundation-Inc.-FS-3,S2_sections,S2 – Section filtering,0,passthrough_risk,FLAG,"Grant distribution 93,800 - - - 569,588 80,000 1,200 600,000 860,709 2,205,297",0.97,True,source_text,Verbatim
+Public-Citizen-Foundation-Inc.-FS-3,S5_extended,S5 – Extended extraction,0,expense_spike,FLAG,"Access to Medicines 686,566 - 686,566 437,714",1.0,True,prepared_context,Verbatim
+financial-statements-2024,S1_full,S1 – Full text,0,revenue_concentration,FLAG,"Revenue from U.S. government grants and contracts, including U.S. government commodities and ocean freight, represented 50.6% and 54.8% of total operating revenue for 2024 and 2023, respectively.",1.0,True,source_text,Verbatim
+financial-statements-2024,S1_full,S1 – Full text,0,passthrough_risk,FLAG,"U.S. government obligated conditional grants by SCUS to subrecipients (2025-2029) 256,276 278,502",1.0,True,source_text,Verbatim
+financial-statements-2024,S2_sections,S2 – Section filtering,0,revenue_concentration,FLAG,"Revenue from U.S. government grants and contracts, including U.S. government commodities and ocean freight, represented 50.6% and 54.8% of total operating revenue for 2024 and 2023, respectively.",1.0,True,source_text,Verbatim
+financial-statements-2024,S2_sections,S2 – Section filtering,0,passthrough_risk,FLAG,"Grants to other agencies 48,489 89 2,869 20,697 6,785 78,929 92,210",1.0,True,source_text,Verbatim
+financial-statements-2024,S3_fields,S3 – Field extraction,0,revenue_concentration,FLAG,The operations of the Organization’s programs at present levels are dependent upon continued funding from USAID.,1.0,True,prepared_context,Verbatim
+financial-statements-2024,S3_fields,S3 – Field extraction,0,expense_spike,FLAG,"Professional fees 9,332 4,368 13,700 5,343 8,200 13,543 27,243 38,243",1.0,True,prepared_context,Verbatim
+financial-statements-2024,S3_fields,S3 – Field extraction,0,passthrough_risk,FLAG,"Grants to and charges from SCI 547,992 — 547,992 20,599 4,449 25,048 573,040 606,802",1.0,True,prepared_context,Verbatim
+financial-statements-2024,S4_hybrid,S4 – Hybrid,0,revenue_concentration,FLAG,The operations of the Organization’s programs at present levels are dependent upon continued funding from USAID.,1.0,True,prepared_context,Verbatim
+financial-statements-2024,S4_hybrid,S4 – Hybrid,0,passthrough_risk,FLAG,"Grants to and charges from SCI 547,992 — 547,992 20,599 4,449 25,048 573,040 606,802",1.0,True,prepared_context,Verbatim
+financial-statements-2024,S5_extended,S5 – Extended extraction,0,revenue_concentration,FLAG,The operations of the Organization’s programs at present levels are dependent upon continued funding from USAID.,1.0,True,prepared_context,Verbatim
+financial-statements-2024,S5_extended,S5 – Extended extraction,0,passthrough_risk,FLAG,"Grants to and charges from SCI 547,992 — 547,992 20,599 4,449 25,048 573,040 606,802",1.0,True,prepared_context,Verbatim
+8392233-FinancialStatement-1708722656073,S1_full,S1 – Full text,0,expense_spike,FLAG,"Management and general 478,712 379,517",1.0,True,source_text,Verbatim
+8392233-FinancialStatement-1708722656073,S1_full,S1 – Full text,0,passthrough_risk,FLAG,"Grants 496,240",1.0,True,source_text,Verbatim
+8392233-FinancialStatement-1708722656073,S2_sections,S2 – Section filtering,0,expense_spike,FLAG,"Management and general 478,712 379,517",1.0,True,source_text,Verbatim
+8392233-FinancialStatement-1708722656073,S2_sections,S2 – Section filtering,0,passthrough_risk,FLAG,"Grants 496,240 - - 496,240 586,882",1.0,True,source_text,Verbatim
+8392233-FinancialStatement-1708722656073,S3_fields,S3 – Field extraction,0,passthrough_risk,FLAG,"Grants payable - 34,438",1.0,True,prepared_context,Verbatim
+8392233-FinancialStatement-1708722656073,S4_hybrid,S4 – Hybrid,0,expense_spike,FLAG,"Salaries and wages $ 1,267,168 $ 151,793 $ 261,657 $ 1,680,618 $ 1,577,768",1.0,True,prepared_context,Verbatim
+8392233-FinancialStatement-1708722656073,S4_hybrid,S4 – Hybrid,0,passthrough_risk,FLAG,"Grants payable - 34,438",1.0,True,prepared_context,Verbatim
+8392233-FinancialStatement-1708722656073,S5_extended,S5 – Extended extraction,0,expense_spike,FLAG,"Fundraising 334,884 - 334,884 263,789",1.0,True,prepared_context,Verbatim
+8392233-FinancialStatement-1708722656073,S5_extended,S5 – Extended extraction,0,passthrough_risk,FLAG,"Grants 496,240 - - 496,240 586,882",1.0,True,prepared_context,Verbatim

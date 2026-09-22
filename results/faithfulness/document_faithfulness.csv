@@ -1,0 +1,58 @@
+doc_id,strategy,strategy_label,evidence_cases,mean_faithfulness,hallucination_rate,verbatim_rate,synthesised_rate,unsupported_rate,mean_match_score
+2024-CARE-USA-Financial-Statements_Final,S1_full,S1 – Full text,2,1.0,0.0,1.0,0.0,0.0,1.0
+2024-CARE-USA-Financial-Statements_Final,S2_sections,S2 – Section filtering,1,1.0,0.0,1.0,0.0,0.0,1.0
+2024-CARE-USA-Financial-Statements_Final,S3_fields,S3 – Field extraction,2,1.0,0.0,1.0,0.0,0.0,1.0
+2024-CARE-USA-Financial-Statements_Final,S4_hybrid,S4 – Hybrid,2,1.0,0.0,1.0,0.0,0.0,1.0
+2024-CARE-USA-Financial-Statements_Final,S5_extended,S5 – Extended extraction,3,1.0,0.0,1.0,0.0,0.0,1.0
+2024_Water.org_audited_financials,S1_full,S1 – Full text,3,1.0,0.0,0.6666666666666666,0.3333333333333333,0.0,0.9500000000000001
+2024_Water.org_audited_financials,S2_sections,S2 – Section filtering,3,1.0,0.0,0.6666666666666666,0.3333333333333333,0.0,0.9433333333333334
+2024_Water.org_audited_financials,S4_hybrid,S4 – Hybrid,1,1.0,0.0,1.0,0.0,0.0,1.0
+2024_Water.org_audited_financials,S5_extended,S5 – Extended extraction,1,1.0,0.0,1.0,0.0,0.0,1.0
+8392233-FinancialStatement-1708722656073,S1_full,S1 – Full text,2,1.0,0.0,1.0,0.0,0.0,1.0
+8392233-FinancialStatement-1708722656073,S2_sections,S2 – Section filtering,2,1.0,0.0,1.0,0.0,0.0,1.0
+8392233-FinancialStatement-1708722656073,S3_fields,S3 – Field extraction,1,1.0,0.0,1.0,0.0,0.0,1.0
+8392233-FinancialStatement-1708722656073,S4_hybrid,S4 – Hybrid,2,1.0,0.0,1.0,0.0,0.0,1.0
+8392233-FinancialStatement-1708722656073,S5_extended,S5 – Extended extraction,2,1.0,0.0,1.0,0.0,0.0,1.0
+BRAC-Liberia-Audited-Financial-Statements,S1_full,S1 – Full text,3,1.0,0.0,0.6666666666666666,0.3333333333333333,0.0,0.9533333333333333
+BRAC-Liberia-Audited-Financial-Statements,S2_sections,S2 – Section filtering,3,1.0,0.0,0.3333333333333333,0.6666666666666666,0.0,0.9199999999999999
+BRAC-Liberia-Audited-Financial-Statements,S3_fields,S3 – Field extraction,3,1.0,0.0,1.0,0.0,0.0,1.0
+BRAC-Liberia-Audited-Financial-Statements,S4_hybrid,S4 – Hybrid,3,1.0,0.0,1.0,0.0,0.0,1.0
+BRAC-Liberia-Audited-Financial-Statements,S5_extended,S5 – Extended extraction,3,1.0,0.0,1.0,0.0,0.0,1.0
+BRAC-Uganda-Audited-Financial-Statements,S1_full,S1 – Full text,2,1.0,0.0,1.0,0.0,0.0,1.0
+BRAC-Uganda-Audited-Financial-Statements,S2_sections,S2 – Section filtering,3,1.0,0.0,1.0,0.0,0.0,1.0
+BRAC-Uganda-Audited-Financial-Statements,S3_fields,S3 – Field extraction,1,1.0,0.0,1.0,0.0,0.0,1.0
+BRAC-Uganda-Audited-Financial-Statements,S4_hybrid,S4 – Hybrid,1,1.0,0.0,1.0,0.0,0.0,1.0
+BRAC-Uganda-Audited-Financial-Statements,S5_extended,S5 – Extended extraction,3,1.0,0.0,1.0,0.0,0.0,1.0
+FY23_Audit,S1_full,S1 – Full text,1,1.0,0.0,1.0,0.0,0.0,1.0
+FY23_Audit,S2_sections,S2 – Section filtering,1,1.0,0.0,1.0,0.0,0.0,1.0
+FY23_Audit,S3_fields,S3 – Field extraction,1,1.0,0.0,1.0,0.0,0.0,1.0
+FY23_Audit,S4_hybrid,S4 – Hybrid,1,1.0,0.0,1.0,0.0,0.0,1.0
+FY23_Audit,S5_extended,S5 – Extended extraction,1,1.0,0.0,1.0,0.0,0.0,1.0
+FY24-25-ALC-Audit-Financial,S1_full,S1 – Full text,2,1.0,0.0,1.0,0.0,0.0,1.0
+FY24-25-ALC-Audit-Financial,S2_sections,S2 – Section filtering,2,1.0,0.0,0.5,0.5,0.0,0.9450000000000001
+FY24-25-ALC-Audit-Financial,S3_fields,S3 – Field extraction,2,1.0,0.0,1.0,0.0,0.0,1.0
+FY24-25-ALC-Audit-Financial,S4_hybrid,S4 – Hybrid,1,1.0,0.0,1.0,0.0,0.0,1.0
+FY24-25-ALC-Audit-Financial,S5_extended,S5 – Extended extraction,2,1.0,0.0,1.0,0.0,0.0,1.0
+Justice-in-Aging-FY23-Audited-Financial-Statements,S1_full,S1 – Full text,3,1.0,0.0,1.0,0.0,0.0,1.0
+Justice-in-Aging-FY23-Audited-Financial-Statements,S2_sections,S2 – Section filtering,3,1.0,0.0,1.0,0.0,0.0,1.0
+Justice-in-Aging-FY23-Audited-Financial-Statements,S3_fields,S3 – Field extraction,2,1.0,0.0,1.0,0.0,0.0,1.0
+Justice-in-Aging-FY23-Audited-Financial-Statements,S4_hybrid,S4 – Hybrid,2,1.0,0.0,1.0,0.0,0.0,1.0
+Justice-in-Aging-FY23-Audited-Financial-Statements,S5_extended,S5 – Extended extraction,2,1.0,0.0,1.0,0.0,0.0,1.0
+PATH-annual-report-2024,S1_full,S1 – Full text,1,1.0,0.0,1.0,0.0,0.0,1.0
+PATH-annual-report-2024,S2_sections,S2 – Section filtering,1,1.0,0.0,1.0,0.0,0.0,1.0
+PATH-annual-report-2024,S3_fields,S3 – Field extraction,1,1.0,0.0,1.0,0.0,0.0,1.0
+PATH-annual-report-2024,S4_hybrid,S4 – Hybrid,1,1.0,0.0,1.0,0.0,0.0,1.0
+PATH-annual-report-2024,S5_extended,S5 – Extended extraction,1,1.0,0.0,1.0,0.0,0.0,1.0
+Public-Citizen-Foundation-Inc.-FS-3,S1_full,S1 – Full text,2,1.0,0.0,1.0,0.0,0.0,0.985
+Public-Citizen-Foundation-Inc.-FS-3,S2_sections,S2 – Section filtering,2,1.0,0.0,1.0,0.0,0.0,0.985
+Public-Citizen-Foundation-Inc.-FS-3,S5_extended,S5 – Extended extraction,1,1.0,0.0,1.0,0.0,0.0,1.0
+Somos+2024+Audited+Financial+Statements+-+Final,S1_full,S1 – Full text,2,1.0,0.0,0.5,0.5,0.0,0.94
+Somos+2024+Audited+Financial+Statements+-+Final,S2_sections,S2 – Section filtering,3,1.0,0.0,0.3333333333333333,0.6666666666666666,0.0,0.8533333333333334
+Somos+2024+Audited+Financial+Statements+-+Final,S3_fields,S3 – Field extraction,1,1.0,0.0,1.0,0.0,0.0,1.0
+Somos+2024+Audited+Financial+Statements+-+Final,S4_hybrid,S4 – Hybrid,1,1.0,0.0,1.0,0.0,0.0,1.0
+Somos+2024+Audited+Financial+Statements+-+Final,S5_extended,S5 – Extended extraction,1,1.0,0.0,1.0,0.0,0.0,1.0
+financial-statements-2024,S1_full,S1 – Full text,2,1.0,0.0,1.0,0.0,0.0,1.0
+financial-statements-2024,S2_sections,S2 – Section filtering,2,1.0,0.0,1.0,0.0,0.0,1.0
+financial-statements-2024,S3_fields,S3 – Field extraction,3,1.0,0.0,1.0,0.0,0.0,1.0
+financial-statements-2024,S4_hybrid,S4 – Hybrid,2,1.0,0.0,1.0,0.0,0.0,1.0
+financial-statements-2024,S5_extended,S5 – Extended extraction,2,1.0,0.0,1.0,0.0,0.0,1.0

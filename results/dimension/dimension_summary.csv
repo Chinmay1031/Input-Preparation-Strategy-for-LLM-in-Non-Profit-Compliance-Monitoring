@@ -1,0 +1,7 @@
+dimension,dimension_label,strategies_evaluated,mean_precision,mean_recall,mean_f1,mean_accuracy,total_evaluable_cases,total_gold_positive_cases
+revenue_concentration,Revenue concentration,5,1.0,0.6,0.7485714285714287,0.64,50,45
+expense_spike,Expense spike,5,0.6366666666666666,0.8333333333333333,0.7147619047619047,0.6545454545454545,55,30
+pass_through_risk,Pass-through risk,5,1.0,0.775,0.8615384615384615,0.775,40,40
+unallowable_expenditure,Unallowable expenditure,5,0.0,0.0,0.0,0.2857142857142857,35,25
+audit_opinion,Audit opinion,5,0.0,0.0,0.0,0.9818181818181818,55,0
+going_concern,Going concern,5,0.0,0.0,0.0,0.909090909090909,55,5

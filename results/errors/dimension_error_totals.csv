@@ -1,0 +1,7 @@
+dimension,dimension_label,evaluable_cases,false_positives,false_negatives,total_errors
+revenue_concentration,Revenue concentration,50,0,18,18
+expense_spike,Expense spike,55,14,5,19
+pass_through_risk,Pass-through risk,40,0,9,9
+unallowable_expenditure,Unallowable expenditure,35,0,25,25
+audit_opinion,Audit opinion,55,1,0,1
+going_concern,Going concern,55,0,5,5

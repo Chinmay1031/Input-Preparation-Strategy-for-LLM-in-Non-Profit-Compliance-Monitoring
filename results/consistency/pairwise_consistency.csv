@@ -1,0 +1,16 @@
+strategy,strategy_label,run_a,run_b,comparison,observations,kappa,agreement_rate
+S1_full,S1 – Full text,0,1,Run 0 vs Run 1,72,0.9089376053962901,0.9583333333333334
+S1_full,S1 – Full text,0,2,Run 0 vs Run 2,72,1.0,1.0
+S1_full,S1 – Full text,1,2,Run 1 vs Run 2,72,0.9089376053962901,0.9583333333333334
+S2_sections,S2 – Section filtering,0,1,Run 0 vs Run 1,72,0.7838765008576329,0.9027777777777778
+S2_sections,S2 – Section filtering,0,2,Run 0 vs Run 2,72,0.939799331103679,0.9722222222222222
+S2_sections,S2 – Section filtering,1,2,Run 1 vs Run 2,72,0.8456260720411664,0.9305555555555556
+S3_fields,S3 – Field extraction,0,1,Run 0 vs Run 1,72,0.8820960698689956,0.9583333333333334
+S3_fields,S3 – Field extraction,0,2,Run 0 vs Run 2,72,0.9260020554984584,0.9722222222222222
+S3_fields,S3 – Field extraction,1,2,Run 1 vs Run 2,72,0.8870292887029289,0.9583333333333334
+S4_hybrid,S4 – Hybrid,0,1,Run 0 vs Run 1,72,0.8459893048128342,0.9444444444444444
+S4_hybrid,S4 – Hybrid,0,2,Run 0 vs Run 2,72,0.9622641509433962,0.9861111111111112
+S4_hybrid,S4 – Hybrid,1,2,Run 1 vs Run 2,72,0.8867924528301887,0.9583333333333334
+S5_extended,S5 – Extended extraction,0,1,Run 0 vs Run 1,72,0.8979206049149339,0.9583333333333334
+S5_extended,S5 – Extended extraction,0,2,Run 0 vs Run 2,72,1.0,1.0
+S5_extended,S5 – Extended extraction,1,2,Run 1 vs Run 2,72,0.8979206049149339,0.9583333333333334

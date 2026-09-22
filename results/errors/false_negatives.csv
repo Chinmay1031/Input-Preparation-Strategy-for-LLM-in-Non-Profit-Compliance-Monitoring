@@ -1,0 +1,63 @@
+experiment_doc_id,gold_document_id,strategy,strategy_label,dimension,dimension_label,gold_label,predicted_label,gold_binary,predicted_binary
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S1_full,S1 – Full text,going_concern,Going concern,ESCALATE,CLEAR,1,0
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S1_full,S1 – Full text,revenue_concentration,Revenue concentration,FLAG,CLEAR,1,0
+BRAC-Uganda-Audited-Financial-Statements,BRAC_Uganda_AuditedFinancials_2023,S1_full,S1 – Full text,revenue_concentration,Revenue concentration,ESCALATE,CLEAR,1,0
+PATH-annual-report-2024,PATH_AnnualReport_2024,S1_full,S1 – Full text,revenue_concentration,Revenue concentration,FLAG,CLEAR,1,0
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S1_full,S1 – Full text,unallowable_expenditure,Unallowable expenditure,FLAG,CLEAR,1,0
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S1_full,S1 – Full text,unallowable_expenditure,Unallowable expenditure,FLAG,CLEAR,1,0
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S1_full,S1 – Full text,unallowable_expenditure,Unallowable expenditure,FLAG,CLEAR,1,0
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S1_full,S1 – Full text,unallowable_expenditure,Unallowable expenditure,ESCALATE,CLEAR,1,0
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S1_full,S1 – Full text,unallowable_expenditure,Unallowable expenditure,FLAG,CLEAR,1,0
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S2_sections,S2 – Section filtering,going_concern,Going concern,ESCALATE,CLEAR,1,0
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S2_sections,S2 – Section filtering,revenue_concentration,Revenue concentration,ESCALATE,CLEAR,1,0
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S2_sections,S2 – Section filtering,revenue_concentration,Revenue concentration,FLAG,CLEAR,1,0
+PATH-annual-report-2024,PATH_AnnualReport_2024,S2_sections,S2 – Section filtering,revenue_concentration,Revenue concentration,FLAG,CLEAR,1,0
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S2_sections,S2 – Section filtering,unallowable_expenditure,Unallowable expenditure,FLAG,CLEAR,1,0
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S2_sections,S2 – Section filtering,unallowable_expenditure,Unallowable expenditure,FLAG,CLEAR,1,0
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S2_sections,S2 – Section filtering,unallowable_expenditure,Unallowable expenditure,FLAG,CLEAR,1,0
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S2_sections,S2 – Section filtering,unallowable_expenditure,Unallowable expenditure,ESCALATE,CLEAR,1,0
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S2_sections,S2 – Section filtering,unallowable_expenditure,Unallowable expenditure,FLAG,CLEAR,1,0
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S3_fields,S3 – Field extraction,expense_spike,Expense spike,FLAG,CLEAR,1,0
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S3_fields,S3 – Field extraction,expense_spike,Expense spike,FLAG,CLEAR,1,0
+BRAC-Uganda-Audited-Financial-Statements,BRAC_Uganda_AuditedFinancials_2023,S3_fields,S3 – Field extraction,expense_spike,Expense spike,FLAG,CLEAR,1,0
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S3_fields,S3 – Field extraction,going_concern,Going concern,ESCALATE,,1,0
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S3_fields,S3 – Field extraction,pass_through_risk,Pass-through risk,FLAG,CLEAR,1,0
+PATH-annual-report-2024,PATH_AnnualReport_2024,S3_fields,S3 – Field extraction,pass_through_risk,Pass-through risk,FLAG,CLEAR,1,0
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S3_fields,S3 – Field extraction,pass_through_risk,Pass-through risk,FLAG,CLEAR,1,0
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S3_fields,S3 – Field extraction,revenue_concentration,Revenue concentration,FLAG,CLEAR,1,0
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S3_fields,S3 – Field extraction,revenue_concentration,Revenue concentration,FLAG,CLEAR,1,0
+BRAC-Uganda-Audited-Financial-Statements,BRAC_Uganda_AuditedFinancials_2023,S3_fields,S3 – Field extraction,revenue_concentration,Revenue concentration,ESCALATE,CLEAR,1,0
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S3_fields,S3 – Field extraction,revenue_concentration,Revenue concentration,FLAG,CLEAR,1,0
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S3_fields,S3 – Field extraction,unallowable_expenditure,Unallowable expenditure,FLAG,CLEAR,1,0
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S3_fields,S3 – Field extraction,unallowable_expenditure,Unallowable expenditure,FLAG,CLEAR,1,0
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S3_fields,S3 – Field extraction,unallowable_expenditure,Unallowable expenditure,FLAG,CLEAR,1,0
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S3_fields,S3 – Field extraction,unallowable_expenditure,Unallowable expenditure,ESCALATE,CLEAR,1,0
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S3_fields,S3 – Field extraction,unallowable_expenditure,Unallowable expenditure,FLAG,CLEAR,1,0
+BRAC-Uganda-Audited-Financial-Statements,BRAC_Uganda_AuditedFinancials_2023,S4_hybrid,S4 – Hybrid,expense_spike,Expense spike,FLAG,CLEAR,1,0
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S4_hybrid,S4 – Hybrid,expense_spike,Expense spike,FLAG,CLEAR,1,0
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S4_hybrid,S4 – Hybrid,going_concern,Going concern,ESCALATE,,1,0
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S4_hybrid,S4 – Hybrid,pass_through_risk,Pass-through risk,FLAG,CLEAR,1,0
+PATH-annual-report-2024,PATH_AnnualReport_2024,S4_hybrid,S4 – Hybrid,pass_through_risk,Pass-through risk,FLAG,CLEAR,1,0
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S4_hybrid,S4 – Hybrid,pass_through_risk,Pass-through risk,FLAG,CLEAR,1,0
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S4_hybrid,S4 – Hybrid,revenue_concentration,Revenue concentration,FLAG,CLEAR,1,0
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S4_hybrid,S4 – Hybrid,revenue_concentration,Revenue concentration,FLAG,CLEAR,1,0
+BRAC-Uganda-Audited-Financial-Statements,BRAC_Uganda_AuditedFinancials_2023,S4_hybrid,S4 – Hybrid,revenue_concentration,Revenue concentration,ESCALATE,CLEAR,1,0
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S4_hybrid,S4 – Hybrid,revenue_concentration,Revenue concentration,FLAG,CLEAR,1,0
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S4_hybrid,S4 – Hybrid,unallowable_expenditure,Unallowable expenditure,FLAG,CLEAR,1,0
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S4_hybrid,S4 – Hybrid,unallowable_expenditure,Unallowable expenditure,FLAG,CLEAR,1,0
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S4_hybrid,S4 – Hybrid,unallowable_expenditure,Unallowable expenditure,FLAG,CLEAR,1,0
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S4_hybrid,S4 – Hybrid,unallowable_expenditure,Unallowable expenditure,ESCALATE,CLEAR,1,0
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S4_hybrid,S4 – Hybrid,unallowable_expenditure,Unallowable expenditure,FLAG,CLEAR,1,0
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S5_extended,S5 – Extended extraction,going_concern,Going concern,ESCALATE,,1,0
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S5_extended,S5 – Extended extraction,pass_through_risk,Pass-through risk,FLAG,CLEAR,1,0
+PATH-annual-report-2024,PATH_AnnualReport_2024,S5_extended,S5 – Extended extraction,pass_through_risk,Pass-through risk,FLAG,CLEAR,1,0
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S5_extended,S5 – Extended extraction,pass_through_risk,Pass-through risk,FLAG,CLEAR,1,0
+2024_Water.org_audited_financials,WaterOrg_AuditedFinancials_2024,S5_extended,S5 – Extended extraction,revenue_concentration,Revenue concentration,FLAG,CLEAR,1,0
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S5_extended,S5 – Extended extraction,revenue_concentration,Revenue concentration,FLAG,CLEAR,1,0
+BRAC-Uganda-Audited-Financial-Statements,BRAC_Uganda_AuditedFinancials_2023,S5_extended,S5 – Extended extraction,revenue_concentration,Revenue concentration,ESCALATE,CLEAR,1,0
+Somos+2024+Audited+Financial+Statements+-+Final,SOMOSMayfair_AuditedFinancials_2024,S5_extended,S5 – Extended extraction,revenue_concentration,Revenue concentration,FLAG,CLEAR,1,0
+2024-CARE-USA-Financial-Statements_Final,CARE_USA_AuditedFinancials_2024,S5_extended,S5 – Extended extraction,unallowable_expenditure,Unallowable expenditure,FLAG,CLEAR,1,0
+8392233-FinancialStatement-1708722656073,RiverNetwork_AuditedFinancials_2023,S5_extended,S5 – Extended extraction,unallowable_expenditure,Unallowable expenditure,FLAG,CLEAR,1,0
+FY23_Audit,RockingTheBoat_AuditedFinancials_2023,S5_extended,S5 – Extended extraction,unallowable_expenditure,Unallowable expenditure,FLAG,CLEAR,1,0
+FY24-25-ALC-Audit-Financial,AsianLawCaucus_AuditedFinancials_2025,S5_extended,S5 – Extended extraction,unallowable_expenditure,Unallowable expenditure,ESCALATE,CLEAR,1,0
+financial-statements-2024,SaveTheChildrenFederation_AuditedFinancials_2024,S5_extended,S5 – Extended extraction,unallowable_expenditure,Unallowable expenditure,FLAG,CLEAR,1,0

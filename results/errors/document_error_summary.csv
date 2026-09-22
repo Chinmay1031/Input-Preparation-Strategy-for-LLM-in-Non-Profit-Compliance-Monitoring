@@ -1,0 +1,61 @@
+experiment_doc_id,strategy,strategy_label,evaluable_cases,false_positives,false_negatives,total_errors,error_rate
+2024-CARE-USA-Financial-Statements_Final,S1_full,S1 – Full text,6,0,1,1,0.16666666666666666
+2024-CARE-USA-Financial-Statements_Final,S2_sections,S2 – Section filtering,6,0,2,2,0.3333333333333333
+2024-CARE-USA-Financial-Statements_Final,S3_fields,S3 – Field extraction,6,0,1,1,0.16666666666666666
+2024-CARE-USA-Financial-Statements_Final,S4_hybrid,S4 – Hybrid,6,0,1,1,0.16666666666666666
+2024-CARE-USA-Financial-Statements_Final,S5_extended,S5 – Extended extraction,6,1,1,2,0.3333333333333333
+2024_Water.org_audited_financials,S1_full,S1 – Full text,5,0,0,0,0.0
+2024_Water.org_audited_financials,S2_sections,S2 – Section filtering,5,0,0,0,0.0
+2024_Water.org_audited_financials,S3_fields,S3 – Field extraction,5,0,3,3,0.6
+2024_Water.org_audited_financials,S4_hybrid,S4 – Hybrid,5,0,2,2,0.4
+2024_Water.org_audited_financials,S5_extended,S5 – Extended extraction,5,0,2,2,0.4
+8392233-FinancialStatement-1708722656073,S1_full,S1 – Full text,6,0,2,2,0.3333333333333333
+8392233-FinancialStatement-1708722656073,S2_sections,S2 – Section filtering,6,0,2,2,0.3333333333333333
+8392233-FinancialStatement-1708722656073,S3_fields,S3 – Field extraction,6,0,3,3,0.5
+8392233-FinancialStatement-1708722656073,S4_hybrid,S4 – Hybrid,6,0,2,2,0.3333333333333333
+8392233-FinancialStatement-1708722656073,S5_extended,S5 – Extended extraction,6,0,2,2,0.3333333333333333
+BRAC-Liberia-Audited-Financial-Statements,S1_full,S1 – Full text,5,0,0,0,0.0
+BRAC-Liberia-Audited-Financial-Statements,S2_sections,S2 – Section filtering,5,0,0,0,0.0
+BRAC-Liberia-Audited-Financial-Statements,S3_fields,S3 – Field extraction,5,0,0,0,0.0
+BRAC-Liberia-Audited-Financial-Statements,S4_hybrid,S4 – Hybrid,5,0,0,0,0.0
+BRAC-Liberia-Audited-Financial-Statements,S5_extended,S5 – Extended extraction,5,0,0,0,0.0
+BRAC-Uganda-Audited-Financial-Statements,S1_full,S1 – Full text,4,0,1,1,0.25
+BRAC-Uganda-Audited-Financial-Statements,S2_sections,S2 – Section filtering,4,0,0,0,0.0
+BRAC-Uganda-Audited-Financial-Statements,S3_fields,S3 – Field extraction,4,0,2,2,0.5
+BRAC-Uganda-Audited-Financial-Statements,S4_hybrid,S4 – Hybrid,4,0,2,2,0.5
+BRAC-Uganda-Audited-Financial-Statements,S5_extended,S5 – Extended extraction,4,1,1,2,0.5
+FY23_Audit,S1_full,S1 – Full text,4,1,1,2,0.5
+FY23_Audit,S2_sections,S2 – Section filtering,4,1,1,2,0.5
+FY23_Audit,S3_fields,S3 – Field extraction,4,1,1,2,0.5
+FY23_Audit,S4_hybrid,S4 – Hybrid,4,1,1,2,0.5
+FY23_Audit,S5_extended,S5 – Extended extraction,4,1,1,2,0.5
+FY24-25-ALC-Audit-Financial,S1_full,S1 – Full text,5,0,1,1,0.2
+FY24-25-ALC-Audit-Financial,S2_sections,S2 – Section filtering,5,0,1,1,0.2
+FY24-25-ALC-Audit-Financial,S3_fields,S3 – Field extraction,5,0,1,1,0.2
+FY24-25-ALC-Audit-Financial,S4_hybrid,S4 – Hybrid,5,0,2,2,0.4
+FY24-25-ALC-Audit-Financial,S5_extended,S5 – Extended extraction,5,0,1,1,0.2
+Justice-in-Aging-FY23-Audited-Financial-Statements,S1_full,S1 – Full text,5,0,0,0,0.0
+Justice-in-Aging-FY23-Audited-Financial-Statements,S2_sections,S2 – Section filtering,5,0,0,0,0.0
+Justice-in-Aging-FY23-Audited-Financial-Statements,S3_fields,S3 – Field extraction,5,0,0,0,0.0
+Justice-in-Aging-FY23-Audited-Financial-Statements,S4_hybrid,S4 – Hybrid,5,0,0,0,0.0
+Justice-in-Aging-FY23-Audited-Financial-Statements,S5_extended,S5 – Extended extraction,5,0,0,0,0.0
+PATH-annual-report-2024,S1_full,S1 – Full text,2,0,1,1,0.5
+PATH-annual-report-2024,S2_sections,S2 – Section filtering,2,0,1,1,0.5
+PATH-annual-report-2024,S3_fields,S3 – Field extraction,2,0,1,1,0.5
+PATH-annual-report-2024,S4_hybrid,S4 – Hybrid,2,0,1,1,0.5
+PATH-annual-report-2024,S5_extended,S5 – Extended extraction,2,0,1,1,0.5
+Public-Citizen-Foundation-Inc.-FS-3,S1_full,S1 – Full text,4,1,0,1,0.25
+Public-Citizen-Foundation-Inc.-FS-3,S2_sections,S2 – Section filtering,4,1,0,1,0.25
+Public-Citizen-Foundation-Inc.-FS-3,S3_fields,S3 – Field extraction,4,0,0,0,0.0
+Public-Citizen-Foundation-Inc.-FS-3,S4_hybrid,S4 – Hybrid,4,0,0,0,0.0
+Public-Citizen-Foundation-Inc.-FS-3,S5_extended,S5 – Extended extraction,4,1,0,1,0.25
+Somos+2024+Audited+Financial+Statements+-+Final,S1_full,S1 – Full text,6,0,0,0,0.0
+Somos+2024+Audited+Financial+Statements+-+Final,S2_sections,S2 – Section filtering,6,1,0,1,0.16666666666666666
+Somos+2024+Audited+Financial+Statements+-+Final,S3_fields,S3 – Field extraction,6,1,2,3,0.5
+Somos+2024+Audited+Financial+Statements+-+Final,S4_hybrid,S4 – Hybrid,6,1,2,3,0.5
+Somos+2024+Audited+Financial+Statements+-+Final,S5_extended,S5 – Extended extraction,6,1,2,3,0.5
+financial-statements-2024,S1_full,S1 – Full text,6,0,2,2,0.3333333333333333
+financial-statements-2024,S2_sections,S2 – Section filtering,6,0,2,2,0.3333333333333333
+financial-statements-2024,S3_fields,S3 – Field extraction,6,1,2,3,0.5
+financial-statements-2024,S4_hybrid,S4 – Hybrid,6,0,2,2,0.3333333333333333
+financial-statements-2024,S5_extended,S5 – Extended extraction,6,0,2,2,0.3333333333333333

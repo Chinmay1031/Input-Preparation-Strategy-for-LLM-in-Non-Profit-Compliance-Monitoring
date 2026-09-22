@@ -1,0 +1,31 @@
+strategy,strategy_label,dimension,dimension_label,evaluable_cases,true_positive,true_negative,false_positive,false_negative,total_errors,error_rate
+S1_full,S1 – Full text,revenue_concentration,Revenue concentration,10,6,1,0,3,3,0.3
+S1_full,S1 – Full text,expense_spike,Expense spike,11,6,3,2,0,2,0.18181818181818182
+S1_full,S1 – Full text,pass_through_risk,Pass-through risk,8,8,0,0,0,0,0.0
+S1_full,S1 – Full text,unallowable_expenditure,Unallowable expenditure,7,0,2,0,5,5,0.7142857142857143
+S1_full,S1 – Full text,audit_opinion,Audit opinion,11,0,11,0,0,0,0.0
+S1_full,S1 – Full text,going_concern,Going concern,11,0,10,0,1,1,0.09090909090909091
+S2_sections,S2 – Section filtering,revenue_concentration,Revenue concentration,10,6,1,0,3,3,0.3
+S2_sections,S2 – Section filtering,expense_spike,Expense spike,11,6,2,3,0,3,0.2727272727272727
+S2_sections,S2 – Section filtering,pass_through_risk,Pass-through risk,8,8,0,0,0,0,0.0
+S2_sections,S2 – Section filtering,unallowable_expenditure,Unallowable expenditure,7,0,2,0,5,5,0.7142857142857143
+S2_sections,S2 – Section filtering,audit_opinion,Audit opinion,11,0,11,0,0,0,0.0
+S2_sections,S2 – Section filtering,going_concern,Going concern,11,0,10,0,1,1,0.09090909090909091
+S3_fields,S3 – Field extraction,revenue_concentration,Revenue concentration,10,5,1,0,4,4,0.4
+S3_fields,S3 – Field extraction,expense_spike,Expense spike,11,3,2,3,3,6,0.5454545454545454
+S3_fields,S3 – Field extraction,pass_through_risk,Pass-through risk,8,5,0,0,3,3,0.375
+S3_fields,S3 – Field extraction,unallowable_expenditure,Unallowable expenditure,7,0,2,0,5,5,0.7142857142857143
+S3_fields,S3 – Field extraction,audit_opinion,Audit opinion,11,0,11,0,0,0,0.0
+S3_fields,S3 – Field extraction,going_concern,Going concern,11,0,10,0,1,1,0.09090909090909091
+S4_hybrid,S4 – Hybrid,revenue_concentration,Revenue concentration,10,5,1,0,4,4,0.4
+S4_hybrid,S4 – Hybrid,expense_spike,Expense spike,11,4,3,2,2,4,0.36363636363636365
+S4_hybrid,S4 – Hybrid,pass_through_risk,Pass-through risk,8,5,0,0,3,3,0.375
+S4_hybrid,S4 – Hybrid,unallowable_expenditure,Unallowable expenditure,7,0,2,0,5,5,0.7142857142857143
+S4_hybrid,S4 – Hybrid,audit_opinion,Audit opinion,11,0,11,0,0,0,0.0
+S4_hybrid,S4 – Hybrid,going_concern,Going concern,11,0,10,0,1,1,0.09090909090909091
+S5_extended,S5 – Extended extraction,revenue_concentration,Revenue concentration,10,5,1,0,4,4,0.4
+S5_extended,S5 – Extended extraction,expense_spike,Expense spike,11,6,1,4,0,4,0.36363636363636365
+S5_extended,S5 – Extended extraction,pass_through_risk,Pass-through risk,8,5,0,0,3,3,0.375
+S5_extended,S5 – Extended extraction,unallowable_expenditure,Unallowable expenditure,7,0,2,0,5,5,0.7142857142857143
+S5_extended,S5 – Extended extraction,audit_opinion,Audit opinion,11,0,10,1,0,1,0.09090909090909091
+S5_extended,S5 – Extended extraction,going_concern,Going concern,11,0,10,0,1,1,0.09090909090909091

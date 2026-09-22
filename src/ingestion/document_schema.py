@@ -4,13 +4,12 @@ from typing import List, Dict, Optional, Any
 
 
 DOCUMENT_TYPE_FINANCIAL_STATEMENT = "financial_statement"
-DOCUMENT_TYPE_AUP_REPORT          = "aup_report"                                   
+DOCUMENT_TYPE_AUP_REPORT          = "aup_report"
 DOCUMENT_TYPE_AUDIT_REPORT         = "audit_report"
 DOCUMENT_TYPE_NARRATIVE_REPORT     = "narrative_report"
 DOCUMENT_TYPE_UNKNOWN              = "unknown"
 
 
-                              
 SEC_GENERAL_INFO          = "general_info"
 SEC_DIRECTORS_RESP        = "directors_responsibilities"
 SEC_AUDIT_REPORT          = "audit_report"
@@ -20,11 +19,10 @@ SEC_ACCOUNTING_POLICIES   = "accounting_policies"
 SEC_NOTES                 = "notes"
 SEC_DETAILED_INCOME       = "detailed_income"
 
-                     
 SEC_AUP_PURPOSE           = "aup_purpose"
 SEC_AUP_PROCEDURES        = "aup_procedures_findings"
-SEC_AUP_ANNEXURE_A        = "aup_annexure_a"                            
-SEC_AUP_ANNEXURE_B        = "aup_annexure_b"                          
+SEC_AUP_ANNEXURE_A        = "aup_annexure_a"
+SEC_AUP_ANNEXURE_B        = "aup_annexure_b"
 SEC_AUP_NOTES             = "aup_notes"
 
 SEC_UNKNOWN               = "unknown"
@@ -36,11 +34,11 @@ class BudgetLine:
     actual: float
     budget: float
     variance: float
-    variance_pct: Optional[float] = None                    
+    variance_pct: Optional[float] = None
     comment: Optional[str] = None
-    country: Optional[str] = None                                 
+    country: Optional[str] = None
     is_overspend: bool = False
-    is_unbudgeted: bool = False                                   
+    is_unbudgeted: bool = False
 
 
 @dataclass
@@ -62,7 +60,7 @@ class ParsedDocument:
     grantee_name: str = ""
     fiscal_year: Optional[int] = None
     currency: Optional[str] = None
-    project_name: Optional[str] = None                      
+    project_name: Optional[str] = None
     auditor: Optional[str] = None
     report_date: Optional[str] = None
 
@@ -74,7 +72,7 @@ class ParsedDocument:
     financial_figures: Dict[str, Any] = field(default_factory=dict)
 
     parse_warnings: List[str] = field(default_factory=list)
-    ocr_quality_score: float = 1.0                                             
+    ocr_quality_score: float = 1.0
 
     def get_section_text(self, section_type: str) -> str:
         s = self.sections.get(section_type)

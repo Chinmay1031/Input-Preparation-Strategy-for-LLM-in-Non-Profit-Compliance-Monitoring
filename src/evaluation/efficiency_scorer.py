@@ -2,9 +2,8 @@
 from typing import List, Dict
 from src.output_processing.result_schema import ExperimentResult
 
-                                                  
-COST_PER_1K_INPUT_TOKENS  = 0.005        
-COST_PER_1K_OUTPUT_TOKENS = 0.015        
+COST_PER_1K_INPUT_TOKENS  = 0.005
+COST_PER_1K_OUTPUT_TOKENS = 0.015
 
 
 def compute_efficiency_metrics(

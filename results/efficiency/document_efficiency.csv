@@ -1,0 +1,61 @@
+gold_document_id,strategy,strategy_label,input_tokens,output_tokens,total_tokens,total_cost
+AsianLawCaucus_AuditedFinancials_2025,S1_full,S1 – Full text,10143.0,157.0,10300.0,0.053070000000000006
+AsianLawCaucus_AuditedFinancials_2025,S2_sections,S2 – Section filtering,6627.0,163.0,6790.0,0.03558
+AsianLawCaucus_AuditedFinancials_2025,S3_fields,S3 – Field extraction,1232.0,208.0,1440.0,0.00928
+AsianLawCaucus_AuditedFinancials_2025,S4_hybrid,S4 – Hybrid,1527.0,130.0,1657.0,0.009585
+AsianLawCaucus_AuditedFinancials_2025,S5_extended,S5 – Extended extraction,4567.0,181.0,4748.0,0.02555
+BRAC_Liberia_AuditedFinancials_2023,S1_full,S1 – Full text,18281.0,230.0,18511.0,0.094855
+BRAC_Liberia_AuditedFinancials_2023,S2_sections,S2 – Section filtering,16805.0,204.0,17009.0,0.087085
+BRAC_Liberia_AuditedFinancials_2023,S3_fields,S3 – Field extraction,1096.0,229.0,1325.0,0.008915000000000001
+BRAC_Liberia_AuditedFinancials_2023,S4_hybrid,S4 – Hybrid,1346.0,217.0,1563.0,0.009985
+BRAC_Liberia_AuditedFinancials_2023,S5_extended,S5 – Extended extraction,4594.0,254.0,4848.0,0.02678
+BRAC_Uganda_AuditedFinancials_2023,S1_full,S1 – Full text,21023.0,178.0,21201.0,0.107785
+BRAC_Uganda_AuditedFinancials_2023,S2_sections,S2 – Section filtering,21022.0,275.0,21297.0,0.109235
+BRAC_Uganda_AuditedFinancials_2023,S3_fields,S3 – Field extraction,847.0,126.0,973.0,0.006125
+BRAC_Uganda_AuditedFinancials_2023,S4_hybrid,S4 – Hybrid,1121.0,126.0,1247.0,0.007495
+BRAC_Uganda_AuditedFinancials_2023,S5_extended,S5 – Extended extraction,5176.0,227.0,5403.0,0.029285
+CARE_USA_AuditedFinancials_2024,S1_full,S1 – Full text,14287.0,215.0,14502.0,0.07466000000000002
+CARE_USA_AuditedFinancials_2024,S2_sections,S2 – Section filtering,2390.0,135.0,2525.0,0.013975000000000001
+CARE_USA_AuditedFinancials_2024,S3_fields,S3 – Field extraction,1213.0,179.0,1392.0,0.00875
+CARE_USA_AuditedFinancials_2024,S4_hybrid,S4 – Hybrid,1404.0,178.0,1582.0,0.009689999999999999
+CARE_USA_AuditedFinancials_2024,S5_extended,S5 – Extended extraction,2540.0,217.0,2757.0,0.015955
+JusticeInAging_AuditedFinancials_2023,S1_full,S1 – Full text,13793.0,217.0,14010.0,0.07221999999999999
+JusticeInAging_AuditedFinancials_2023,S2_sections,S2 – Section filtering,8559.0,226.0,8785.0,0.046185
+JusticeInAging_AuditedFinancials_2023,S3_fields,S3 – Field extraction,1166.0,188.0,1354.0,0.00865
+JusticeInAging_AuditedFinancials_2023,S4_hybrid,S4 – Hybrid,1444.0,188.0,1632.0,0.01004
+JusticeInAging_AuditedFinancials_2023,S5_extended,S5 – Extended extraction,4437.0,188.0,4625.0,0.025005000000000003
+PATH_AnnualReport_2024,S1_full,S1 – Full text,10540.0,125.0,10665.0,0.054575
+PATH_AnnualReport_2024,S2_sections,S2 – Section filtering,3379.0,128.0,3507.0,0.018815000000000002
+PATH_AnnualReport_2024,S3_fields,S3 – Field extraction,776.0,123.0,899.0,0.005725
+PATH_AnnualReport_2024,S4_hybrid,S4 – Hybrid,776.0,123.0,899.0,0.005725
+PATH_AnnualReport_2024,S5_extended,S5 – Extended extraction,2996.0,123.0,3119.0,0.016825
+PublicCitizenFoundation_AuditedFinancials_2024,S1_full,S1 – Full text,12238.0,190.0,12428.0,0.06404
+PublicCitizenFoundation_AuditedFinancials_2024,S2_sections,S2 – Section filtering,11625.0,190.0,11815.0,0.060975
+PublicCitizenFoundation_AuditedFinancials_2024,S3_fields,S3 – Field extraction,1136.0,87.0,1223.0,0.006984999999999999
+PublicCitizenFoundation_AuditedFinancials_2024,S4_hybrid,S4 – Hybrid,1375.0,87.0,1462.0,0.00818
+PublicCitizenFoundation_AuditedFinancials_2024,S5_extended,S5 – Extended extraction,6721.0,132.0,6853.0,0.035585000000000006
+RiverNetwork_AuditedFinancials_2023,S1_full,S1 – Full text,8703.0,161.0,8864.0,0.04593
+RiverNetwork_AuditedFinancials_2023,S2_sections,S2 – Section filtering,7525.0,171.0,7696.0,0.040190000000000003
+RiverNetwork_AuditedFinancials_2023,S3_fields,S3 – Field extraction,1129.0,127.0,1256.0,0.007549999999999999
+RiverNetwork_AuditedFinancials_2023,S4_hybrid,S4 – Hybrid,1296.0,189.0,1485.0,0.009315
+RiverNetwork_AuditedFinancials_2023,S5_extended,S5 – Extended extraction,5616.0,176.0,5792.0,0.030719999999999997
+RockingTheBoat_AuditedFinancials_2023,S1_full,S1 – Full text,11138.0,159.0,11297.0,0.058075
+RockingTheBoat_AuditedFinancials_2023,S2_sections,S2 – Section filtering,3874.0,136.0,4010.0,0.021410000000000002
+RockingTheBoat_AuditedFinancials_2023,S3_fields,S3 – Field extraction,1090.0,139.0,1229.0,0.007535000000000001
+RockingTheBoat_AuditedFinancials_2023,S4_hybrid,S4 – Hybrid,1363.0,139.0,1502.0,0.0089
+RockingTheBoat_AuditedFinancials_2023,S5_extended,S5 – Extended extraction,4122.0,164.0,4286.0,0.02307
+SOMOSMayfair_AuditedFinancials_2024,S1_full,S1 – Full text,17512.0,157.0,17669.0,0.089915
+SOMOSMayfair_AuditedFinancials_2024,S2_sections,S2 – Section filtering,9907.0,198.0,10105.0,0.052505
+SOMOSMayfair_AuditedFinancials_2024,S3_fields,S3 – Field extraction,1267.0,146.0,1413.0,0.008525
+SOMOSMayfair_AuditedFinancials_2024,S4_hybrid,S4 – Hybrid,1560.0,146.0,1706.0,0.00999
+SOMOSMayfair_AuditedFinancials_2024,S5_extended,S5 – Extended extraction,7769.0,145.0,7914.0,0.04102
+SaveTheChildrenFederation_AuditedFinancials_2024,S1_full,S1 – Full text,18544.0,220.0,18764.0,0.09602000000000001
+SaveTheChildrenFederation_AuditedFinancials_2024,S2_sections,S2 – Section filtering,12327.0,222.0,12549.0,0.06496500000000001
+SaveTheChildrenFederation_AuditedFinancials_2024,S3_fields,S3 – Field extraction,1316.0,261.0,1577.0,0.010495
+SaveTheChildrenFederation_AuditedFinancials_2024,S4_hybrid,S4 – Hybrid,1316.0,200.0,1516.0,0.009580000000000002
+SaveTheChildrenFederation_AuditedFinancials_2024,S5_extended,S5 – Extended extraction,5849.0,200.0,6049.0,0.032245
+WaterOrg_AuditedFinancials_2024,S1_full,S1 – Full text,13015.0,238.0,13253.0,0.06864500000000001
+WaterOrg_AuditedFinancials_2024,S2_sections,S2 – Section filtering,6117.0,215.0,6332.0,0.03381
+WaterOrg_AuditedFinancials_2024,S3_fields,S3 – Field extraction,1226.0,87.0,1313.0,0.007435
+WaterOrg_AuditedFinancials_2024,S4_hybrid,S4 – Hybrid,1501.0,165.0,1666.0,0.00998
+WaterOrg_AuditedFinancials_2024,S5_extended,S5 – Extended extraction,5100.0,152.0,5252.0,0.02778

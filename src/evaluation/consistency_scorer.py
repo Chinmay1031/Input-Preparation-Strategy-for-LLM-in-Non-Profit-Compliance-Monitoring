@@ -29,7 +29,6 @@ def compute_consistency_metrics(
             }
             continue
 
-                                                               
         def get_labels(run_num):
             labels = []
             for r in sorted(runs[run_num], key=lambda x: x.doc_id):
@@ -52,7 +51,6 @@ def compute_consistency_metrics(
                 labels_r2 = get_labels(r2)
 
                 if len(labels_r1) == len(labels_r2) and len(labels_r1) > 0:
-                                                                      
                     if len(set(labels_r1 + labels_r2)) == 1:
                         kappas.append(1.0)
                     else:

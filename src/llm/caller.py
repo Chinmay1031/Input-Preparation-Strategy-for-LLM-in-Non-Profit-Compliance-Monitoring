@@ -16,7 +16,6 @@ TEMPERATURE = 0.3
 MAX_TOKENS  = 1000
 N_RUNS      = 3
 
-                                                                
 MAX_INPUT_TOKENS = 22_000
 INTER_CALL_DELAY = 3
 
@@ -100,7 +99,7 @@ def call_llm_with_retry(prepared_text: str, max_retries: int = 4) -> dict:
             )
 
             if is_rate_limit and attempt < max_retries - 1:
-                wait = 15 * (attempt + 1)                  
+                wait = 15 * (attempt + 1)
                 print(f"\n    Rate limit — waiting {wait}s "
                       f"(retry {attempt + 1}/{max_retries})", flush=True)
                 time.sleep(wait)

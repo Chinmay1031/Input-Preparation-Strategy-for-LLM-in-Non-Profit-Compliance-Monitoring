@@ -3,20 +3,12 @@ import re
 from fuzzywuzzy import fuzz
 from .result_schema import ExperimentResult, ComplianceFlag
 
-                                                        
 FAITHFULNESS_THRESHOLD = 60
 
-                                                               
-                                          
 VERBATIM_THRESHOLD = 92
 
-                                                                     
-                                                                    
-                                                              
 FIGURE_MATCH_SCORE = 85.0
 
-                                                                
-                                                                    
 SUMMARY_STRATEGIES = {"S3_fields", "S4_hybrid", "S5_extended"}
 
 
@@ -47,19 +39,15 @@ def _best_match_score(evidence: str, source_text: str) -> float:
     if not sentences:
         return 0.0
 
-                                         
     text_score = max(
         fuzz.partial_ratio(evidence_lower, sentence)
         for sentence in sentences
     )
 
-                                                                 
     cited_figures = _extract_figures(evidence)
     if cited_figures:
         source_figures = _extract_figures(source_text)
         matched = cited_figures & source_figures
-                                                                         
-                                                                           
         if matched and len(matched) == len(cited_figures):
             return float(max(text_score, FIGURE_MATCH_SCORE))
 

@@ -34,7 +34,7 @@ def parse_document(pdf_path: str, doc_id: Optional[str] = None) -> ParsedDocumen
 
     all_text_parts = []
     all_tables     = []
-    page_data      = []                                     
+    page_data      = []
 
     with pdfplumber.open(pdf_path) as pdf:
         doc.total_pages = len(pdf.pages)
@@ -76,14 +76,9 @@ def parse_document(pdf_path: str, doc_id: Optional[str] = None) -> ParsedDocumen
     for page_num, text, tables in page_data:
         detected = classify_page(text, doc.document_type)
 
-                                                                      
-                              
         if detected != SEC_UNKNOWN:
             current_section = detected
 
-                                                                         
-                                                                           
-                                                   
         page_section = detected if detected != SEC_UNKNOWN else current_section
 
         if page_section not in section_accumulator:
@@ -148,7 +143,7 @@ def _extract_metadata(doc: ParsedDocument) -> ParsedDocument:
     elif "USD" in upper or "US DOLLAR" in upper:
         doc.currency = "USD"
     else:
-        doc.currency = "EUR"                             
+        doc.currency = "EUR"
 
     name_patterns = [
         r'([A-Z][A-Z\s]+(?:NPC|FOUNDATION|CHARITIES|ORGANISATION|TRUST))',
@@ -199,7 +194,6 @@ def _extract_aup_data(doc: ParsedDocument, all_tables: list) -> ParsedDocument:
 
     text = doc.full_text
 
-                                                                   
     donation_match = re.search(
         r'Donations\s+([\d,]+)', text, re.IGNORECASE
     )
@@ -207,7 +201,7 @@ def _extract_aup_data(doc: ParsedDocument, all_tables: list) -> ParsedDocument:
         amount_str = donation_match.group(1).replace(',', '')
         try:
             val = float(amount_str)
-            if val > 1000:                               
+            if val > 1000:
                 doc.financial_figures["donations_received"] = val
         except ValueError:
             pass
@@ -236,7 +230,6 @@ def _extract_aup_data(doc: ParsedDocument, all_tables: list) -> ParsedDocument:
         except ValueError:
             pass
 
-                                               
     procedure_count = len(re.findall(r'^\d+\.\s+', text, re.MULTILINE))
     if procedure_count > 0:
         doc.financial_figures["procedure_count"] = procedure_count
@@ -317,7 +310,6 @@ def _estimate_ocr_quality(text: str) -> float:
     alpha_words = sum(1 for w in words if any(c.isalpha() for c in w))
     quality = alpha_words / len(words)
 
-                                                        
     special_ratio = sum(
         1 for c in text if c in '|~`^<>{}\\@#$%*'
     ) / max(len(text), 1)

@@ -179,8 +179,8 @@ NOISE_PATTERNS = [
     r'the accompanying notes are an integral',
     r'^\s*table of contents',
     r'\.{6,}',
-    r'^\s*[•*=■▪]',                                              
-    r'participants have',                              
+    r'^\s*[•*=■▪]',
+    r'participants have',
     r'\b(farmers|beneficiaries|households|villages)\b',
 ]
 
