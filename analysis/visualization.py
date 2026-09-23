@@ -1,12 +1,4 @@
-"""
-Visualization module for dissertation evaluation results.
 
-Reads derived CSV outputs from the analysis modules and generates
-thesis-ready figures under results/figures/.
-
-Run:
-    python -m analysis.visualization
-"""
 
 from pathlib import Path
 

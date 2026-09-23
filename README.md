@@ -57,9 +57,9 @@ Plus an `overall_verdict` (`COMPLIANT` / `REVIEW_REQUIRED` / `ESCALATE`), a list
 
 The corpus consists of **12 publicly available audited financial statements and AUP reports** from real nonprofits. All documents are used solely for academic research; nothing in this repository asserts any compliance finding against the named organisations — the labels in the gold standard reflect what the documents *say*, not any judgement about the organisations themselves.
 
-> **Note for the reader:** the PDFs are included in [data/pdfs/](data/pdfs/) for reproducibility. All were obtained from the organisations' public disclosures. The table below is a placeholder — fill in the original public source URL for each document before publishing, so readers can verify provenance.
+> **Note for the reader:** the PDFs are included in [data/pdfs/](data/pdfs/) for reproducibility. All were obtained from the organisations' public disclosures; the public source URL for each is listed below.
 
-| # | File                                                     | Organisation / Report                | Public source (fill in) |
+| # | File                                                     | Organisation / Report                | Public source |
 |---|----------------------------------------------------------|--------------------------------------|-------------------------|
 | 1 | `2024-CARE-USA-Financial-Statements_Final.pdf`           | CARE USA — FY2024 Financial Statements | https://www.care.org/financial-reports/ |
 | 2 | `2024_Water.org_audited_financials.pdf`                  | Water.org — FY2024 Audited Financials  | https://water.org/about-us/financials/ |
@@ -111,17 +111,32 @@ Full interpretation and discussion belong in the thesis document itself. In brie
 │   ├── pdfs/                       # Source PDFs (not redistributed — see §5)
 │   ├── gold_standard/              # Manually labelled ground truth
 │   ├── ocr_cache/                  # Cached OCR output for scanned pages
-│   └── results/                    # Raw run outputs + master results table
+│   └── results/                    # Raw run outputs (all_results.json) + master results table
 ├── src/
 │   ├── ingestion/                  # PDF parsing, section classification, OCR fallback
 │   ├── strategies/                 # The five input-preparation strategies (S1–S5)
 │   ├── llm/                        # OpenAI client + prompt template
 │   ├── output_processing/          # Verdict normalisation, faithfulness, hallucination detection
 │   └── evaluation/                 # Quality / efficiency / consistency / faithfulness scorers
+├── analysis/                       # Post-hoc analysis pipeline (see §10) — no API calls
+│   ├── config.py                   # Shared constants: strategies, dimensions, paths, seed
+│   ├── data_loader.py, id_mapping.py  # Load raw results/gold standard, reconcile document IDs
+│   ├── validation.py                # Data-integrity checks (record/document/strategy counts, label validity)
+│   ├── quality_analysis.py          # Precision/recall/F1/accuracy vs gold standard
+│   ├── dimension_analysis.py        # Per-compliance-dimension breakdown
+│   ├── document_analysis.py         # Per-document F1
+│   ├── error_analysis.py            # False positive/negative case-level breakdown
+│   ├── efficiency_analysis.py       # Token/cost analysis
+│   ├── consistency_analysis.py      # Cohen's κ across runs
+│   ├── faithfulness_analysis.py     # Evidence-citation faithfulness breakdown
+│   ├── statistical_tests.py         # Token-vs-quality correlation, pairwise strategy changes
+│   └── visualization.py             # Renders results/figures/ from the CSVs above
+├── results/                         # Derived CSVs + figures produced by analysis/ (see §10)
 ├── parse.py, strategies.py, one_call.py, faithfulness.py, experiment.py  # Pipeline runners (see §9)
 ├── compute_metrics.py              # Re-scores existing results without re-calling the API
 ├── rescore_faithfulness.py         # Recomputes faithfulness on saved runs
 ├── requirements.txt
+├── analysis/requirements-analysis.txt  # Extra deps for the analysis pipeline (numpy, pandas, scipy, scikit-learn, matplotlib)
 └── README.md
 ```
 
@@ -166,25 +181,69 @@ python compute_metrics.py     # Re-score saved results without any API calls
 
 `compute_metrics.py` prints the four metric families and writes the master results table to `data/results/master_results_table.csv`.
 
-## 10. Reproducibility notes and limitations
+## 10. Analysis pipeline
+
+The scored, per-run output in `data/results/all_results.json` (produced by `experiment.py`, §9.3) is turned into the tables and figures used in the thesis by a second, **API-free** pipeline under [analysis/](analysis/). It only reads that committed JSON and the gold standard — reproducing the analysis requires no OpenAI calls, no cost, and no non-determinism.
+
+### 10.1 Setup
+
+```bash
+pip install -r analysis/requirements-analysis.txt
+```
+
+### 10.2 Run order
+
+The modules have a dependency chain: several downstream analyses read the evaluation dataset that `quality_analysis.py` writes to `results/quality/evaluation_dataset.csv`, and `statistical_tests.py`/`visualization.py` read the CSVs that the others produce. Run them in this order:
+
+```bash
+# 1. Validate the raw data before trusting any downstream number
+python -m analysis.validation
+
+# 2. Quality scoring — writes results/quality/, required by steps 3
+python -m analysis.quality_analysis
+
+# 3. Independent breakdowns (any order; each only needs step 2's output)
+python -m analysis.dimension_analysis
+python -m analysis.document_analysis
+python -m analysis.error_analysis
+
+# 4. Independent of quality_analysis — read data/results/all_results.json directly
+python -m analysis.efficiency_analysis
+python -m analysis.consistency_analysis
+python -m analysis.faithfulness_analysis
+
+# 5. Needs results/quality/ and results/efficiency/ from steps 2 and 4
+python -m analysis.statistical_tests
+
+# 6. Needs all of the above — renders results/figures/
+python -m analysis.visualization
+```
+
+Each module is also independently runnable against the CSVs already committed under [results/](results/), so a reader can re-render figures or re-check a single metric family without rerunning the full chain. `analysis/config.py` holds the shared constants (strategy IDs, dimension names, expected record counts, the bootstrap random seed) that every module imports, so there is a single place to check or change them.
+
+There is currently no single `run_all` entry point — `analysis/run_all.py` is an empty placeholder — so the six `python -m analysis.*` commands above must be run individually in the order shown.
+
+## 11. Reproducibility notes and limitations
 
 - **Model non-determinism.** Runs use temperature 0.3, not 0.0, in order to *measure* consistency rather than eliminate it. Results are therefore expected to vary slightly across executions; Cohen's κ across three runs is reported for exactly this reason.
 - **Truncation.** S1 hits the input cap on the largest documents and is truncated with an explicit end-of-document marker. Truncation events are logged to `data/results/truncation_log.json` and discussed in the results chapter.
 - **Faithfulness check.** The current check verifies that cited evidence strings appear (fuzzy match) in the input sent to the model. It does not verify that the *interpretation* of that evidence is correct — that remains a human judgement.
 - **Corpus size.** 12 documents is a small sample by ML standards. This is a design choice: each document requires manual gold-standard labelling by the researcher, and the study is intended as an evaluation methodology rather than a production benchmark.
+- **Deterministic analysis, non-deterministic generation.** The only randomness in the whole pipeline is the LLM call itself (§9.3, temperature 0.3). Everything downstream of `all_results.json` — every table and figure — is a pure, deterministic function of that committed file, the gold standard, and `analysis/config.py`'s fixed `RANDOM_SEED`; re-running the analysis pipeline (§10) on the committed data reproduces the thesis numbers exactly, without needing an API key.
+- **Data-integrity checks.** `analysis/validation.py` asserts the expected record/document/strategy counts and label vocabulary before any metric is computed, so a corrupted or partial results file fails loudly instead of silently skewing a downstream table.
+- **Document-ID reconciliation.** `analysis/id_mapping.py` and `analysis/config.py::EXPERIMENT_DIMENSION_MAP` reconcile two small naming inconsistencies between the raw experiment output and the gold-standard CSV (e.g. `passthrough_risk` vs. `pass_through_risk`); see the code comments there for the exact mapping if extending either schema.
+- **Historical artifact.** `data/results/all_results_6docs_backup.json` is a snapshot from an earlier 6-document run kept for provenance; it is not read by any script and is not part of the reported results.
 - **Human review required.** The verdicts produced here are a triage aid. Any real compliance action taken on a nonprofit grantee should go through the foundation's normal human review process.
 
-## 11. Citation
+## 12. Citation
 
 If you refer to this work, please cite the thesis document:
 
 ```
 Bandekar, C. (2026). Input Strategies for Large Language Models in
-Non-Profit Compliance Monitoring. Master's thesis. [Institution].
+Non-Profit Compliance Monitoring. Master's thesis.
 ```
 
-*[Add DOI / institutional repository link once the thesis is deposited.]*
+## 13. License
 
-## 12. License
-
-*[Choose and add a license — e.g. MIT for the code, CC-BY-4.0 for the written thesis. The source PDFs remain the property of their respective publishers.]*
+The source PDFs remain the property of their respective publishers.
