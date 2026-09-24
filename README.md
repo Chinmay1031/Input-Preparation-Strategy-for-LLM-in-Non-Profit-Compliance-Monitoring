@@ -1,6 +1,6 @@
 # Input Strategies for Large Language Models in Non-Profit Compliance Monitoring
 
-> **Master's Thesis Project** — An empirical comparison of five document-preparation strategies for LLM-based compliance review of nonprofit grantee financial statements.
+> **Master's Thesis Project** on An Empirical Evaluation of LLM Input Strategies for Token Efficiency, Evidential Traceability, and Compliance Reasoning in Nonprofit Grantee Financial Monitoring
 
 **Author:** Chinmay Bandekar
 **Model under study:** OpenAI GPT-4o
