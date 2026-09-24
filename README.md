@@ -22,9 +22,17 @@ This thesis asks: **how does the way we prepare a document as LLM input affect t
 
 ## 2. Research question
 
-> *For automated compliance monitoring of nonprofit financial documents, how does the choice of input preparation strategy affect an LLM's classification quality, run-to-run consistency, faithfulness to source evidence, and per-document cost?*
+RQ1: How different strategies prepared for an LLM input can affect compliance reasoning
+quality and efficiency of token when analyzing on non-profit grantee financial documents ?
 
-The study compares five input strategies (§3) across six compliance dimensions (§4) on a set of publicly available audited nonprofit financial statements and Agreed-Upon-Procedures (AUP) reports (§5), scored against a manually constructed gold standard.
+RQ2: What is the relationship between volume of an LLM input and compliance reasoning
+quality? And is it monotonic across all the evaluated input preparation strategies ?
+
+RQ3: TDoes LLM input preparation strategies have any effect on the evidential fitness and
+traceability of findings related to compliance ?
+
+RQ4: What is the consistency of compliance finding across repeated model runs when they
+are run on different LLM input preparation strategies?
 
 ## 3. The five input strategies
 
