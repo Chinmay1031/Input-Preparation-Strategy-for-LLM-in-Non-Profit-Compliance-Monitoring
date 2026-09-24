@@ -240,10 +240,6 @@ There is currently no single `run_all` entry point — `analysis/run_all.py` is 
 If you refer to this work, please cite the thesis document:
 
 ```
-Bandekar, C. (2026). Input Strategies for Large Language Models in
-Non-Profit Compliance Monitoring. Master's thesis.
+Bandekar, C. (2026). An Empirical Evaluation of LLM Input Strategies for Token Efficiency, Evidential Traceability, and Compliance Reasoning in Nonprofit Grantee Financial Monitoring. Master's thesis.
 ```
 
-## 13. License
-
-The source PDFs remain the property of their respective publishers.
